@@ -1,6 +1,9 @@
-package com.chatterbox;
+package com.controllers;
 
 import java.io.IOException;
+
+import com.chatterbox.App;
+
 import javafx.fxml.FXML;
 
 public class PrimaryController {
