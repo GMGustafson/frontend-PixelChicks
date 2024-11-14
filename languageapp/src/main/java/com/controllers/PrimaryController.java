@@ -11,7 +11,7 @@ public class PrimaryController {
 
     @FXML
     private void switchToSecondary() throws IOException {
-        Narriator.playSound("Hi my name is Grace Gustafson");
+        Narriator.playSound("Hello World");
         App.setRoot("secondary");
     }
 }
