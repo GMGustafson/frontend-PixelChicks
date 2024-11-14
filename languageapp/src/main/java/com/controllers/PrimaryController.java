@@ -1,7 +1,7 @@
 package com.controllers;
 
-import java.io.IOException;
 import com.chatterbox.App;
+import java.io.IOException;
 import com.narration.*;
 import javafx.fxml.FXML;
 
