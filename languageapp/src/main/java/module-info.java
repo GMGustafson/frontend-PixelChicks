@@ -16,4 +16,10 @@ module com.chatterbox {
 
     opens com.chatterbox to javafx.fxml;
     exports com.chatterbox;
+
+    opens com.controllers to javafx.fxml;
+    exports com.controllers;
+
+    opens com.narration to javafx.fxml;
+    exports com.narration;
 }
