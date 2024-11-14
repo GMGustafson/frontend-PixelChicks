@@ -220,7 +220,9 @@ private static BufferedReader getReaderFromFile(String fileName, String junitFil
 				InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
 				return new BufferedReader(inputStreamReader);
 			} else {
+                System.out.println("Trying to read");
 				FileReader reader = new FileReader(fileName);
+                System.out.println("We are in the reader");
 				return new BufferedReader(reader);
 			}
 		} catch(Exception e){
