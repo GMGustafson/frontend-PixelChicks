@@ -15,7 +15,7 @@ public class UserList {
     /**
      * private constructor
      */
-   UserList(){
+   public UserList(){
         users = DataLoader.getUsers();
         this.id = UUID.randomUUID();
     }
