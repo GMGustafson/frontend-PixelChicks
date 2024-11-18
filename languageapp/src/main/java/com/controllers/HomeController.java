@@ -24,7 +24,7 @@ public class HomeController {
     }
 
     @FXML
-    private void CreateAccount() throws IOException {
+    private void createAccount() throws IOException {
         Narriator.playSound("Hola Mundo");
 
         System.out.println("Welcome. Let's create an account!");
