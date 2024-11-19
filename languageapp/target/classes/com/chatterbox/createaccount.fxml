@@ -36,7 +36,7 @@
          </font>
       </TextField>
       <Label layoutX="12.0" layoutY="169.0" prefHeight="31.0" prefWidth="413.0" text="Email:" />
-      <TextField editable="false" layoutX="100.0" layoutY="173.0">
+      <TextField accessibleRole="DATE_PICKER" layoutX="100.0" layoutY="173.0">
          <font>
             <Font size="11.0" />
          </font>

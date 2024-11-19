@@ -36,6 +36,7 @@ public class LoginController implements Initializable {
             lbl_error.setText("Invalid login credentials.");
             return;
         }
+        
 
         App.setRoot("user_home");
     }
