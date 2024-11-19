@@ -19,32 +19,20 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Label prefHeight="31.0" prefWidth="418.0" text="First Name:" />
+      <Label prefHeight="31.0" prefWidth="418.0" text="User Name:" />
       <TextField accessibleRole="CHECK_BOX" prefHeight="24.0" prefWidth="327.0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <Label alignment="TOP_LEFT" contentDisplay="RIGHT" prefHeight="31.0" prefWidth="413.0" text="Last Name:" />
+      <Label alignment="TOP_LEFT" contentDisplay="RIGHT" prefHeight="31.0" prefWidth="413.0" text="Password:" />
       <TextField>
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <Label prefHeight="31.0" prefWidth="411.0" text="Birthday:" />
+      <Label prefHeight="31.0" prefWidth="411.0" text="Re-enter Password:" />
       <TextField accessibleRole="DATE_PICKER">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </TextField>
-      <Label prefHeight="31.0" prefWidth="413.0" text="Email:" />
-      <TextField editable="false">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </TextField>
-      <Label prefHeight="31.0" prefWidth="410.0" text="Phone Number:" />
-      <TextField prefHeight="11.0" prefWidth="271.0">
          <font>
             <Font size="11.0" />
          </font>
