@@ -22,26 +22,23 @@ public class HomeController {
     private Button loginButton;
 
     @FXML
-    void createAccount(ActionEvent event) {}
-
-    @FXML
-    void login(ActionEvent event) {}
-
-
-    @FXML
-    private void login() throws IOException {
-        //Narriator.playSound("Hola Mundo");
-
-        // System.out.println("Welcome " + txtUserName.getText().toString());
-        System.out.println("Welcome back!");
-        App.setRoot("login");
-    }
-
-    @FXML
-    private void createAccount() throws IOException {
-       // Narriator.playSound("Hola Mundo");
-
+    void createAccount(ActionEvent event) {
         System.out.println("Welcome. Let's create an account!");
-        App.setRoot("createAccount");
+        try {
+            App.setRoot("createAccount");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+    @FXML
+    void login(ActionEvent event) {
+        System.out.println("Welcome back!");
+        try {
+            App.setRoot("login");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
