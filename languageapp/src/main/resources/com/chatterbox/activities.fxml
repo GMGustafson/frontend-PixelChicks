@@ -3,14 +3,20 @@
 <?import com.gluonhq.charm.glisten.control.AppBar?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="383.0" style="-fx-background-color: #FEF6DD;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Polygon fill="#56bfbf" layoutX="-83.0" layoutY="20.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 83.89739227294922, 125.79914855957031, 210.58424377441406, 227.30209350585938" rotate="-76.0" stroke="BLACK" strokeType="INSIDE" />
-      <Polygon fill="#56bfbf" layoutX="-83.0" layoutY="182.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" rotate="-74.5" stroke="BLACK" strokeType="INSIDE" />
-      <Polygon fill="#57bdbd" layoutX="127.0" layoutY="55.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" rotate="-33.7" stroke="BLACK" strokeType="INSIDE" />
-      <Polygon fill="#56bfbf" layoutX="-71.0" layoutY="339.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" stroke="BLACK" strokeType="INSIDE" />
-      <Polygon fill="#56bfbf" layoutX="118.0" layoutY="247.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fill="#56bfbf" layoutX="-83.0" layoutY="20.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 83.89739227294922, 125.79914855957031, 210.58424377441406, 227.30209350585938" rotate="-76.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Polygon fill="#56bfbf" layoutX="-83.0" layoutY="182.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" rotate="-74.5" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Polygon fill="#57bdbd" layoutX="127.0" layoutY="55.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" rotate="-33.7" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Polygon fill="#56bfbf" layoutX="-71.0" layoutY="339.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Polygon fill="#56bfbf" layoutX="118.0" layoutY="247.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" stroke="TRANSPARENT" strokeType="INSIDE" />
       <AppBar prefHeight="60.0" prefWidth="383.0" style="-fx-background-color: #3BA1B8;" titleText="                                    Activities" />
+      <Text layoutX="43.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mock Convo" />
+      <Text layoutX="52.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Matching" />
+      <Text layoutX="278.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Story" />
+      <Text layoutX="245.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flashcards" />
+      <Text layoutX="47.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fill in the Blank" />
    </children>
 </Pane>
