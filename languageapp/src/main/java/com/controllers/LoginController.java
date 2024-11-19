@@ -23,8 +23,8 @@ public class LoginController implements Initializable {
     @FXML
     private Label lbl_error;
     @FXML
-    private Button login;
-    
+    private Button loginUser;
+
     @FXML
     void switchToWelcome(ActionEvent event) {
 
