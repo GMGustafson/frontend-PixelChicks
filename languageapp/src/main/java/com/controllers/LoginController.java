@@ -19,8 +19,9 @@ public class LoginController implements Initializable {
     private TextField txt_password;
     @FXML
     private Label lbl_error;
+
     @FXML
-    private Button secondaryButton;
+    private Button login;
 
     @FXML
     private void btnLoginClicked(MouseEvent event) throws IOException {
