@@ -17,15 +17,16 @@ public class HomeController {
 
     @FXML
     private void login() throws IOException {
-        Narriator.playSound("Hola Mundo");
+        //Narriator.playSound("Hola Mundo");
 
         // System.out.println("Welcome " + txtUserName.getText().toString());
+        System.out.println("Welcome back!");
         App.setRoot("login");
     }
 
     @FXML
     private void createAccount() throws IOException {
-        Narriator.playSound("Hola Mundo");
+       // Narriator.playSound("Hola Mundo");
 
         System.out.println("Welcome. Let's create an account!");
         App.setRoot("createAccount");

@@ -192,6 +192,11 @@ public class UserList {
         return email != null && email.contains("@") && email.contains(".");
     }
 
+    public boolean login(String username) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'login'");
+    }
+
     // public ArrayList getUsers() {
     //     return users;
     // }
