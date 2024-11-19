@@ -26,12 +26,7 @@ public class LoginController implements Initializable {
     private Button loginUser;
 
     @FXML
-    void switchToWelcome(ActionEvent event) {
-
-    }
-
-    @FXML
-    private void btnLoginClicked(MouseEvent event) throws IOException {
+    void switchToWelcome(ActionEvent event) throws IOException{
         String username = txt_username.getText();
         String password = txt_password.getText();
 
@@ -43,6 +38,11 @@ public class LoginController implements Initializable {
         }
 
         App.setRoot("user_home");
+    }
+
+    @FXML
+    private void btnLoginClicked(MouseEvent event) throws IOException {
+        
     }
 
     @FXML
