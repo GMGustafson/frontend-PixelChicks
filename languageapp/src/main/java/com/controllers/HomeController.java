@@ -1,7 +1,10 @@
 package com.controllers;
 
 import java.io.IOException;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -12,8 +15,17 @@ import javafx.fxml.FXML;
 
 public class HomeController {
 
-    // @FXML
-    // private TextField txtUserName;
+    @FXML
+    private Button createAccountButton;
+
+    @FXML
+    private Button loginButton;
+
+    @FXML
+    void createAccount(ActionEvent event) {}
+
+    @FXML
+    void login(ActionEvent event) {}
 
 
     @FXML
