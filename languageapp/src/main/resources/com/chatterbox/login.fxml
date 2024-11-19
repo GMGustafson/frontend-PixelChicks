@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" prefHeight="408.0" prefWidth="274.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.LoginController">
     <children>
@@ -12,9 +13,10 @@
          <font>
             <Font size="21.0" />
          </font></Label>
-      <TextField promptText="username" />
-      <TextField promptText="password" />
-        <Button fx:id="login" onAction="#switchToWelcome" text="Login" />
+        //<Button layoutX="214.0" layoutY="173.0" mnemonicParsing="false" onMouseClicked="#btnLoginClicked" prefHeight="24.0" prefWidth="173.0" text="Login" />
+        <TextField promptText="username" />
+        <TextField promptText="password" />
+        <Button fx:id="loginUser" onAction="#switchToWelcome" text="Login" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

@@ -4,8 +4,9 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-import com.chatterbox.App;
 import java.io.IOException;
+
+import com.chatterbox.App;
 import com.narration.*;
 import javafx.fxml.FXML;
 
