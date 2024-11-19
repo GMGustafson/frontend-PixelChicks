@@ -24,9 +24,9 @@ public class LoginController implements Initializable {
         String username = txt_username.getText();
         String password = txt_password.getText();
 
-        CategorySystemFacade facade = CategorySystemFacade.getInstance();
+        CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance();
 
-        if (!facade.login(username)) {
+        if (!facade.login(username, password)) {
             lbl_error.setText("Invalid login credentials.");
             return;
         }
