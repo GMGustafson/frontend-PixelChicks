@@ -5,22 +5,23 @@
     <artifactId>languageapp</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>13</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>13</version>
-        </dependency>
+<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<maven.compiler.release>17</maven.compiler.release>
+<javafx.version>21</javafx.version>
+<javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+</properties>    
 
+    <dependencies>
+<dependency>
+<groupId>org.openjfx</groupId>
+<artifactId>javafx-controls</artifactId>
+<version>${javafx.version}</version>
+</dependency>
+<dependency>
+<groupId>org.openjfx</groupId>
+<artifactId>javafx-fxml</artifactId>
+<version>${javafx.version}</version>
+</dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -115,3 +116,4 @@
         </plugins>
     </build>
 </project>
+
