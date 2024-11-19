@@ -19,7 +19,6 @@ public class LoginController implements Initializable {
     private TextField txt_password;
     @FXML
     private Label lbl_error;
-
     @FXML
     private Button login;
 
