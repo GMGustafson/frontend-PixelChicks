@@ -1,0 +1,29 @@
+.root {
+    -fx-font-size: 16pt;
+    -fx-font-family: "Helvetica";
+    /*-fx-base: #87c7d1;*/
+    /*-fx-background: #f2f2f2;*/
+    -fx-text-fill: #fff;
+    -fx-background-image: url("../images/background.jpg");
+  }
+  
+  .label {
+    -fx-text-fill: #590202;
+  }
+  
+  .button {
+    -fx-background-color: black;
+    -fx-text-fill: #fff;
+  }
+  
+  .book-grid-item {
+    -fx-background-color: #590202;
+    -fx-padding: 10px;
+    -fx-background-radius: 5;
+    -fx-alignment: center;
+  }
+  
+  .book-grid-item > .label {
+    -fx-text-fill: #fff;
+    -fx-padding: 5px;
+  }
