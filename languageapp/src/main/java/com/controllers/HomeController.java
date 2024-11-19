@@ -11,16 +11,16 @@ import javafx.fxml.FXML;
 
 public class HomeController {
 
-    @FXML
-    private TextField txtUserName;
+    // @FXML
+    // private TextField txtUserName;
 
 
     @FXML
     private void login() throws IOException {
         Narriator.playSound("Hola Mundo");
 
-        System.out.println("Welcome " + txtUserName.getText().toString());
-        //App.setRoot("secondary");
+        // System.out.println("Welcome " + txtUserName.getText().toString());
+        App.setRoot("login");
     }
 
     @FXML
@@ -28,6 +28,6 @@ public class HomeController {
         Narriator.playSound("Hola Mundo");
 
         System.out.println("Welcome. Let's create an account!");
-        //App.setRoot("secondary");
+        App.setRoot("createAccount");
     }
 }
