@@ -81,7 +81,7 @@ public class UserList {
             System.out.println("Last name must have at least one character!");
             return false;
         }
-
+        System.out.println("this email is" + email);
         //valudate email
         if (!validEmail(email)) {
             System.out.println("Invalid email!");
@@ -189,7 +189,7 @@ public class UserList {
      * @return valid email
      */
     public boolean validEmail(String email) {
-        return email != null && email.contains("@") && email.contains(".");
+        return (email != null && email.contains("@") && email.contains("."));
     }
 
     public boolean login(String username) {

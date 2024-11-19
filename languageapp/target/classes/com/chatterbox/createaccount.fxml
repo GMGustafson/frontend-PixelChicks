@@ -18,31 +18,31 @@
          </font>
       </Text>
       <Label layoutX="10.0" layoutY="86.0" prefHeight="31.0" prefWidth="418.0" text="First Name:" />
-      <TextField accessibleRole="CHECK_BOX" layoutX="100.0" layoutY="90.0" prefHeight="24.0" prefWidth="137.0">
+      <TextField fx:id="txt_first_name" accessibleRole="CHECK_BOX" layoutX="100.0" layoutY="90.0" prefHeight="24.0" prefWidth="137.0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
       <Label alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="13.0" layoutY="114.0" prefHeight="31.0" prefWidth="413.0" text="Last Name:" />
-      <TextField layoutX="100.0" layoutY="117.0">
+      <TextField fx:id="txt_last_name" layoutX="100.0" layoutY="117.0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
       <Label layoutX="13.0" layoutY="142.0" prefHeight="31.0" prefWidth="411.0" text="Birthday:" />
-      <TextField accessibleRole="DATE_PICKER" layoutX="100.0" layoutY="145.0">
+      <TextField fx:id="txt_birthday" accessibleRole="DATE_PICKER" layoutX="100.0" layoutY="145.0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
       <Label layoutX="12.0" layoutY="169.0" prefHeight="31.0" prefWidth="413.0" text="Email:" />
-      <TextField accessibleRole="DATE_PICKER" layoutX="100.0" layoutY="173.0">
+      <TextField fx:id="txt_email" accessibleRole="DATE_PICKER" layoutX="100.0" layoutY="173.0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
       <Label layoutX="13.0" layoutY="202.0" prefHeight="31.0" prefWidth="410.0" text="Phone Number:" />
-      <TextField layoutX="100.0" layoutY="206.0" prefHeight="24.0" prefWidth="137.0">
+      <TextField fx:id="txt_phone_number" layoutX="100.0" layoutY="206.0" prefHeight="24.0" prefWidth="137.0">
          <font>
             <Font size="11.0" />
          </font>

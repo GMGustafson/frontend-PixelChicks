@@ -14,9 +14,10 @@
          <font>
             <Font size="21.0" />
          </font></Label>
-        <TextField promptText="username" />
-        <TextField promptText="password" />
+        <TextField fx:id="txt_username" promptText="username" />
+        <TextField fx:id="txt_password" promptText="password" />
         <Button fx:id="loginUser" onAction="#switchToWelcome" text="Login" textFill="RED" />
+      <Label fx:id="lbl_error" text="Label" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
