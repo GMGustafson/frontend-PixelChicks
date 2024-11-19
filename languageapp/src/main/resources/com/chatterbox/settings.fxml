@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.TextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -9,14 +12,45 @@
 
 <VBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="TOP_CENTER" contentDisplay="TOP" text="Settings" textAlignment="CENTER" wrapText="true">
-         <VBox.margin>
-            <Insets left="250.0" top="5.0" />
-         </VBox.margin>
+      <Label text="Settings">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font>
+         <VBox.margin>
+            <Insets right="250.0" />
+         </VBox.margin>
       </Label>
-      <ScrollBar orientation="VERTICAL" prefHeight="564.0" prefWidth="15.0" />
+      <MenuButton mnemonicParsing="false" prefHeight="47.0" prefWidth="48.0" textAlignment="CENTER">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Dictionary" />
+          <MenuItem mnemonicParsing="false" text="Activities" />
+            <MenuItem mnemonicParsing="false" text="Logout" />
+        </items>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </MenuButton>
+      <Label prefHeight="17.0" prefWidth="57.0" text="Username">
+         <VBox.margin>
+            <Insets right="525.0" top="5.0" />
+         </VBox.margin>
+      </Label>
+      <TextField prefHeight="25.0" prefWidth="481.0">
+         <VBox.margin>
+            <Insets left="5.0" right="150.0" top="5.0" />
+         </VBox.margin>
+      </TextField>
+      <Label text="Password">
+         <VBox.margin>
+            <Insets right="535.0" top="5.0" />
+         </VBox.margin>
+      </Label>
+      <ScrollBar orientation="VERTICAL" prefHeight="479.0" prefWidth="15.0" />
+      <MenuButton layoutX="578.0" layoutY="10.0" mnemonicParsing="false">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Dictionary" />
+            <MenuItem mnemonicParsing="false" text="Activities" />
+         </items>
+      </MenuButton>
    </children>
 </VBox>
