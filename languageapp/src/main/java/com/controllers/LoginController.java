@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import com.chatterbox.App;
 import com.model.*;
 
-public class LoginController implements Initializable {
+public class LoginController {
     @FXML
     private TextField txt_username;
     @FXML
@@ -39,26 +39,22 @@ public class LoginController implements Initializable {
         }
         else 
         { 
+<<<<<<< HEAD
            System.out.println("Valid login credentials.");
+=======
+            /* testing purposes */
+            lbl_error.setText("Welcome"  + username + "  " + password); 
+            
+
+           System.out.println("Valid login credentials." + username + "  " + password);
+>>>>>>> 0d715f509cc75ac327c9c7472155f23f4e38d441
             App.setRoot("courses");
         }
-        
-        //App.setRoot("user_home");
+    
     }
 
-    @FXML
-    private void btnLoginClicked(MouseEvent event) throws IOException {
-        
-    }
+    
 
-    @FXML
-    private void back(MouseEvent event) throws IOException {
-        App.setRoot("home");
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-    }
 
    
 }

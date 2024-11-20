@@ -28,37 +28,37 @@ public class CourseController {
     @FXML
     void chooseColors(ActionEvent event) {
         
-    }
+    };
 
     @FXML
     void chooseCourse(MouseEvent event) {
 
-    }
+    };
 
     @FXML
     void chooseNumbers(ActionEvent event) {
 
-    }
+    };
 
     @FXML
     void choosePeople(ActionEvent event) {
 
-    }
+    };
 
     @FXML
     void choosePhrases(ActionEvent event) {
 
-    }
+    };
 
     @FXML
     void chooseWeather(ActionEvent event) {
 
-    }
+    };
 
     @FXML
     void chooseWords(ActionEvent event) {
 
-    }
+    };
 
     @FXML
     void showCategories(ActionEvent event) {
