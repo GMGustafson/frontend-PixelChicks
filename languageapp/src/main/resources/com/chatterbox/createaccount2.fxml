@@ -20,24 +20,24 @@
          </font>
       </Text>
       <Label prefHeight="31.0" prefWidth="418.0" text="User Name:" />
-      <TextField accessibleRole="CHECK_BOX" prefHeight="24.0" prefWidth="327.0">
+      <TextField fx:id="txt_username" accessibleRole="CHECK_BOX" prefHeight="24.0" prefWidth="327.0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
       <Label alignment="TOP_LEFT" contentDisplay="RIGHT" prefHeight="31.0" prefWidth="413.0" text="Password:" />
-      <TextField>
+      <TextField fx:id="txt_password">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
       <Label prefHeight="31.0" prefWidth="411.0" text="Re-enter Password:" />
-      <TextField accessibleRole="DATE_PICKER">
+      <TextField fx:id="txt_password" accessibleRole="DATE_PICKER">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <Button fx:id="next" onAction="#goToCreateAccount2" prefHeight="48.0" prefWidth="93.0" text="Next">
+      <Button fx:id="signup" onAction="#gotocourses" prefHeight="48.0" prefWidth="128.0" text="Sign up">
          <textFill>
             <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                <stops>

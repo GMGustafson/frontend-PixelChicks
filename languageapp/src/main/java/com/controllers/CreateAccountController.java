@@ -17,6 +17,9 @@ public class CreateAccountController {
     private Button next;
 
     @FXML
+    private Button signup;
+
+    @FXML
     private TextField txt_birthday;
 
     @FXML
@@ -31,6 +34,13 @@ public class CreateAccountController {
     @FXML
     private TextField txt_phone_number;
 
+    @FXML
+    private TextField txt_password;
+
+    @FXML
+    private TextField txt_username;
+
+    
     @FXML
     void goToCreateAccount2(ActionEvent event) throws IOException{
         String firstName = txt_first_name.getText();
@@ -53,8 +63,30 @@ public class CreateAccountController {
             System.out.println("going to next page"); 
             App.setRoot("createAccount2");
         }
+    }
 
-       
+    @FXML
+    void gotocourses(ActionEvent event) throws IOException {
+
+        String username = txt_username.getText();
+        String password = txt_password.getText(); 
+        
+
+       CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance();
+
+       System.out.println("User:" + "  " +  username + "  " + password);
+
+        if (!facade.createCredentials(username,password)) {
+            System.out.println("Not valid"); 
+            return;
+        }
+        else
+        {
+            System.out.println("going to next page"); 
+            App.setRoot("courses");
+        }
+
+
     }
 
 }
