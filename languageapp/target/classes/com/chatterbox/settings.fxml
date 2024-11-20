@@ -13,8 +13,9 @@
    <children>
       <MenuButton mnemonicParsing="false">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem mnemonicParsing="false" text="Dictionary" />
+          <MenuItem mnemonicParsing="false" text="Activities" />
+            <MenuItem mnemonicParsing="false" text="Logout" />
         </items>
       </MenuButton>
       <Label text="Settings">
