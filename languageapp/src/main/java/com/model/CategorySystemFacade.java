@@ -278,5 +278,8 @@ public class CategorySystemFacade {
         return course.getStoriesByCategory(category);
 
     }
+
+    public boolean createCredentials(String username, String password) {
+        return username != null && password != null; }
   
 }
