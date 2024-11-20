@@ -33,12 +33,17 @@ public class LoginController implements Initializable {
         CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance();
 
         if (!facade.login(username, password)) {
+            System.out.println("Not valid"); 
             lbl_error.setText("Invalid login credentials.");
             return;
         }
+        else 
+        { 
+           System.out.println("Valid login credentials.");
+            App.setRoot("home");
+        }
         
-
-        App.setRoot("user_home");
+        //App.setRoot("user_home");
     }
 
     @FXML
