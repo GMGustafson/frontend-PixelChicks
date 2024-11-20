@@ -19,6 +19,7 @@
       <Text layoutX="278.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Story" />
       <Text layoutX="245.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flashcards" />
       <Text layoutX="47.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fill in the Blank" />
-      <Circle fill="DODGERBLUE" layoutX="347.0" layoutY="566.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#56bfbf" layoutX="347.0" layoutY="566.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="343.0" layoutY="570.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P" />
    </children>
 </Pane>

@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="345.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" prefHeight="401.0" prefWidth="569.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.CourseController">
    <children>
-      <MenuButton mnemonicParsing="false" prefHeight="81.0" prefWidth="199.0" text="Courses">
+      <MenuButton fx:id="chooseCourses" mnemonicParsing="false" onAction="#showCourses" onMouseClicked="#showCourses" stylesheets="@styles.css" text="Courses">
         <items>
-          <MenuItem mnemonicParsing="false" text="Words" />
-            <MenuItem mnemonicParsing="false" text="Phrases" />
+          <MenuItem fx:id="courseWords" mnemonicParsing="false" onAction="#chooseWords" text="Words" />
+            <MenuItem fx:id="coursePhrases" mnemonicParsing="false" onAction="#choosePhrases" text="Phrases" />
         </items>
       </MenuButton>
-      <Separator minHeight="-Infinity" minWidth="-Infinity" prefHeight="15.0" prefWidth="345.0" stylesheets="@styles.css" />
-      <MenuButton mnemonicParsing="false" prefHeight="84.0" prefWidth="208.0" text="Categories">
+      <Separator minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" stylesheets="@styles.css" />
+      <MenuButton fx:id="chooseCategories" mnemonicParsing="false" onAction="#showCategories" onMouseClicked="#chooseCourse" text="Categories">
         <items>
-          <MenuItem mnemonicParsing="false" text="Numbers" />
-          <MenuItem mnemonicParsing="false" text="Colors" />
-            <MenuItem mnemonicParsing="false" text="People" />
-            <MenuItem mnemonicParsing="false" text="Places" />
-            <MenuItem mnemonicParsing="false" text="Weather" />
+          <MenuItem fx:id="categoryNumbers" mnemonicParsing="false" onAction="#chooseNumbers" text="Numbers" />
+          <MenuItem fx:id="categoryColors" mnemonicParsing="false" onAction="#chooseColors" text="Colors" />
+            <MenuItem fx:id="categoryPeople" mnemonicParsing="false" onAction="#choosePeople" text="People" />
+            <MenuItem fx:id="categoryPeople" mnemonicParsing="false" onAction="#choosePeople" text="Places" />
+            <MenuItem fx:id="categoryWeather" mnemonicParsing="false" onAction="#chooseWeather" text="Weather" />
         </items>
       </MenuButton>
    </children>
