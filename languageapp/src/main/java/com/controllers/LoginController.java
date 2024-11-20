@@ -40,7 +40,7 @@ public class LoginController implements Initializable {
         else 
         { 
            System.out.println("Valid login credentials.");
-            App.setRoot("home");
+            App.setRoot("courses");
         }
         
         //App.setRoot("user_home");
