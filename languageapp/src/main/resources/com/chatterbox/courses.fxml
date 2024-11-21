@@ -25,6 +25,10 @@
         </items>
       </MenuButton>
    </children>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3b7ace79dc1adc84975ac0b6b04b5ba8ee35213c
     <stylesheets>
         <URL value="@styles.css" />
     </stylesheets>
