@@ -39,15 +39,12 @@ public class LoginController {
         }
         else 
         { 
-<<<<<<< HEAD
            System.out.println("Valid login credentials.");
-=======
             /* testing purposes */
             lbl_error.setText("Welcome"  + username + "  " + password); 
             
 
            System.out.println("Valid login credentials." + username + "  " + password);
->>>>>>> 0d715f509cc75ac327c9c7472155f23f4e38d441
             App.setRoot("courses");
         }
     
