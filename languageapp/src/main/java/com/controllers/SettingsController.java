@@ -50,7 +50,7 @@ public class SettingsController {
     
     @FXML
     void switchToDictionary(ActionEvent event) throws IOException{
-
+        CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance();
     }
 
     @FXML
@@ -60,6 +60,7 @@ public class SettingsController {
 
     @FXML
     void switchToLogout(ActionEvent event) throws IOException{
-
+        CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance();
+        App.setRoot("courses");
     }
 }

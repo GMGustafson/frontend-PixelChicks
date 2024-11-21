@@ -13,9 +13,9 @@
    <children>
       <MenuButton mnemonicParsing="false">
         <items>
-          <MenuItem mnemonicParsing="false" text="Dictionary" />
-          <MenuItem mnemonicParsing="false" text="Activities" />
-            <MenuItem mnemonicParsing="false" text="Logout" />
+          <MenuItem fx:id="Dictionary" mnemonicParsing="false" onAction="#switchToDictionary" text="Dictionary" />
+          <MenuItem fx:id="Activities" mnemonicParsing="false" onAction="#switchToActivities" text="Activities" />
+            <MenuItem fx:id="Logout" mnemonicParsing="false" onAction="#switchToLogout" text="Logout" />
         </items>
       </MenuButton>
       <Label text="Settings">
