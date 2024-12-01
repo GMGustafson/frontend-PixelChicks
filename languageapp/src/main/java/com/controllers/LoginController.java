@@ -25,6 +25,11 @@ public class LoginController {
     @FXML
     private Button loginUser;
 
+    
+    @FXML
+    void switchToActivites(ActionEvent event) {
+
+    }
     @FXML
     void switchToWelcome(ActionEvent event) throws IOException{
         String username = txt_username.getText();
