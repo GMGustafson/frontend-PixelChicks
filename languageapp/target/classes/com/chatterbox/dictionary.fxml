@@ -17,5 +17,187 @@
          </padding>
       </Label>
       <Button fx:id="next" mnemonicParsing="false" onAction="#NextPage" text="Next" />
+      <DropdownButton maxWidth="700.0">
+          <items>
+              <MenuItem text="A" />
+              <MenuItem text="Aubela- Grandmother" />
+              <MenuItem text="Abuleo- Grandfather" />
+          </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="B" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="C" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="D" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="E" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="F" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="G" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="H" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="I" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="J" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="K" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="L" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="M" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="N" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="O" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="P" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="Q" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="R" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="S" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="T" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="U" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="V" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="W" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="X" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="Y" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="Z" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
    </children>
 </VBox>
