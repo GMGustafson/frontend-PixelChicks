@@ -16,7 +16,7 @@
          </font></Label>
         <TextField fx:id="txt_username" promptText="username" />
         <TextField fx:id="txt_password" promptText="password" />
-        <Button fx:id="loginUser" onAction="#switchToWelcome" text="Login" textFill="RED" />
+        <Button fx:id="loginUser" onAction="#switchToActivites" text="Login" textFill="RED" />
       <Label fx:id="lbl_error" />
     </children>
     <padding>
