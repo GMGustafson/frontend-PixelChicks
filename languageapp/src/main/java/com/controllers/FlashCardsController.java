@@ -8,7 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class FlashCardsController {
+public class FlashcardsController {
 
     @FXML
     private Button Back;
