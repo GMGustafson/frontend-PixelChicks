@@ -23,7 +23,7 @@
           <items>
               <MenuItem text="A" />
               <MenuItem text="Aubela- Grandmother" />
-              <MenuItem text="Choice 3" />
+              <MenuItem text="Abuleo- Grandfather" />
           </items>
       </DropdownButton>
       <DropdownButton maxWidth="700">
