@@ -25,7 +25,7 @@
             <MenuItem fx:id="categoryWeather" mnemonicParsing="false" onAction="#chooseWeather" text="Weather" />
         </items>
       </MenuButton>
-      <Button fx:id="next2" mnemonicParsing="false" onAction="#GoToNext" text="Next" />
+      <Button fx:id="next2" mnemonicParsing="false" onAction="#GoToActivities" text="Next" />
    </children>
     <stylesheets>
         <URL value="@styles.css" />
