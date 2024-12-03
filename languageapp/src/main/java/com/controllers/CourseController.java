@@ -80,7 +80,7 @@ public class CourseController {
 
     @FXML
     void GoToNext(ActionEvent event) throws IOException {
-        App.setRoot("matching");
+        App.setRoot("activities");
 
     }
 
