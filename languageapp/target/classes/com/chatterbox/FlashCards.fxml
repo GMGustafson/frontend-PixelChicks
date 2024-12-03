@@ -15,13 +15,14 @@
          </font>
       </Text>
       <Button fx:id="Back" layoutX="23.0" layoutY="21.0" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
-      <Button layoutX="244.0" layoutY="295.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Relearn" />
+      <Button layoutX="243.0" layoutY="291.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Relearn" />
       <Button layoutX="244.0" layoutY="344.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Shuffle" />
       <ImageView fitHeight="165.0" fitWidth="291.0" layoutX="153.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../flashcardimg.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="168.0" layoutY="249.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="40.0" text="&lt;-" />
+      <Button layoutX="231.0" layoutY="243.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="&lt;" />
+      <Button layoutX="328.0" layoutY="243.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="&gt;" />
    </children>
 </Pane>
