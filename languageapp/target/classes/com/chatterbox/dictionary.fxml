@@ -22,7 +22,7 @@
       <DropdownButton maxWidth="700.0">
           <items>
               <MenuItem text="A" />
-              <MenuItem text="Choice 2" />
+              <MenuItem text="Aubela- Grandmother" />
               <MenuItem text="Choice 3" />
           </items>
       </DropdownButton>
