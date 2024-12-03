@@ -7,14 +7,14 @@
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.FillInTheBlankController">
    <children>
-      <Button fx:id="back" mnemonicParsing="false" onAction="#backtoActivities" text="Back" />
-      <Label text="Fill in the Blank Question: _________" />
+      <Label fx:id="fitbQuestion" text="Fill in the Blank Question: _________" />
       <Separator prefHeight="42.0" prefWidth="600.0" stylesheets="@styles.css" />
-      <Button mnemonicParsing="false" stylesheets="@styles.css" text="Hint" textAlignment="CENTER" VBox.vgrow="NEVER" />
+      <Button fx:id="hint" mnemonicParsing="false" onAction="#showHint" stylesheets="@styles.css" text="Hint" textAlignment="CENTER" VBox.vgrow="NEVER" />
+      <Button fx:id="back" mnemonicParsing="false" onAction="#backtoActivities" text="Back" />
       <Separator prefHeight="51.0" prefWidth="600.0" />
-      <Button mnemonicParsing="false" stylesheets="@styles.css" text="Answer 1" />
-      <Button mnemonicParsing="false" stylesheets="@styles.css" text="Answer 2" textAlignment="CENTER" />
-      <Button mnemonicParsing="false" stylesheets="@styles.css" text="Answer 3" textAlignment="CENTER" />
-      <Button mnemonicParsing="false" stylesheets="@styles.css" text="Answer 4" textAlignment="CENTER" />
+      <Button fx:id="A" mnemonicParsing="false" onAction="#chooseA" stylesheets="@styles.css" text="Answer 1" textAlignment="CENTERLEFT" />
+      <Button fx:id="B" mnemonicParsing="false" onAction="#chooseB" stylesheets="@styles.css" text="Answer 2" textAlignment="CENTERRIGHT" />
+      <Button fx:id="C" mnemonicParsing="false" onAction="#chooseC" stylesheets="@styles.css" text="Answer 3" textAlignment="CENTERLEFT" />
+      <Button fx:id="D" mnemonicParsing="false" onAction="#chooseD" stylesheets="@styles.css" text="Answer 4" textAlignment="CENTERRIGHT" />
    </children>
 </VBox>
