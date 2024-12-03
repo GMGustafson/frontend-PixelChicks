@@ -1,4 +1,5 @@
 package com.controllers;
+
 import java.io.IOException;
 
 import com.chatterbox.App;
@@ -7,7 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class MockConvoController {
+public class FlashCardsControllers {
 
     @FXML
     private Button Back;
@@ -16,6 +17,5 @@ public class MockConvoController {
     void backtoActivites(ActionEvent event) throws IOException {
          App.setRoot("activities");
     }
-
 
 }

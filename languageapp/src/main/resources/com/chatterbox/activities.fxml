@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="383.0" style="-fx-background-color: #FEF6DD;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="383.0" style="-fx-background-color: #FEF6DD;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.ActivitiesController">
    <children>
       <Polygon fill="#56bfbf" layoutX="-83.0" layoutY="20.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 83.89739227294922, 125.79914855957031, 210.58424377441406, 227.30209350585938" rotate="-76.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <Polygon fill="#56bfbf" layoutX="-83.0" layoutY="182.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" rotate="-74.5" stroke="TRANSPARENT" strokeType="INSIDE" />
@@ -17,10 +17,11 @@
       <AppBar prefHeight="60.0" prefWidth="383.0" style="-fx-background-color: #3BA1B8;" titleText="                                    Activities" />
       <Circle fill="#56bfbf" layoutX="347.0" layoutY="566.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
       <Text layoutX="343.0" layoutY="570.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P" />
-      <Button layoutX="44.0" layoutY="156.0" mnemonicParsing="false" text="Mock Convo" />
-      <Button layoutX="271.0" layoutY="191.0" mnemonicParsing="false" text="Story" />
-      <Button layoutX="53.0" layoutY="318.0" mnemonicParsing="false" text="Matching" />
-      <Button layoutX="241.0" layoutY="383.0" mnemonicParsing="false" text="Flashcards" />
-      <Button layoutX="36.0" layoutY="484.0" mnemonicParsing="false" text="Fill in the Blank" />
+      <Button fx:id="MockConvosButton" layoutX="44.0" layoutY="156.0" mnemonicParsing="false" onAction="#GoToMockConvo" text="Mock Convo" />
+      <Button fx:id="StoryButton" layoutX="271.0" layoutY="191.0" mnemonicParsing="false" onAction="#GoToStory" text="Story" />
+      <Button fx:id="MatchingButton" layoutX="53.0" layoutY="318.0" mnemonicParsing="false" onAction="#GoToMatching" text="Matching" />
+      <Button fx:id="FlashcardButton" layoutX="241.0" layoutY="383.0" mnemonicParsing="false" onAction="#GoToFlashCards" text="Flashcards" />
+      <Button fx:id="FillInTheBlankButton" layoutX="36.0" layoutY="484.0" mnemonicParsing="false" onAction="#GoToFillInTheBlank" text="Fill in the Blank" />
+      <Button fx:id="dictionary" layoutX="307.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoToDictionary" text="D" />
    </children>
 </Pane>

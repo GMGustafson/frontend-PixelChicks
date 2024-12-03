@@ -14,11 +14,12 @@
                 <Font size="18.0" />
             </font>
         </Label>
+      <Button fx:id="back" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
 
               <!-- Read Aloud Button -->
         <Button fx:id="readStoryButton" onAction="#readStoryAloud" text="Read Aloud" />
 
-        <!-- English Translation -->
+              <!-- English Translation -->
         <Label fx:id="englishText" text="English Translation:" textAlignment="CENTER" wrapText="true">
             <font>
                 <Font size="16.0" />

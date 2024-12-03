@@ -6,9 +6,9 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
+      <Button fx:id="back" mnemonicParsing="false" onAction="#backtoActivities" text="Back" />
       <AppBar prefHeight="60.0" prefWidth="383.0" style="-fx-background-color: #3BA1B8;" titleText="                                       Fill in the Blank" />
       <Label text="Fill in the Blank Question: _________" />
       <Separator prefHeight="42.0" prefWidth="600.0" stylesheets="@styles.css" />
