@@ -140,9 +140,9 @@ public class CourseController implements Initializable{
     }
 
     @FXML
-    void nextToActivities(ActionEvent event) throws IOException {
-            System.out.println("going to next page");
-            App.setRoot("activities");
+    void GoToNext(ActionEvent event) throws IOException {
+        App.setRoot("activities");
+
     }
 
 

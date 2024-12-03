@@ -11,11 +11,11 @@ import javafx.scene.control.Button;
 public class MatchingController {
 
     @FXML
-    private Button next;
+    private Button Back;
 
     @FXML
-    void OnNext(ActionEvent event) throws IOException {
-        App.setRoot("mockconvos");
+    void backtoActivites(ActionEvent event) throws IOException {
+         App.setRoot("activities");
     }
 
 }
