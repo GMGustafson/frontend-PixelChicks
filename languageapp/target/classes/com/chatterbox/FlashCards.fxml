@@ -25,6 +25,6 @@
       </ImageView>
       <Button layoutX="231.0" layoutY="243.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="&lt;" />
       <Button layoutX="328.0" layoutY="243.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="&gt;" />
-      <Label layoutX="228.0" layoutY="122.0" prefHeight="43.0" prefWidth="126.0" text="word" textAlignment="CENTER" />
+      <Label alignment="CENTER" layoutX="228.0" layoutY="122.0" prefHeight="43.0" prefWidth="126.0" text="word" textAlignment="CENTER" />
    </children>
 </Pane>
