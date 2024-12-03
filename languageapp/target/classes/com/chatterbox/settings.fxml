@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="491.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.SettingsController">
    <children>
       <MenuButton mnemonicParsing="false">
         <items>
@@ -96,7 +96,7 @@
             <Insets left="150.0" right="150.0" top="5.0" />
          </VBox.margin>
       </TextField>
-      <Button minHeight="19.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="87.0" text="Update">
+      <Button fx:id="next" alignment="TOP_RIGHT" minHeight="19.0" mnemonicParsing="false" onAction="#GotoNext" prefHeight="31.0" prefWidth="87.0" text="Next">
          <VBox.margin>
             <Insets right="255.0" top="12.0" />
          </VBox.margin>

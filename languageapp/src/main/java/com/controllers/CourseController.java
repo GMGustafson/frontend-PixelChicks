@@ -1,7 +1,12 @@
 package com.controllers;
 
+import java.io.IOException;
+
+import com.chatterbox.App;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
@@ -24,6 +29,8 @@ public class CourseController {
     private MenuItem coursePhrases;
     @FXML
     private MenuItem courseWords;
+    @FXML
+    private Button next2;
 
     @FXML
     void chooseColors(ActionEvent event) {
@@ -67,6 +74,13 @@ public class CourseController {
 
     @FXML
     void showCourses(MouseEvent event) {
+
+    }
+    
+
+    @FXML
+    void GoToNext(ActionEvent event) throws IOException {
+        App.setRoot("matching");
 
     }
 

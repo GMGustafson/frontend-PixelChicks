@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
@@ -24,11 +25,8 @@
             <MenuItem fx:id="categoryWeather" mnemonicParsing="false" onAction="#chooseWeather" text="Weather" />
         </items>
       </MenuButton>
+      <Button fx:id="next2" mnemonicParsing="false" onAction="#GoToNext" text="Next" />
    </children>
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b7ace79dc1adc84975ac0b6b04b5ba8ee35213c
     <stylesheets>
         <URL value="@styles.css" />
     </stylesheets>

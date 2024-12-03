@@ -27,11 +27,7 @@ public class LoginController {
 
     
     @FXML
-    void switchToActivites(ActionEvent event) {
-
-    }
-    @FXML
-    void switchToWelcome(ActionEvent event) throws IOException{
+    void switchToActivites(ActionEvent event) throws IOException {
         String username = txt_username.getText();
         String password = txt_password.getText();
 
@@ -52,6 +48,10 @@ public class LoginController {
            System.out.println("Valid login credentials." + username + "  " + password);
             App.setRoot("courses");
         }
+    }
+    @FXML
+    void switchToWelcome(ActionEvent event) throws IOException{
+        
     
     }
 

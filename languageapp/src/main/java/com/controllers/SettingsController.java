@@ -44,6 +44,15 @@ public class SettingsController {
     private MenuItem Logout;
 
     @FXML
+    private Button next;
+
+    @FXML
+    void GotoNext(ActionEvent event) throws IOException {
+        App.setRoot("dictionary");
+    }
+    
+
+    @FXML
     void initialize() {
 
     }
@@ -61,6 +70,6 @@ public class SettingsController {
     @FXML
     void switchToLogout(ActionEvent event) throws IOException{
         CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance();
-        App.setRoot("courses");
+        //App.setRoot("courses");
     }
 }
