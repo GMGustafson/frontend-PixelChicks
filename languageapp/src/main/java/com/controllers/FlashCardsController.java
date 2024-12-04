@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class FlashCardsController {
 
@@ -35,8 +36,14 @@ public class FlashCardsController {
 
     }
 
-    private void showCard(){
-        CategorySystemFacade facade = facade.getFacadeInstance();
-    }
+    @FXML
+    private Label word;
+
+    @FXML
+
+
+    // private void showCard(){
+    //     CategorySystemFacade facade = facade.getFacadeInstance();
+    // }
 
 }
