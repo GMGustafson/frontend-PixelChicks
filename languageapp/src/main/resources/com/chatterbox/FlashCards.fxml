@@ -23,7 +23,7 @@
             <Image url="@../../images/flashcard.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="225.0" layoutY="243.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="40.0" text="&lt;" />
+      <Button fx:id="dorw" layoutX="225.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="35.0" prefWidth="40.0" text="&lt;" />
       <Button fx:id="word" layoutX="328.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#goNext" prefHeight="32.0" prefWidth="40.0" text="&gt;" />
       <Label fx:id="wordLabel" alignment="CENTER" layoutX="229.0" layoutY="122.0" onMouseClicked="#translateCard" prefHeight="44.0" prefWidth="124.0" text="Label" />
    </children>
