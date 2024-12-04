@@ -1,16 +1,22 @@
 package com.controllers;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import com.chatterbox.App;
+import com.model.CategorySystemFacade;
+import com.model.DataLoader;
+import com.model.Story;
 import com.narration.Narriator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class StoryController {
+public class StoryController implements Initializable {
 
     @FXML
     private Label SpanishText;
@@ -29,9 +35,12 @@ public class StoryController {
 
     @FXML
     void Translate(ActionEvent event) {
-        storyTitle.setText("Let's go grocery shopping!");
-        englishText.setText("At the store, Tom buys one red apple. He also looks for two ripe oranges. He finally buys three yellow bananas."); 
-        SpanishText.setText("En la tienda, Tom compra una manzana roja.También busca dos naranjas maduras.Finalmente compra tres plátanos amarillos."); 
+        story = DataLoader.getStorybyCategory();
+        CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance(); 
+
+        storyTitle.setText(story.getTitle()); 
+        englishText.setText(story.getText());
+        SpanishText.setText(story.getStoryTranslation()); 
     }
     
     @FXML
@@ -43,6 +52,20 @@ public class StoryController {
     void readStoryAloud(ActionEvent event) {
         Narriator.playSound("En la tienda, Tom compra una manzana roja.También busca dos naranjas maduras.Finalmente compra tres plátanos amarillos."); 
     }
+
+    private Story story; 
+
+    // @Override
+    // public void initialize(URL location, ResourceBundle resources) {
+    //     story = Story.getStorybycategory("numbers");
+    //     CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance(); 
+
+    //     storyTitle.setText(story.getTitle()); 
+    //     englishText.setText(story.getText());
+    //     SpanishText.setText(story.getStoryTranslation()); 
+    // }
+
+  
 
 }
 

@@ -65,6 +65,7 @@ public class Story {
         return category;
     }
 
+   
     /**
      * toString 
      * returns title, text, and storyTranslation in format
