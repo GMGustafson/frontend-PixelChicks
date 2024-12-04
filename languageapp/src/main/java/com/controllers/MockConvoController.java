@@ -6,12 +6,28 @@ import com.chatterbox.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class MockConvoController {
 
     @FXML
-    private Button Back;
+    private Label Hint;
 
+    @FXML
+    private Label Question;
+
+    @FXML
+    private Button back;
+
+    @FXML
+    void HintWillAppear(ActionEvent event) {
+        Hint.setText("Hint");
+    }
+
+    @FXML
+    void QuestionWillAppear(ActionEvent event) {
+        Question.setText("Question");
+    }
     @FXML
     void backtoActivites(ActionEvent event) throws IOException {
          App.setRoot("activities");
