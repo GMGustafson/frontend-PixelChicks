@@ -6,16 +6,13 @@ import com.chatterbox.App;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-
+import com.model.*;
 
 public class FillInTheBlankController {
 
-    @FXML 
-    private Label hintLabel;
+    private Progress progress;
 
     @FXML
     private Button A;
@@ -35,39 +32,52 @@ public class FillInTheBlankController {
     @FXML
     private Button hint;
 
+    @FXML 
+    private Label hintLabel;
+
     @FXML
-    void backtoActivities(ActionEvent event) throws IOException {
-        App.setRoot("activities");
+    private Label fitbQuestion;
+
+
+    @FXML
+    void backtoActivities(ActionEvent event) throws IOException{
+            App.setRoot("activities");
     }
 
     @FXML
     void chooseA(ActionEvent event) {
-        
+        A.setText("X");
+        progress.trackQuestion();
     }
 
     @FXML
     void chooseB(ActionEvent event) {
-
+        B.setText("X");
+        progress.trackQuestion();
     }
 
     @FXML
     void chooseC(ActionEvent event) {
-
+        C.setText("X");
+        progress.trackQuestion();
     }
 
     @FXML
     void chooseD(ActionEvent event) {
-
+        D.setText("CORRECT!");
+        progress.trackCorrectAnswer();
     }
 
     @FXML
     void showHint(ActionEvent event) {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Hint");
-        alert.setHeaderText(null);
-        alert.setContentText("This is your hint for the question!");
-        alert.showAndWait();
+        if (hintLabel.equals("Hint")) {
+        hintLabel.setText("Black and white make what?");
+        }
+        else {
+        hintLabel.setText("Hint");
+        }
     }
+
 
 }
 

@@ -70,7 +70,8 @@ public class CourseController implements Initializable{
 
     //@FXML
     private void chooseCategory() {
-        //List<String> categoryList = facade.getCategory();
+        List<String> categoryList = facade.getCategory();
+        
 
 
     }

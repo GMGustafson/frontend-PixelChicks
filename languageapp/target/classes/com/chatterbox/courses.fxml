@@ -4,19 +4,17 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="401.0" prefWidth="569.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.CourseController">
+<VBox fx:id="myFun" alignment="CENTER" prefHeight="481.0" prefWidth="304.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.CourseController">
    <children>
-      <MenuButton fx:id="chooseCourses" mnemonicParsing="false" onAction="#showCourses" onMouseClicked="#showCourses" stylesheets="@styles.css" text="Courses">
+      <MenuButton fx:id="chooseCourses" mnemonicParsing="false" onAction="#chosenCourses" stylesheets="@styles.css" text="Courses">
         <items>
           <MenuItem fx:id="courseWords" mnemonicParsing="false" onAction="#chooseWords" text="Words" />
             <MenuItem fx:id="coursePhrases" mnemonicParsing="false" onAction="#choosePhrases" text="Phrases" />
         </items>
       </MenuButton>
-      <Separator minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" stylesheets="@styles.css" />
-      <MenuButton fx:id="chooseCategories" mnemonicParsing="false" onAction="#showCategories" onMouseClicked="#chooseCourse" text="Categories">
+      <MenuButton fx:id="chooseCategories" mnemonicParsing="false" onAction="#choosenCategories" onMouseClicked="#showCategories" text="Categories">
         <items>
           <MenuItem fx:id="categoryNumbers" mnemonicParsing="false" onAction="#chooseNumbers" text="Numbers" />
           <MenuItem fx:id="categoryColors" mnemonicParsing="false" onAction="#chooseColors" text="Colors" />
@@ -25,7 +23,7 @@
             <MenuItem fx:id="categoryWeather" mnemonicParsing="false" onAction="#chooseWeather" text="Weather" />
         </items>
       </MenuButton>
-      <Button fx:id="next2" mnemonicParsing="false" onAction="#GoToNext" text="Next" />
+      <Button fx:id="next" mnemonicParsing="false" onAction="#GoToNext" text="Next" />
    </children>
     <stylesheets>
         <URL value="@styles.css" />
