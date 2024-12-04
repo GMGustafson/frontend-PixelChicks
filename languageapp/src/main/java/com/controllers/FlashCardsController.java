@@ -28,6 +28,9 @@ public class FlashCardsController {
 
     @FXML // fx:id="word"
     private Button word; // Value injected by FXMLLoader
+
+    @FXML // fx:id="word"
+    private Button dorw; // Value injected by FXMLLoader
     
     @FXML
     private Label wordLabel;
@@ -63,6 +66,17 @@ public class FlashCardsController {
     void translateCard(MouseEvent event) throws IOException{
         word.setText(translated[index]);
         index = (index + 1) % translated.length;
+    }
+
+    @FXML
+    void goBack(MouseEvent event) throws IOException{
+        if(index > 0){
+            index--;
+        }
+        else{
+           index = words.length - 1 ;
+        }
+        wordLabel.setText(words[index]);
     }
 
     // private void showCard(){
