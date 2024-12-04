@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.chatterbox.App;
 import com.model.CategorySystemFacade;
+import com.model.DataWriter;
 import com.model.UserList;
 
 import javafx.event.ActionEvent;
@@ -83,6 +84,7 @@ public class CreateAccountController {
         else
         {
             System.out.println("going to next page"); 
+            //DataWriter.saveUsers(); 
             App.setRoot("courses");
         }
 
