@@ -17,5 +17,205 @@
          </padding>
       </Label>
       <Button fx:id="next" mnemonicParsing="false" onAction="#NextPage" text="Next" />
+      <DropdownButton maxWidth="700.0">
+          <items>
+              <MenuItem text="A" />
+              <MenuItem text="Aubela- Grandmother" />
+              <MenuItem text="Abuleo- Grandfather" />
+            <MenuItem mnemonicParsing="false" text="Adentro- Inside" />
+            <MenuItem mnemonicParsing="false" text="Aeropuerto- Airport" />
+            <MenuItem mnemonicParsing="false" text="Amarillo- Yellow" />
+            <MenuItem mnemonicParsing="false" text="Azul- Blue" />
+          </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="B" />
+            <MenuItem text="Biblioteca- Library" />
+            <MenuItem text="Blanco - White" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="C" />
+            <MenuItem text="Cinco - Five" />
+            <MenuItem text="Cuatro - Four" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="D" />
+            <MenuItem text="Diez- Ten" />
+            <MenuItem text="Dos- Two" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="E" />
+            <MenuItem text="el grado - degree" />
+            <MenuItem text="el invierno - winter" />
+            <MenuItem mnemonicParsing="false" text="el tiempo - weather" />
+            <MenuItem mnemonicParsing="false" text="el verano - summer" />
+            <MenuItem mnemonicParsing="false" text="Escuela - School" />
+            <MenuItem mnemonicParsing="false" text="Esposa - wife" />
+            <MenuItem mnemonicParsing="false" text="Esposo - Husband" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="F" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="G" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="H" />
+            <MenuItem text="Hermano - Brother" />
+            <MenuItem text="Hermana - Sister" />
+            <MenuItem mnemonicParsing="false" text="Hija - daughter" />
+            <MenuItem mnemonicParsing="false" text="Hijo - son" />
+            <MenuItem mnemonicParsing="false" text="hotel - hotel" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="I" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="J" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="K" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="L" />
+            <MenuItem text="la lluvia - rain" />
+            <MenuItem text="a nieve - snow" />
+            <MenuItem mnemonicParsing="false" text="la primavera - spring" />
+            <MenuItem mnemonicParsing="false" text="la temperatura - temperature" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="M" />
+            <MenuItem text="Mama - mom" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="N" />
+            <MenuItem text="naranja - orange" />
+            <MenuItem text="negro - black" />
+            <MenuItem mnemonicParsing="false" text="nueve - nine" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="O" />
+            <MenuItem text="ocho - eight" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="P" />
+            <MenuItem text="Panadería - bakery" />
+            <MenuItem text="Parque - Park" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="Q" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="R" />
+            <MenuItem text="Restaurante - Restaurant" />
+            <MenuItem text="rojo - red" />
+            <MenuItem mnemonicParsing="false" text="rosa - pink" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="S" />
+            <MenuItem text="seis - six" />
+            <MenuItem text="siete - seven" />
+            <MenuItem mnemonicParsing="false" text="soleado - sunny" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="T" />
+            <MenuItem text="tres - three" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="U" />
+            <MenuItem text="uno - one" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="V" />
+            <MenuItem text="verde - green" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="W" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="X" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="Y" />
+            <MenuItem text="Choice 2" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
+      <DropdownButton maxWidth="700">
+         <items>
+            <MenuItem text="Z" />
+            <MenuItem text="zoológico - Zoo" />
+            <MenuItem text="Choice 3" />
+         </items>
+      </DropdownButton>
    </children>
 </VBox>
+
