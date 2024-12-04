@@ -15,7 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
-public class FlashcardsController {
+public class FlashCardsController {
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
