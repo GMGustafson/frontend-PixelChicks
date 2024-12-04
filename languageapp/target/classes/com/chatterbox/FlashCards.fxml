@@ -25,9 +25,9 @@
             <Image url="@../../images/flashcard.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="231.0" layoutY="243.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="&lt;" />
-      <Button layoutX="328.0" layoutY="243.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="&gt;" />
-      <Label alignment="CENTER" layoutX="223.0" layoutY="122.0" prefHeight="59.0" prefWidth="129.0" text="word" textAlignment="CENTER" />
+      <Button layoutX="225.0" layoutY="243.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="40.0" text="&lt;" />
+      <Button fx:id="word" layoutX="328.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#goNext" prefHeight="32.0" prefWidth="40.0" text="&gt;" />
+      <Label fx:id="wordLabel" alignment="CENTER" layoutX="229.0" layoutY="122.0" onMouseClicked="#translateCard" prefHeight="44.0" prefWidth="124.0" text="Label" />
    </children>
 </Pane>
 >>>>>>> 186fd056f2df04f13ef81fa5b59d5854a1252a77

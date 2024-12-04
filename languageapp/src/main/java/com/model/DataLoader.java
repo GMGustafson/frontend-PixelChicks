@@ -213,6 +213,26 @@ public static Story getStory(JSONObject storyJSON) {
 
 }
 
+public static Story getStorybyCategory(JSONObject storyJSON) 
+{
+    String title = (String) storyJSON.get(TITLE);
+    JSONArray textListJSON = (JSONArray) storyJSON.get(TEXT);
+    JSONArray textTranslationsJSON = (JSONArray) storyJSON.get(STORY_TRANSLATION);
+    String category = (String) storyJSON.get(STORY_CATEGORY);
+
+    // Assuming you want to check if the category matches a specific value
+    String targetCategory = "numbers"; // Replace with your actual category value
+    if (category.equals(targetCategory)) 
+    {
+        // Assuming you have a constructor for Story that takes these values
+        return new Story(title, textListJSON, textTranslationsJSON, category);
+    } 
+    else 
+    {
+        return null; // Or return an appropriate Story object for non-matching categories
+    }
+}
+
 private static BufferedReader getReaderFromFile(String fileName, String junitFileName){
 		try {
 			if(isJUnitTest()){
