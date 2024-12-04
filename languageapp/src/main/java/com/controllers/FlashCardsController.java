@@ -15,7 +15,7 @@ public class FlashCardsController {
     private Button Back;
 
     @FXML
-    private Button word;
+    private Button forward;
 
     @FXML
     private Label wordLabel;
@@ -34,8 +34,14 @@ public class FlashCardsController {
     }
 
     @FXML
+    void goBack(MouseEvent event) throws IOException{
+        index = (index - 1 + words.length) % words.length; 
+        wordLabel.setText(words[index]);
+    }
+
+    @FXML
     void translateCard(MouseEvent event) throws IOException{
-        word.setText(words[index]);
+        forward.setText(words[index]);
         index = (index + 1) % words.length;
     }
 
