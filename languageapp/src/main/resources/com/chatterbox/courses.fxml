@@ -11,7 +11,7 @@
       <MenuButton fx:id="chooseCourses" mnemonicParsing="false" onAction="#chosenCourses" stylesheets="@styles.css" text="Courses">
         <items>
           <MenuItem fx:id="courseWords" mnemonicParsing="false" onAction="#chooseWords" text="Words" />
-            <MenuItem fx:id="coursePhrases" mnemonicParsing="false" onAction="#choosePhrases" text="Phrases" />
+          <MenuItem fx:id="coursePhrases" mnemonicParsing="false" onAction="#choosePhrases" text="Phrases" />
         </items>
       </MenuButton>
       <MenuButton fx:id="chooseCategories" mnemonicParsing="false" onAction="#choosenCategories" onMouseClicked="#showCategories" text="Categories">
