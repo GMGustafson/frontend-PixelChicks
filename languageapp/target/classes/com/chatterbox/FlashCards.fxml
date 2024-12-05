@@ -15,7 +15,8 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button fx:id="Back" layoutX="23.0" layoutY="21.0" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
+      <Button fx:id="Back" layoutX="23.0" layoutY="21.0" mnemonicParsing="false"  text="Back" />
+      <!-- onAction="#backtoActivites" -->
       <Button layoutX="243.0" layoutY="291.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Relearn" />
       <Button layoutX="244.0" layoutY="344.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Shuffle" />
       <ImageView fitHeight="165.0" fitWidth="291.0" layoutX="153.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
