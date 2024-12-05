@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -11,22 +10,38 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.FlashCardsController">
    <children>
-      <Text layoutX="243.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flashcards">
+      <Text layoutX="237.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flashcards">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Button fx:id="Back" layoutX="23.0" layoutY="21.0" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
+<<<<<<< HEAD
+      <Button fx:id="Back" layoutX="23.0" layoutY="21.0" mnemonicParsing="false"  text="Back" />
+      <!-- onAction="#backtoActivites" -->
       <Button layoutX="243.0" layoutY="291.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Relearn" />
       <Button layoutX="244.0" layoutY="344.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Shuffle" />
       <ImageView fitHeight="165.0" fitWidth="291.0" layoutX="153.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+=======
+      <Button fx:id="Back" layoutX="23.0" layoutY="21.0" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
+      <Button layoutX="243.0" layoutY="304.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Relearn" />
+      <Button layoutX="243.0" layoutY="351.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Shuffle" />
+      <ImageView fitHeight="165.0" fitWidth="291.0" layoutX="152.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+>>>>>>> 4cdbdb296da4c36b4169f6dc220166a45ee0ed23
          <image>
             <Image url="@../../images/flashcard.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="225.0" layoutY="243.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="40.0" text="&lt;" />
+<<<<<<< HEAD
+      <Button fx:id="dorw" layoutX="225.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="35.0" prefWidth="40.0" text="&lt;" />
       <Button fx:id="word" layoutX="328.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#goNext" prefHeight="32.0" prefWidth="40.0" text="&gt;" />
       <Label fx:id="wordLabel" alignment="CENTER" layoutX="229.0" layoutY="122.0" onMouseClicked="#translateCard" prefHeight="44.0" prefWidth="124.0" text="Label" />
+=======
+      <Button layoutX="203.0" layoutY="260.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="40.0" text="&lt;" />
+      <Button fx:id="forward" layoutX="333.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#goNext" prefHeight="32.0" prefWidth="40.0" text="&gt;" />
+      <Label fx:id="wordLabel" alignment="CENTER" layoutX="229.0" layoutY="123.0" onMouseClicked="#translateCard" prefHeight="44.0" prefWidth="124.0" text="Label" />
       <Accordion />
+      <Label fx:id="showcard" alignment="CENTER" layoutX="229.0" layoutY="178.0" onMouseClicked="#translateCard" prefHeight="44.0" prefWidth="124.0" text="showcard" />
+      <Label fx:id="categ" alignment="CENTER" layoutX="237.0" layoutY="59.0" prefHeight="17.0" prefWidth="103.0" text="Label" />
+>>>>>>> 497571b945e7f724e65ee4009ff0a631a057a015
    </children>
 </Pane>

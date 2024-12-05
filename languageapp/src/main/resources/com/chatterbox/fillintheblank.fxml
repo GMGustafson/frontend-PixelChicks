@@ -10,25 +10,24 @@
 
 <AnchorPane fx:id="fillintheblank" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="fitbQuestion" layoutX="181.0" layoutY="35.0" stylesheets="@styles.css" text="Fill in the Blank: Question" />
-      <Label fx:id="hintLabel" layoutX="247.0" layoutY="104.0" />
-      <Button fx:id="hint" layoutX="247.0" layoutY="161.0" mnemonicParsing="false" onAction="#showHint" text="Hint" />
-      <GridPane layoutX="190.0" layoutY="252.0" stylesheets="@styles.css" AnchorPane.bottomAnchor="73.60000000000002" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.79999999999995" AnchorPane.topAnchor="252.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="47.799993896484374" minHeight="10.0" prefHeight="37.4" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="39.000006103515624" minHeight="10.0" prefHeight="37.4" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Button fx:id="fitbA" alignment="CENTER" mnemonicParsing="false" onAction="#chooseA" prefHeight="66.0" prefWidth="76.0" stylesheets="@styles.css" text="A" />
-            <Button fx:id="fitbB" alignment="CENTER" mnemonicParsing="false" onAction="#fitbD" prefHeight="42.0" prefWidth="82.0" stylesheets="@styles.css" text="B" GridPane.columnIndex="1" />
-            <Button fx:id="fitbC" alignment="CENTER" mnemonicParsing="false" onAction="#chooseC" prefHeight="67.0" prefWidth="75.0" stylesheets="@styles.css" text="C" GridPane.rowIndex="1" />
-            <Button fx:id="fitbD" alignment="CENTER" mnemonicParsing="false" onAction="#chooseD" prefHeight="18.0" prefWidth="82.0" stylesheets="@styles.css" text="D" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-         </children>
-      </GridPane>
-      <Button fx:id="back" layoutX="489.0" layoutY="333.0" mnemonicParsing="false" onAction="#backToActivities" text="Back" />
+<<<<<<< HEAD
+      <Button fx:id="back" mnemonicParsing="false" text="Back" />
+       <!-- onAction="#backtoActivities"  -->
+      <Label text="Fill in the Blank Question: _________" />
+      <Separator prefHeight="42.0" prefWidth="600.0" stylesheets="@styles.css" />
+      <Button fx:id="hint" mnemonicParsing="false"  stylesheets="@styles.css" text="Hint" textAlignment="CENTER" VBox.vgrow="NEVER" />
+      <!-- onAction="#showHint" -->
+=======
+      <Label fx:id="fitbQuestion" text="El blanco y el negro hacen _____" />
+      <Button fx:id="back" mnemonicParsing="false" onAction="#backtoActivities" text="Back" />
+      <Separator prefHeight="42.0" prefWidth="600.0" stylesheets="@styles.css" />
+      <Label fx:id="hintLabel" />
+      <Button fx:id="hint" mnemonicParsing="false" onAction="#showHint" stylesheets="@styles.css" text="Hint" textAlignment="CENTER" VBox.vgrow="NEVER" />
+>>>>>>> 4cdbdb296da4c36b4169f6dc220166a45ee0ed23
+      <Separator prefHeight="51.0" prefWidth="600.0" />
+      <Button fx:id="A" mnemonicParsing="false" onAction="#chooseA" stylesheets="@styles.css" text="Verde" />
+      <Button fx:id="B" mnemonicParsing="false" onAction="#chooseB" stylesheets="@styles.css" text="Rojo" textAlignment="CENTER" />
+      <Button fx:id="C" mnemonicParsing="false" onAction="#chooseC" stylesheets="@styles.css" text="Rosa" textAlignment="CENTER" />
+      <Button fx:id="D" mnemonicParsing="false" onAction="#chooseD" stylesheets="@styles.css" text="Gris" textAlignment="CENTER" />
    </children>
 </AnchorPane>
