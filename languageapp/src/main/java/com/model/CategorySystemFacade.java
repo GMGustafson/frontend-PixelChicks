@@ -133,9 +133,9 @@ public class CategorySystemFacade {
         return courseTitles;
     };
 
-    public static void getCurrentCourse()
+    public Course getCurrentCourse()
     { 
-        
+        return CourseList.getInstance().getCourses().get(0);
     }
    
     

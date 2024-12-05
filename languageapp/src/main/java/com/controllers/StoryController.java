@@ -9,10 +9,11 @@ import org.json.simple.JSONObject;
 import com.chatterbox.App;
 import com.model.CategorySystemFacade;
 import com.model.Course;
+import com.model.DataLoader;
+import com.model.Flashcard;
 import com.model.Story;
-import com.narration.Narriator;
 import com.model.User;
-import com.model.*; 
+import com.narration.Narriator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class StoryController  {
+public class StoryController implements Initializable {
 
     @FXML
     private Label SpanishText;
@@ -37,23 +38,32 @@ public class StoryController  {
     @FXML
     private Label storyTitle;
 
-   private User user; 
-   private Course course; 
-   private Story co;
-   
-
+    private CategorySystemFacade facade;
+    private User user;
+    private Course course;
+    private Story co;
+    private Story story; 
+    
     @FXML
-    void Translate(ActionEvent event){ 
-        CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance(); 
+    void Translate(ActionEvent event) {
+
+        facade = CategorySystemFacade.getFacadeInstance();
+        user = facade.getCurrentUser(); 
         course = facade.chooseCourse(course);
         co = course.getStoriesByCategory("colors");
-        
-       
+
         storyTitle.setText(story.getTitle()); 
         englishText.setText(story.getText());
         SpanishText.setText(story.getStoryTranslation()); 
     }
     
+   
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+
+    }
+
     @FXML
     void backtoActivites(ActionEvent event) throws IOException {
         App.setRoot("activities");
@@ -64,29 +74,10 @@ public class StoryController  {
         Narriator.playSound("En la tienda, Tom compra una manzana roja.También busca dos naranjas maduras.Finalmente compra tres plátanos amarillos."); 
     }
 
-    private Story story;
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
-
     
-
-    // @Override
-    // public void initialize(URL location, ResourceBundle resources) {
-    //     story = Story.getStorybycategory("numbers");
-    //     CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance(); 
-
-    //     storyTitle.setText(story.getTitle()); 
-    //     englishText.setText(story.getText());
-    //     SpanishText.setText(story.getStoryTranslation()); 
-    // }
-
+    
   
 
 }
-
-
 
 

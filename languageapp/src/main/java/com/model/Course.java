@@ -136,7 +136,7 @@ public class Course {
             * @param category
             * @return stories.get(category)
             */
-            public static Story getStoriesByCategory(String category) {
+            public Story getStoriesByCategory(String category) {
                 return stories.get(category);
     }
     
