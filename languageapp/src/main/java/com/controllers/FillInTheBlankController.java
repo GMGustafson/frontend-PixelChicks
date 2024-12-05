@@ -3,100 +3,134 @@ package com.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import com.chatterbox.App;
+import com.model.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import com.model.*;
+import javafx.scene.layout.AnchorPane;
+import java.util.ArrayList;
 
 public class FillInTheBlankController implements Initializable{
-
-    private Progress progress;
-
-    @FXML
-    private Button A;
-
-    @FXML
-    private Button B;
-
-    @FXML
-    private Button C;
-
-    @FXML
-    private Button D;
 
     @FXML
     private Button back;
 
     @FXML
-    private Button hint;
+    private AnchorPane fillintheblank;
 
-    @FXML 
-    private Label hintLabel;
+    @FXML
+    private Button fitbA;
+
+    @FXML
+    private Button fitbB;
+
+    @FXML
+    private Button fitbC;
+
+    @FXML
+    private Button fitbD;
 
     @FXML
     private Label fitbQuestion;
-    private CourseList courseList;
-    private CourseList course;
-    private User user;
+
+    @FXML
+    private Button hint;
+
+    @FXML
+    private Label hintLabel;
+
+    private Progress progress;
     private CategorySystemFacade facade;
     private UserList userList;
-    private CategorySystemFacade currentCategory;
-
+    private Course course;
+    private CourseList courseList;
+    private FillInTheBlank fillInTheBlank;
+    private Phrase phrase;
+    private Word word;
+    private String correctAnswer;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        facade = CategorySystemFacade.getFacadeInstance();
-        courseList = CourseList.getInstance();
-        userList = UserList.getInstance();
-        currentCategory = facade.chooseCategory();
+        CourseList currentCourse = courseList.getInstance();
+        UserList currentUser = userList.getInstance();
+        
+        String currentCategory = progress.getCurrentCategory();
+        ArrayList<Word> answerList = course.getWordsByCategory(currentCategory);
+        ArrayList<String> altAnswers = word.getAlternatives();
+        
+        ArrayList<Phrase> phrases = course.getPhrasesByCategory(currentCategory);
+        fitbQuestion.setText(""+ fillInTheBlank.getSampleSentence());
+        correctAnswer = fillInTheBlank.getMissingWord();
 
-        fitbQuestion.setText(" " + facade.getQuestion() + " ");
         throw new UnsupportedOperationException("Unimplemented method 'initialize'");
     }
 
-
-
-
     @FXML
-    void chooseA(ActionEvent event) {
-        
-        progress.trackQuestion();
+    void backToActivities(ActionEvent event) throws IOException {
+        App.setRoot("activities");
     }
 
     @FXML
-    void chooseB(ActionEvent event) {
-        B.setText("X");
+    void chooseA(ActionEvent event) {
+        fillInTheBlank.checkAnswer(fitbA.getText());
+    if (fitbA.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
+        progress.trackCorrectAnswer();
+    }
+    else {
+        fitbD.setText("X");
         progress.trackQuestion();
+
+    }
     }
 
     @FXML
     void chooseC(ActionEvent event) {
-        C.setText("X");
-        progress.trackQuestion();
+        fillInTheBlank.checkAnswer(fitbC.getText());
+        if (fitbC.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
+            progress.trackCorrectAnswer();
+        }
+        else {
+            fitbC.setText("X");
+            progress.trackQuestion();
+        }
     }
 
     @FXML
     void chooseD(ActionEvent event) {
-        D.setText("CORRECT!");
+    
+    fitbD.setText("");
+    fillInTheBlank.checkAnswer(fitbD.getText());
+    if (fitbD.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
         progress.trackCorrectAnswer();
+    }
+    else {
+        fitbD.setText("X");
+        progress.trackQuestion();
+    }
+    }
+
+    @FXML
+    void chooseB(ActionEvent event) {
+        fillInTheBlank.checkAnswer(fitbB.getText());
+    if (fitbB.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
+        progress.trackCorrectAnswer();
+    }
+    else {
+        fitbB.setText("X");
+        progress.trackQuestion();
+    }
     }
 
     @FXML
     void showHint(ActionEvent event) {
-
-        if (hintLabel.equals("Hint")) {
-        hintLabel.setText("equals");
-        }
-        else {
-        hintLabel.setText("Hint");
-
-    @FXML
-    void backtoActivities(ActionEvent event) throws IOException{
-            App.setRoot("activities");
+            hintLabel.setText(""+ phrase.getTranslation());
+            hintLabel.setText("");
+            
     }
 }
+
+
