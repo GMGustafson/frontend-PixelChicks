@@ -2,6 +2,8 @@ package com.controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import org.json.simple.JSONObject;
@@ -13,6 +15,7 @@ import com.model.DataLoader;
 import com.model.Flashcard;
 import com.model.Story;
 import com.model.User;
+import com.model.Word;
 import com.narration.Narriator;
 
 import javafx.event.ActionEvent;
@@ -37,17 +40,8 @@ public class StoryController implements Initializable {
 
     @FXML
     private Label storyTitle;
+ 
 
-    @FXML
-    void Translate(ActionEvent event) {
-        // story = DataLoader.getStorybyCategory();
-        // CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance(); 
-
-        // storyTitle.setText(story.getTitle()); 
-        // englishText.setText(story.getText());
-        // SpanishText.setText(story.getStoryTranslation()); 
-    }
-    
     @FXML
     void backtoActivites(ActionEvent event) throws IOException {
         App.setRoot("activities");
@@ -61,27 +55,38 @@ public class StoryController implements Initializable {
     private CategorySystemFacade facade;
     private User user;
     private Course course;
-    private Story co;
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    private Course co;
+    private Story story;
+    private Story sto;
+
+    @FXML
+    void Translate(ActionEvent event) {
+
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
-        course = facade.chooseCourse(course);
-        co = course.getStoriesByCategory("colors");
+        course = facade.getCurrentCourse();
+        //co = course.getStoriesByCategory("colors");
+
+        storyTitle.setText(story.getTitle()); 
+        // englishText.setText(story.getText());
+        // SpanishText.setText(story.getStoryTranslation()); 
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
 
     }
 
-    // @Override
-    // public void initialize(URL location, ResourceBundle resources) {
-    //     story = Story.getStorybycategory("numbers");
-    //     CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance(); 
+    private void displayStory(){
+    ArrayList<Story> stories = course.getStoriesByCategory("colors");
+        for (int i=0; i < stories.size(); i++) {
+            Story storysentence = stories.get(i);
+            
 
-    //     storyTitle.setText(story.getTitle()); 
-    //     englishText.setText(story.getText());
-    //     SpanishText.setText(story.getStoryTranslation()); 
-    // }
+        }
 
+    
+    
   
 
 }
