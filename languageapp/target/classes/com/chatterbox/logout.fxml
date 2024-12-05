@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.LogoutController">
    <children>
       <Label prefHeight="35.0" prefWidth="602.0" text="Logout">
@@ -18,18 +17,15 @@
             <Insets left="265.0" />
          </padding>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../parot.jpg" />
-         </image>
-         <VBox.margin>
-            <Insets left="455.0" top="55.0" />
-         </VBox.margin>
-      </ImageView>
-      <Label prefHeight="95.0" prefWidth="113.0" text="Thanks for playing! ">
+      <Label fx:id="thanks" prefHeight="95.0" prefWidth="113.0" text="Thanks for playing! ">
          <VBox.margin>
             <Insets left="255.0" />
          </VBox.margin>
       </Label>
+      <ImageView fx:id="myImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/parrot.jpg" />
+         </image>
+      </ImageView>
    </children>
 </VBox>
