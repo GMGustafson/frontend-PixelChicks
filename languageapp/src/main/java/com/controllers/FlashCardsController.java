@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 public class FlashCardsController implements Initializable {
     @FXML
@@ -32,6 +33,9 @@ public class FlashCardsController implements Initializable {
 
     @FXML
     private Label categ;
+
+    @FXML
+    private Pane pane;
     
     @FXML
     private Label showcard;
@@ -71,7 +75,6 @@ public class FlashCardsController implements Initializable {
         user = facade.getCurrentUser(); 
 
         showcard.setText("Welcome " + user.getFirstName() + " " + user.getLastName());
-       
         
         categ.setText(category.getCategory());
 
@@ -82,8 +85,10 @@ public class FlashCardsController implements Initializable {
     private void displayFlashcardWords(){
         ArrayList<Word> words = category.getWordsByCategory(null);
         for (int i=0; i < words.size(); i++) {
+            Word flashwords = words.get(i);
+            
+
         }
-        
     }
 
 }
