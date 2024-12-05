@@ -133,7 +133,13 @@ public class CategorySystemFacade {
             courseTitles.add(course.getCourse());
         }
         return courseTitles;
-    }
+    };
+    public static Course getCurrentCourse(){
+            return course; 
+    };
+    
+   
+   
     
     /**
      * getCategory method 

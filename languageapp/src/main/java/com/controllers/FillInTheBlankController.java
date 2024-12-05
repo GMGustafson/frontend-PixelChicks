@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import com.chatterbox.App;
 import com.model.*;
+import java.util.Random;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import java.util.ArrayList;
 
 public class FillInTheBlankController implements Initializable{
 
@@ -43,22 +44,32 @@ public class FillInTheBlankController implements Initializable{
     @FXML
     private Label hintLabel;
 
+    @FXML
+    private Label showCategory;
+
     private Progress progress;
     private CategorySystemFacade facade;
+    private User user;
     private UserList userList;
     private Course course;
+    private Course category;
     private CourseList courseList;
     private FillInTheBlank fillInTheBlank;
     private Phrase phrase;
     private Word word;
     private String correctAnswer;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        CourseList currentCourse = courseList.getInstance();
-        UserList currentUser = userList.getInstance();
+        facade = CategorySystemFacade.getFacadeInstance()
+        user = facade.getCurrentUser();
+        category = facade.getCategory();
+        course = Course.getAvailableCourse();
+        showCategory.setText("Category: " + facade.getCategory());
         
-        String currentCategory = progress.getCurrentCategory();
+        
+        //String currentCategory = progress.getCurrentCategory();
         ArrayList<Word> answerList = course.getWordsByCategory(currentCategory);
         ArrayList<String> altAnswers = word.getAlternatives();
         
@@ -66,6 +77,13 @@ public class FillInTheBlankController implements Initializable{
         fitbQuestion.setText(""+ fillInTheBlank.getSampleSentence());
         correctAnswer = fillInTheBlank.getMissingWord();
 
+        Random random = new Random();
+        while (!altAnswers.isEmpty()) {
+            int index = random.nextInt(altAnswers.size());
+            System.out.println(altAnswers.remove(index));
+            // fitbA.setText();
+
+        }
         throw new UnsupportedOperationException("Unimplemented method 'initialize'");
     }
 
