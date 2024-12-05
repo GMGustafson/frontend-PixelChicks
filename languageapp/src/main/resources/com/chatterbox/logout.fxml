@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.LogoutController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="399.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label prefHeight="35.0" prefWidth="602.0" text="Logout">
+      <Text layoutX="162.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout" wrappingWidth="82.7664794921875">
          <font>
-            <Font size="24.0" />
+            <Font size="27.0" />
          </font>
-         <padding>
-            <Insets left="265.0" />
-         </padding>
-      </Label>
-      <Label fx:id="thanks" prefHeight="95.0" prefWidth="113.0" text="Thanks for playing! ">
-         <VBox.margin>
-            <Insets left="255.0" />
-         </VBox.margin>
-      </Label>
-      <ImageView fx:id="myImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/parrot.jpg" />
-         </image>
-      </ImageView>
+      </Text>
+      <Text layoutX="86.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thanks for playing! See you Next Time! " textAlignment="CENTER" wrappingWidth="219.32077026367188">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
    </children>
-</VBox>
+</Pane>
