@@ -18,7 +18,6 @@ public class Progress {
     private ArrayList<String> missedWords;
     private static final String[] categories = {"numbers", "colors", "places", "weather", "people"};
 
-
     /**
      * Constructor for Progress (missedWords)
      */

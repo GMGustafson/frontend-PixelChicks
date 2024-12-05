@@ -26,6 +26,8 @@ public class ActivitiesController {
     private Button StoryButton;
     @FXML
     private Button dictionary;
+    @FXML
+    private Button Progress;
 
     @FXML
     void GoToDictionary(ActionEvent event) throws IOException{
@@ -56,5 +58,11 @@ public class ActivitiesController {
     void GoToStory(ActionEvent event)  throws IOException{
         App.setRoot("Story");
     }
+
+    @FXML
+    void GoToProgress(ActionEvent event) throws IOException{
+        App.setRoot("Progress");
+    }
+
 
 }

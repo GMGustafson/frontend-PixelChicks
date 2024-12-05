@@ -20,6 +20,8 @@ public class User{
     private String username;
     private String password;
     private HashMap<Course,Progress> courses;
+    private Course currentcourse;
+    private Progress currentprogress; 
 
     /**
      * Constructor for User that makes a HashMap
@@ -41,7 +43,9 @@ public class User{
         this.dateOfBirth = dateOfBirth;
         this.username = username;
         this.password = password;
-        this.courses = new HashMap <>();
+        this.courses = new HashMap <>(); 
+        Course currentcourse = CourseList.getInstance().getCourses().get(0); 
+        Progress currentprogress = Progress.getProgressInCategory; 
     }
 
     /**
