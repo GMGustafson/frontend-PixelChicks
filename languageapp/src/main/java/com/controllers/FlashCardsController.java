@@ -10,6 +10,7 @@ import com.model.CategorySystemFacade;
 import com.model.Category;
 import com.model.Course;
 import com.model.Flashcard;
+import com.model.Story;
 import com.model.User;
 import com.model.Word;
 
@@ -36,15 +37,11 @@ public class FlashCardsController implements Initializable {
 
     @FXML
     private Pane pane;
-    
     @FXML
     private Label showcard;
     private String[] words = {"rojo", "verde", "blanco"};
     private int index = 0;
-    private CategorySystemFacade facade;
-    private User user;
-    private Course category;
-    private Flashcard flashcard;
+  
 
     @FXML
     void backtoActivites(ActionEvent event) {
@@ -69,11 +66,21 @@ public class FlashCardsController implements Initializable {
         index = (index + 1) % words.length;
     }
 
+    private CategorySystemFacade facade;
+    private User user;
+    private Course category;
+    private Course course;
+    private Flashcard flashcard;
+    private Story co;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
+        course = facade.chooseCourse(course);
+        co = course.getStoriesByCategory("colors");
 
+        
         showcard.setText("Welcome " + user.getFirstName() + " " + user.getLastName());
         
         categ.setText(category.getCategory());

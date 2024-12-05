@@ -60,8 +60,9 @@ public class StoryController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
-
-   
+    private Story co;
+    course = facade.chooseCourse(course);
+    co = course.getStoriesByCategory("colors");
 
     // @Override
     // public void initialize(URL location, ResourceBundle resources) {
