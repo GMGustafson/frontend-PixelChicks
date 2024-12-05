@@ -39,22 +39,19 @@ public class StoryController  {
 
    private User user; 
    private Course course; 
+   private Story co;
+   
 
     @FXML
     void Translate(ActionEvent event){ 
-        // Story Story = course.getStoriesByCategory("numbers");
         CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance(); 
-        // user = facade.getCurrentUser(); 
-        // course = user.
-        // course.getCourse();
+        course = facade.chooseCourse(course);
+        co = course.getStoriesByCategory("colors");
         
-        facade.chooseCourse(course).getStoriesByCategory("numbers"); 
-
-        // facade.getCurrentUsegetCurrentCourse().getStoriesByCategory("numbers"); 
-
+       
         storyTitle.setText(story.getTitle()); 
-        // englishText.setText(story.getText());
-        // SpanishText.setText(story.getStoryTranslation()); 
+        englishText.setText(story.getText());
+        SpanishText.setText(story.getStoryTranslation()); 
     }
     
     @FXML
@@ -69,20 +66,12 @@ public class StoryController  {
 
     private Story story;
 
-<<<<<<< HEAD
-    // @Override
-    // public void initialize(URL location, ResourceBundle resources) {
-    // }
-
-   
-=======
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
     }
-    private Story co;
-    course = facade.chooseCourse(course);
-    co = course.getStoriesByCategory("colors");
->>>>>>> db62429f698719d9c5f0a4c9efee26e62408b593
+
+    
 
     // @Override
     // public void initialize(URL location, ResourceBundle resources) {

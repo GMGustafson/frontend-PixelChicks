@@ -172,6 +172,8 @@ public class Course {
         return selectedCourse;
     }
 
+   
+
      /**
     * toString method
     * prints out phrases and words in courses

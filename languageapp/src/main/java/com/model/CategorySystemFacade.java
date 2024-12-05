@@ -132,9 +132,12 @@ public class CategorySystemFacade {
         }
         return courseTitles;
     };
-    public static Course getCurrentCourse(){
-            return course; 
-    };
+
+    public static void getCurrentCourse()
+    { 
+        
+    }
+   
     
    
    
