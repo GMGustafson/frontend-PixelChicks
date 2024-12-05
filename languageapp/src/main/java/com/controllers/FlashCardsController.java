@@ -77,8 +77,8 @@ public class FlashCardsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
-        course = facade.chooseCourse(course);
-        co = course.getStoriesByCategory("colors");
+        // course = facade.chooseCourse(course);
+        // co = course.getStoriesByCategory("colors");
 
         
         showcard.setText("Welcome " + user.getFirstName() + " " + user.getLastName());
