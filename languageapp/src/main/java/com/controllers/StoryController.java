@@ -8,8 +8,11 @@ import org.json.simple.JSONObject;
 
 import com.chatterbox.App;
 import com.model.CategorySystemFacade;
+import com.model.Course;
 import com.model.DataLoader;
+import com.model.Flashcard;
 import com.model.Story;
+import com.model.User;
 import com.narration.Narriator;
 
 import javafx.event.ActionEvent;
@@ -55,14 +58,19 @@ public class StoryController implements Initializable {
         Narriator.playSound("En la tienda, Tom compra una manzana roja.También busca dos naranjas maduras.Finalmente compra tres plátanos amarillos."); 
     }
 
-    private Story story;
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    }
+    private CategorySystemFacade facade;
+    private User user;
+    private Course course;
     private Story co;
-    course = facade.chooseCourse(course);
-    co = course.getStoriesByCategory("colors");
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        facade = CategorySystemFacade.getFacadeInstance();
+        user = facade.getCurrentUser(); 
+        course = facade.chooseCourse(course);
+        co = course.getStoriesByCategory("colors");
+
+    }
 
     // @Override
     // public void initialize(URL location, ResourceBundle resources) {
