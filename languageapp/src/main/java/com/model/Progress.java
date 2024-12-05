@@ -10,6 +10,7 @@ import java.time.LocalDate;
  */
 
 public class Progress {
+    public static Progress getProgressInCategory;
     private int totalQuestionsAnswered;
     private int numCorrectAnswers;
     private String currentCategory;
