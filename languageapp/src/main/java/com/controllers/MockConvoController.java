@@ -20,12 +20,12 @@ public class MockConvoController {
     private Button back;
 
     @FXML
-    void HintWillAppear(ActionEvent event) {
+    void HintWillAppear(ActionEvent event) throws IOException {
         Hint.setText("Hint");
     }
 
     @FXML
-    void QuestionWillAppear(ActionEvent event) {
+    void QuestionWillAppear(ActionEvent event) throws IOException {
         Question.setText("Question");
     }
     @FXML

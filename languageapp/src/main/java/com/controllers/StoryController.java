@@ -37,12 +37,12 @@ public class StoryController implements Initializable {
 
     @FXML
     void Translate(ActionEvent event) {
-        story = DataLoader.getStorybyCategory();
-        CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance(); 
+        // story = DataLoader.getStorybyCategory();
+        // CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance(); 
 
-        storyTitle.setText(story.getTitle()); 
-        englishText.setText(story.getText());
-        SpanishText.setText(story.getStoryTranslation()); 
+        // storyTitle.setText(story.getTitle()); 
+        // englishText.setText(story.getText());
+        // SpanishText.setText(story.getStoryTranslation()); 
     }
     
     @FXML
@@ -55,7 +55,13 @@ public class StoryController implements Initializable {
         Narriator.playSound("En la tienda, Tom compra una manzana roja.También busca dos naranjas maduras.Finalmente compra tres plátanos amarillos."); 
     }
 
-    private Story story; 
+    private Story story;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+    }
+
+   
 
     // @Override
     // public void initialize(URL location, ResourceBundle resources) {

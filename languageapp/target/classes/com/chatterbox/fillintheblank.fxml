@@ -7,11 +7,20 @@
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.FillInTheBlankController">
    <children>
+<<<<<<< HEAD
+      <Button fx:id="back" mnemonicParsing="false" text="Back" />
+       <!-- onAction="#backtoActivities"  -->
+      <Label text="Fill in the Blank Question: _________" />
+      <Separator prefHeight="42.0" prefWidth="600.0" stylesheets="@styles.css" />
+      <Button fx:id="hint" mnemonicParsing="false"  stylesheets="@styles.css" text="Hint" textAlignment="CENTER" VBox.vgrow="NEVER" />
+      <!-- onAction="#showHint" -->
+=======
       <Label fx:id="fitbQuestion" text="El blanco y el negro hacen _____" />
       <Button fx:id="back" mnemonicParsing="false" onAction="#backtoActivities" text="Back" />
       <Separator prefHeight="42.0" prefWidth="600.0" stylesheets="@styles.css" />
       <Label fx:id="hintLabel" />
       <Button fx:id="hint" mnemonicParsing="false" onAction="#showHint" stylesheets="@styles.css" text="Hint" textAlignment="CENTER" VBox.vgrow="NEVER" />
+>>>>>>> 4cdbdb296da4c36b4169f6dc220166a45ee0ed23
       <Separator prefHeight="51.0" prefWidth="600.0" />
       <Button fx:id="A" mnemonicParsing="false" onAction="#chooseA" stylesheets="@styles.css" text="Verde" />
       <Button fx:id="B" mnemonicParsing="false" onAction="#chooseB" stylesheets="@styles.css" text="Rojo" textAlignment="CENTER" />
