@@ -8,9 +8,11 @@ import org.json.simple.JSONObject;
 
 import com.chatterbox.App;
 import com.model.CategorySystemFacade;
-import com.model.DataLoader;
+import com.model.Course;
 import com.model.Story;
 import com.narration.Narriator;
+import com.model.User;
+import com.model.*; 
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,7 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class StoryController implements Initializable {
+public class StoryController  {
 
     @FXML
     private Label SpanishText;
@@ -35,12 +37,22 @@ public class StoryController implements Initializable {
     @FXML
     private Label storyTitle;
 
-    @FXML
-    void Translate(ActionEvent event) {
-        // story = DataLoader.getStorybyCategory();
-        // CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance(); 
+   private User user; 
+   private Course course; 
 
-        // storyTitle.setText(story.getTitle()); 
+    @FXML
+    void Translate(ActionEvent event){ 
+        // Story Story = course.getStoriesByCategory("numbers");
+        CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance(); 
+        // user = facade.getCurrentUser(); 
+        // course = user.
+        // course.getCourse();
+        
+        facade.chooseCourse(course).getStoriesByCategory("numbers"); 
+
+        // facade.getCurrentUsegetCurrentCourse().getStoriesByCategory("numbers"); 
+
+        storyTitle.setText(story.getTitle()); 
         // englishText.setText(story.getText());
         // SpanishText.setText(story.getStoryTranslation()); 
     }
@@ -57,9 +69,9 @@ public class StoryController implements Initializable {
 
     private Story story;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-    }
+    // @Override
+    // public void initialize(URL location, ResourceBundle resources) {
+    // }
 
    
 

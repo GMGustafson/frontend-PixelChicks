@@ -253,6 +253,7 @@ public class User{
         return courses;
     }
 
+
     /**
      * setCourses method
      * Sets courses HashMap
