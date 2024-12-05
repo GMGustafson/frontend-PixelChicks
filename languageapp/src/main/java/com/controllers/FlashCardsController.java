@@ -19,10 +19,16 @@ import javafx.scene.input.MouseEvent;
 public class FlashCardsController implements Initializable {
     @FXML
     private Button Back;
+
     @FXML
     private Button forward;
+
     @FXML
     private Label wordLabel;
+
+    @FXML
+    private Label categ;
+    
     @FXML
     private Label showcard;
     private String[] words = {"rojo", "verde", "blanco"};
@@ -60,10 +66,10 @@ public class FlashCardsController implements Initializable {
         user = facade.getCurrentUser();
         
         showcard.setText("Welcome " + user.getFirstName() + " " + user.getLastName());
-        
+       // showcard.setCategory();
     }
 
-    
+
 
 }
   
