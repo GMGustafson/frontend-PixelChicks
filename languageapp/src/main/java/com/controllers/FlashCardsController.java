@@ -6,6 +6,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.model.CategorySystemFacade;
+import com.model.Category;
+import com.model.Course;
 import com.model.Flashcard;
 import com.model.User;
 
@@ -35,6 +37,7 @@ public class FlashCardsController implements Initializable {
     private int index = 0;
     private CategorySystemFacade facade;
     private User user;
+    private Course category;
     private Flashcard flashcard;
 
     @FXML
@@ -63,10 +66,14 @@ public class FlashCardsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = CategorySystemFacade.getFacadeInstance();
-        user = facade.getCurrentUser();
-        
+        user = facade.getCurrentUser(); 
+
         showcard.setText("Welcome " + user.getFirstName() + " " + user.getLastName());
-       // showcard.setCategory();
+       
+        
+       categ.setText(category.getCategory());
+
+
     }
 
 
