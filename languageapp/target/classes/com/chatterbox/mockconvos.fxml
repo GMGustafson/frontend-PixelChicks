@@ -11,15 +11,10 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.HomeController">
    <children>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false"  text="back" />
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="back" />
       <!-- onAction="#backtoActivites" -->
       <Ellipse fill="DODGERBLUE" layoutX="191.0" layoutY="107.0" radiusX="114.0" radiusY="68.0" stroke="BLACK" strokeType="INSIDE" />
       <Label fx:id="Question" layoutX="98.0" layoutY="73.0" prefHeight="69.0" prefWidth="186.0" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="249.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../images/parrot.jpg" />
-         </image>
-      </ImageView>
       <RadioButton layoutX="34.0" layoutY="220.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="305.0" text="Answer 1">
          <font>
             <Font size="24.0" />
@@ -35,10 +30,15 @@
             <Font size="24.0" />
          </font>
       </RadioButton>
-      <Button fx:id="Ask" layoutX="59.0" layoutY="150.0" mnemonicParsing="false"  text="Ask" />
+      <Button fx:id="Ask" layoutX="59.0" layoutY="150.0" mnemonicParsing="false" text="Ask" />
       <!-- onAction="#QuestionWillAppear" -->
       <Button fx:id="Hint" layoutX="8.0" layoutY="150.0" mnemonicParsing="false" text="Hint" />
       <!-- onAction="#HintWillAppear"  -->
       <Label fx:id="Hint" layoutX="13.0" layoutY="192.0" prefHeight="17.0" prefWidth="215.0" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="228.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/parrot.jpg" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
