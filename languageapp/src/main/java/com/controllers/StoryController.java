@@ -37,32 +37,7 @@ public class StoryController implements Initializable {
 
     @FXML
     private Label storyTitle;
-
-    private CategorySystemFacade facade;
-    private User user;
-    private Course course;
-    private Story co;
-    private Story story; 
-    
-    @FXML
-    void Translate(ActionEvent event) {
-
-        facade = CategorySystemFacade.getFacadeInstance();
-        user = facade.getCurrentUser(); 
-        course = facade.chooseCourse(course);
-        co = course.getStoriesByCategory("colors");
-
-        storyTitle.setText(story.getTitle()); 
-        englishText.setText(story.getText());
-        SpanishText.setText(story.getStoryTranslation()); 
-    }
-    
-   
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
-
-    }
+ 
 
     @FXML
     void backtoActivites(ActionEvent event) throws IOException {
@@ -72,6 +47,31 @@ public class StoryController implements Initializable {
     @FXML
     void readStoryAloud(ActionEvent event) {
         Narriator.playSound("En la tienda, Tom compra una manzana roja.También busca dos naranjas maduras.Finalmente compra tres plátanos amarillos."); 
+    }
+
+    private CategorySystemFacade facade;
+    private User user;
+    private Course course;
+    private Story co;
+    private Story story;
+
+    @FXML
+    void Translate(ActionEvent event) {
+
+        facade = CategorySystemFacade.getFacadeInstance();
+        user = facade.getCurrentUser(); 
+        course = facade.chooseCourse(course);
+        co = course.getStoriesByCategory("colors");
+
+        storyTitle.setText(story.getTitle()); 
+        // englishText.setText(story.getText());
+        // SpanishText.setText(story.getStoryTranslation()); 
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+
     }
 
     
