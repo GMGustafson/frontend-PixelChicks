@@ -118,9 +118,11 @@ public class CategorySystemFacade {
         System.out.println("Course Choosen"+ this.course); 
         return this.course; 
     }
+
     public Category chooseCategory(Category currentCategory) {
         this.category = currentCategory;
-        System.out.println("Course Choosen"+ this.course); 
+        //if (courseTitles.getCourse().contains())
+        System.out.println("Course Choosen"+ this.category); 
         return this.category;
     }
 

@@ -12,6 +12,7 @@ public class FillInTheBlank extends Question{
   private Phrase sampleSentence;
   private ArrayList<String> wordBank;
   private String userInput;
+ // private ArrayList
 
   public FillInTheBlank(String question, Phrase sampleSentence, ArrayList<String> wordBank, String userInput) {
       //TODO Auto-generated constructor stub
@@ -51,6 +52,10 @@ public class FillInTheBlank extends Question{
     return words[index];
   }
 
+  public ArrayList<String> getWordBank() {
+    return wordBank;
+  }
+
   /**
      * getSampleSentence method
      * Returns sentence with a missing word
@@ -61,4 +66,6 @@ public class FillInTheBlank extends Question{
     String missingWord = getMissingWord();
     return sentence.replace(missingWord, "___"); 
   }
+
+
 }
