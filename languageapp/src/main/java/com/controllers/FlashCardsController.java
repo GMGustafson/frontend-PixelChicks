@@ -3,6 +3,7 @@ package com.controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.model.CategorySystemFacade;
@@ -10,6 +11,7 @@ import com.model.Category;
 import com.model.Course;
 import com.model.Flashcard;
 import com.model.User;
+import com.model.Word;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -71,12 +73,18 @@ public class FlashCardsController implements Initializable {
         showcard.setText("Welcome " + user.getFirstName() + " " + user.getLastName());
        
         
-       categ.setText(category.getCategory());
+        categ.setText(category.getCategory());
 
 
     }
 
-
+    
+    private void displayFlashcardWords(){
+        ArrayList<Word> words = category.getWordsByCategory(null);
+        for (int i=0; i < words.size(); i++) {
+        }
+        
+    }
 
 }
   
