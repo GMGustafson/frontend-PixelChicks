@@ -10,6 +10,7 @@ import java.time.LocalDate;
  */
 
 public class Progress {
+    public static Progress getProgressInCategory;
     private int totalQuestionsAnswered;
     private int numCorrectAnswers;
     private String currentCategory;
@@ -17,7 +18,6 @@ public class Progress {
     private int streak;
     private ArrayList<String> missedWords;
     private static final String[] categories = {"numbers", "colors", "places", "weather", "people"};
-
 
     /**
      * Constructor for Progress (missedWords)
