@@ -53,20 +53,32 @@ public class CourseController implements Initializable {
 
         private CategorySystemFacade facade;
         private User user;
-        private String currentCategory;
+        private String userCategory;
         private Progress progress;
+<<<<<<< HEAD
         private Course course; 
+=======
+        private Course course;
+
+>>>>>>> e312ced3ddeb7fabf663a2190e139f10373533a0
         @Override
         public void initialize(URL location, ResourceBundle resources) {
             facade = CategorySystemFacade.getFacadeInstance();
             user = facade.getCurrentUser();
+<<<<<<< HEAD
             progress = facade.getProgress();
             // course = progress.get(); 
 
             currentCategory = progress.getCurrentCategory();
             if (user.getCurrentProgress() != null) {
+=======
+            course = user.getCurrentCourse(); 
+            progress = user.getCurrentProgress(); 
+            userCategory = progress.getCurrentCategory(); 
+            if ( progress != null) {
+>>>>>>> e312ced3ddeb7fabf663a2190e139f10373533a0
                 courseLabel.setText("Welcome back, " + user.getUsername());
-                currentCategory = progress.getCurrentCategory();
+                userCategory = progress.getCurrentCategory();
                 categoryLabel.setText("Loading previous progress");
 
             }
@@ -75,28 +87,47 @@ public class CourseController implements Initializable {
 
         @FXML
         void chooseColors(ActionEvent event) throws IOException {
-            currentCategory = "Colors";
+            String catType = "colors";
+            userCategory = progress.setCurrentCategory(catType);
+            // categoryLabel.setText("Colors");
+            // App.setRoot("activities");
         }
     
         @FXML
         void chooseNumbers(ActionEvent event) throws IOException {
-            currentCategory = "Numbers";
+            String catType = "Numbers";
+            userCategory = progress.setCurrentCategory(catType);
+            // categoryLabel.setText("Numbers");
+            // App.setRoot("activities");
         }
     
         @FXML
         void choosePeople(ActionEvent event) throws IOException {
-            currentCategory = "People";
-        }
-    
-        @FXML
-        void choosePlaces(ActionEvent event) throws IOException{
-            currentCategory = "Places";
+            String catType = "people";
+            userCategory = progress.setCurrentCategory(catType);
+            // categoryLabel.setText("People");
+            // App.setRoot("activities");
 
         }
     
         @FXML
+        void choosePlaces(ActionEvent event) throws IOException{
+            String catType = "places";
+            userCategory = progress.setCurrentCategory(catType);
+            // categoryLabel.setText("Places");
+            // App.setRoot("activities");
+        }
+    
+        @FXML
         void chooseWeather(ActionEvent event) throws IOException {
+<<<<<<< HEAD
             currentCategory = "Weather";
+=======
+            String catType = "weather";
+            userCategory = progress.setCurrentCategory(catType);
+            // categoryLabel.setText("Weather");
+            // App.setRoot("activities");
+>>>>>>> e312ced3ddeb7fabf663a2190e139f10373533a0
         }
     
         @FXML
