@@ -31,11 +31,16 @@ public class ProgressController implements Initializable{
     private Progress progress; 
 
     public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("Hi inside"); 
         if (this.progress == null)
         { 
+            System.out.println("null"); 
+            facade = CategorySystemFacade.getFacadeInstance();
+            progress = facade.getProgress(); 
             Score.setText("No Progress yet"); 
         }
         else { 
+            System.out.println("not null"); 
             facade = CategorySystemFacade.getFacadeInstance();
             progress = facade.getProgress(); 
             TotalWrong.setText("" + (progress.getTotalQuestionsAnswered() - progress.getNumCorrectAnswers())); 
