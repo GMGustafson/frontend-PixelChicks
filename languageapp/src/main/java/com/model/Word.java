@@ -23,7 +23,7 @@ public class Word {
        this.word = word;
        this.pronunciation = pronunciation;
        this.translation = translation;
-        this.alternatives = alternatives;
+       this.alternatives = alternatives;
     }
 
     /**

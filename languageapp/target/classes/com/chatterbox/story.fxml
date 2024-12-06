@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Button fx:id="back" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
-      <Label fx:id="storyTitle" layoutX="53.0" layoutY="62.0" text="Story Title" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="englishText" layoutX="26.0" layoutY="89.0" text="English Translation:" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="SpanishText" layoutX="37.0" layoutY="117.0" prefHeight="96.0" prefWidth="148.0" text="Text" />
-      <Button layoutX="60.0" layoutY="231.0" mnemonicParsing="false" text="Next" />
-      <Button fx:id="readStoryButton" layoutX="28.0" layoutY="268.0" onAction="#readStoryAloud" text="Read Aloud" />
-      <Button fx:id="translate" layoutX="69.0" layoutY="205.0" mnemonicParsing="false" onAction="#Translate" prefHeight="16.0" prefWidth="54.0" text="Translate">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Button>
-   </children>
-</Pane>
+<VBox alignment="CENTER" prefHeight="334.0" prefWidth="242.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.StoryController">
+    <children>
+      <Pane prefHeight="317.0" prefWidth="202.0">
+         <children>
+            <Button fx:id="back" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
+              <!-- Story Title -->
+              <Label fx:id="storyTitle" layoutX="61.0" layoutY="37.0" text="Story Title" textAlignment="CENTER" wrapText="true">
+                  <font>
+                      <Font size="18.0" />
+                  </font>
+              </Label>
+      
+                    <!-- English Translation -->
+              <Label fx:id="englishText" layoutX="33.0" layoutY="74.0" text="English Translation:" textAlignment="CENTER" wrapText="true">
+                  <font>
+                      <Font size="16.0" />
+                  </font>
+              </Label>
+            <Label fx:id="SpanishText" layoutX="27.0" layoutY="107.0" prefHeight="96.0" prefWidth="148.0" text="Text" />
+            <Button layoutX="80.0" layoutY="233.0" mnemonicParsing="false" text="Next" />
+      
+                    <!-- Read Aloud Button -->
+              <Button fx:id="readStoryButton" layoutX="62.0" layoutY="262.0" onAction="#readStoryAloud" text="Read Aloud" />
+            <Button fx:id="translate" layoutX="73.0" layoutY="206.0" mnemonicParsing="false" onAction="#Translate" prefHeight="16.0" prefWidth="54.0" text="Translate">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>

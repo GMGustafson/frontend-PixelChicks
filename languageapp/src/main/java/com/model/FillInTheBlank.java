@@ -5,91 +5,50 @@ import java.util.List;
 import java.util.Random;
 import com.model.Word;
 import java.util.HashSet;
+import com.model.CategorySystemFacade;
 
 /**
  * @author zaniah, sri, gracie, and grace
  */
 
 public class FillInTheBlank extends Question{
-
+    // Attributes
+  private Phrase hint;
   private Phrase sampleSentence;
-  private Phrase phrase;
   private ArrayList<String> wordBank;
   private String userInput;
-  private String correctAnswer;
-  private Phrase hint;
+  private Word word;
   private ArrayList<String> otherAnswers;
 
-  private Word word;
- // private ArrayList
-
-  public FillInTheBlank(String question, Phrase sampleSentence, Phrase hint, ArrayList<String> wordBank, String userInput, ArrayList<String> otherAnswers) {
+  public FillInTheBlank(String question, Phrase hint, Phrase sampleSentence, ArrayList<String> wordBank) {
       //TODO Auto-generated constructor stub
       super(question);
-  
       this.sampleSentence = sampleSentence;
       this.wordBank = wordBank;
-      this.hint = hint;
-      this.phrase = phrase;
-
-
   }
 
-  // public FillInTheBlank(Phrase phrase) {
-  //   super(phrase.getWords());
-  //   this.sampleSentence = phrase.getWords();
-  //   this.wordBank = new ArrayList<>(List.of(phrase.getWords().split(" ")));
-  //   this.correctAnswer = getMissingWord();
-  //   this.hint = phrase.getTranslation();
-  // }
-
-  // public FillInTheBlank(Word word) {
-  //   super(word.getWord());
-    
-  // }
-
-
-  /**
-   * checkAnswer method
-   * Checks if the user response if correct
-   * @param userInput
-   * @return message + missingWord
-   */
   public String checkAnswer(String userInput) 
   {
-    // String missingWord = getMissingWord(); 
-        if (userInput != null && userInput.equalsIgnoreCase(correctAnswer)) {
-            return "You are correct! The missing word was: " + correctAnswer;
+    String missingWord = getMissingWord(); 
+        if (userInput != null && userInput.equalsIgnoreCase(missingWord)) {
+            return "You are correct! The missing word was: " + missingWord;
         } 
         else {
-            return "Sorry, that was incorrect. The correct word is: " + correctAnswer;
+            return "Sorry, that was incorrect. The correct word is: " + missingWord;
         }
-
   }
 
-  /**
-     * getMissingWord method
-     * Returns a missing word
-     * @return words[index]
-     */
   // public String getMissingWord() 
   // {
-  //   String sentence = sampleSentence.getTranslation();
+  //   String sentence = sampleSentence.getWords();
   //   String[] words = sentence.split(" ");
   //   Random random = new Random();
   //   int index = random.nextInt(words.length);
   //   return words[index];
   // }
 
-  public String getHint() {
-    if (sampleSentence != null) {
-      return sampleSentence.getTranslation();
-    }
-    return correctAnswer;
-  }
-
   public String getMissingWord() {
-    String sentence = sampleSentence.getWords();  // Get the translated sentence
+    String sentence = sampleSentence.getTranslation();  // Get the translated sentence
     String[] words = sentence.split(" ");               // Split the sentence into individual words
     Random random = new Random();                       // Create a random object
     ArrayList<String> wordBank = getWordBank();         // Assume this method retrieves the current word bank
@@ -103,38 +62,38 @@ public class FillInTheBlank extends Question{
     return chosenWord;                                  
 }
 
-  public ArrayList<String> getWordBank() {
-    return wordBank;
-  }
-
-
-  /**
-     * getSampleSentence method
-     * Returns sentence with a missing word
-     * @return sentence
-     */
+    
   public String getSampleSentence() {
-    String sentence = phrase.getWords();
+    String sentence = sampleSentence.getWords();
     String missingWord = getMissingWord();
     return sentence.replace(missingWord, "___"); 
   }
 
-  public ArrayList<String> findOtherAnswers () {
+  public String getHint() {
+    String hint = sampleSentence.getTranslation();
+    return hint;
+  }
+ 
+  public ArrayList<String> getWordBank() {
+    
+    return wordBank;
+  }
+
+  public ArrayList<String> getOtherAnswers() {
     otherAnswers = word.getAlternatives();
     ArrayList<String> selectedAnswers = new ArrayList<>();
     HashSet<Integer> indices = new HashSet<>();
     Random random = new Random();
-
     while (indices.size() < 3 && indices.size() < otherAnswers.size()) {
       int index = random.nextInt(otherAnswers.size());
       if (indices.add(index)) {
         selectedAnswers.add(otherAnswers.get(index));
       }
     }
-    return selectedAnswers; 
+      return selectedAnswers;
+
     
   }
 
-
-
 }
+
