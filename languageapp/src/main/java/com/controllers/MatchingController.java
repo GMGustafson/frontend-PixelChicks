@@ -9,6 +9,7 @@ import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
 import java.util.ResourceBundle;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 
 import com.model.Word;
 import com.model.CategorySystemFacade;
@@ -63,6 +64,14 @@ public class MatchingController {
     void backtoActivities(ActionEvent event) throws IOException {
         App.setRoot("activities");
     }
+
+    @FXML
+    void changeColor(MouseEvent event) {
+        Button1.setOnMouseClicked(e -> {
+            Button1.setStyle("-fx-background-color: yellow");
+        });
+    }
+    
     
     @FXML
     void initialize() {
@@ -71,26 +80,26 @@ public class MatchingController {
 
 
    
-    List<String> words = new ArrayList<>(List.of("rojo", "verde", "blanco", "azul", "amarillo", "naranja", "rosa", "morado", "gris"));
-    List<String> wordList = new ArrayList<>(WordLoader.getRandomizedWords(words));
+    // // List<String> words = new ArrayList<>(List.of("rojo", "verde", "blanco", "azul", "amarillo", "naranja", "rosa", "morado", "gris"));
+    // List<String> wordList = new ArrayList<>(WordLoader.getRandomizedWords(words));
 
     
-    int wordCount = buttons1.size();
+    // int wordCount = buttons1.size();
 
-    for (int i = 0; i < wordCount; i++) {
-        buttons1.get(i).setText(wordList.get(i));
-    }
+    // for (int i = 0; i < wordCount; i++) {
+    //     buttons1.get(i).setText(wordList.get(i));
+    // }
 
-    List<String> words2 = new ArrayList<>(List.of("red", "green", "white", "blue", "yellow", "orange", "pink", "purple", "gray"));
-    List<String> wordList2 = new ArrayList<>(WordLoader.getRandomizedWords(words2));
+    // // List<String> words2 = new ArrayList<>(List.of("red", "green", "white", "blue", "yellow", "orange", "pink", "purple", "gray"));
+    // List<String> wordList2 = new ArrayList<>(WordLoader.getRandomizedWords(words2));
 
-    int wordCount2 = buttons2.size();
+    // int wordCount2 = buttons2.size();
 
-    for (int i = 0; i < wordCount2; i++) {
-        buttons2.get(i).setText(wordList2.get(i));
-    }
+    // for (int i = 0; i < wordCount2; i++) {
+    //     buttons2.get(i).setText(wordList2.get(i));
+    // }
 
-    Map<String, String> wordMap = new HashMap<String, String>();
+    Map<String, String> wordMap = new HashMap<>();
     wordMap.put("rojo", "red");
     wordMap.put("verde", "green");
     wordMap.put("blanco", "white");
@@ -100,6 +109,27 @@ public class MatchingController {
     wordMap.put("rosa", "pink");
     wordMap.put("morado", "purple");
     wordMap.put("gris", "gray");
+
+    List<Map.Entry<String, String>> wordList = new ArrayList<>(wordMap.entrySet());
+    Collections.shuffle(wordList);
+
+    List<String> spanishWords = new ArrayList<>();
+    List<String> englishWords = new ArrayList<>();
+    for (Map.Entry<String, String> pair : wordList) {
+        spanishWords.add(pair.getKey());
+        englishWords.add(pair.getValue());
+    }
+
+    int wordCount = buttons1.size();
+
+    for (int i = 0; i < wordCount; i++) {
+        buttons1.get(i).setText(spanishWords.get(i));
+    }
+
+    int wordCount2 = buttons2.size();
+    for (int i = 0; i < wordCount2; i++) {
+        buttons2.get(i).setText(englishWords.get(i));
+    }   
 }
 
 }
