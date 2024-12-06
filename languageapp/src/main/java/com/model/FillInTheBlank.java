@@ -1,7 +1,10 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+import com.model.Word;
+import java.util.HashSet;
 
 /**
  * @author zaniah, sri, gracie, and grace
@@ -10,16 +13,39 @@ import java.util.Random;
 public class FillInTheBlank extends Question{
 
   private Phrase sampleSentence;
+  private Phrase phrase;
   private ArrayList<String> wordBank;
   private String userInput;
+  private String correctAnswer;
+  private String hint;
+  private ArrayList<String> otherAnswers;
+
+  private Word word;
  // private ArrayList
 
   public FillInTheBlank(String question, Phrase sampleSentence, ArrayList<String> wordBank, String userInput) {
       //TODO Auto-generated constructor stub
       super(question);
+  
       this.sampleSentence = sampleSentence;
       this.wordBank = wordBank;
+      this.phrase = phrase;
+
   }
+
+  // public FillInTheBlank(Phrase phrase) {
+  //   super(phrase.getWords());
+  //   this.sampleSentence = phrase.getWords();
+  //   this.wordBank = new ArrayList<>(List.of(phrase.getWords().split(" ")));
+  //   this.correctAnswer = getMissingWord();
+  //   this.hint = phrase.getTranslation();
+  // }
+
+  // public FillInTheBlank(Word word) {
+  //   super(word.getWord());
+    
+  // }
+
 
   /**
    * checkAnswer method
@@ -29,13 +55,14 @@ public class FillInTheBlank extends Question{
    */
   public String checkAnswer(String userInput) 
   {
-    String missingWord = getMissingWord(); 
-        if (userInput != null && userInput.equalsIgnoreCase(missingWord)) {
-            return "You are correct! The missing word was: " + missingWord;
+    // String missingWord = getMissingWord(); 
+        if (userInput != null && userInput.equalsIgnoreCase(correctAnswer)) {
+            return "You are correct! The missing word was: " + correctAnswer;
         } 
         else {
-            return "Sorry, that was incorrect. The correct word is: " + missingWord;
+            return "Sorry, that was incorrect. The correct word is: " + correctAnswer;
         }
+
   }
 
   /**
@@ -43,18 +70,34 @@ public class FillInTheBlank extends Question{
      * Returns a missing word
      * @return words[index]
      */
-  public String getMissingWord() 
-  {
-    String sentence = sampleSentence.getTranslation();
-    String[] words = sentence.split(" ");
-    Random random = new Random();
-    int index = random.nextInt(words.length);
-    return words[index];
-  }
+  // public String getMissingWord() 
+  // {
+  //   String sentence = sampleSentence.getTranslation();
+  //   String[] words = sentence.split(" ");
+  //   Random random = new Random();
+  //   int index = random.nextInt(words.length);
+  //   return words[index];
+  // }
+
+  public String getMissingWord() {
+    String sentence = sampleSentence.getTranslation();  // Get the translated sentence
+    String[] words = sentence.split(" ");               // Split the sentence into individual words
+    Random random = new Random();                       // Create a random object
+    ArrayList<String> wordBank = getWordBank();         // Assume this method retrieves the current word bank
+
+    String chosenWord = null;
+    do {
+        int index = random.nextInt(words.length);       // Select a random index from the sentence words
+        chosenWord = words[index];                      // Pick the word at that index
+    } while (!wordBank.contains(chosenWord));           // Keep looping until the chosen word is in the word bank
+
+    return chosenWord;                                  
+}
 
   public ArrayList<String> getWordBank() {
     return wordBank;
   }
+
 
   /**
      * getSampleSentence method
@@ -62,10 +105,25 @@ public class FillInTheBlank extends Question{
      * @return sentence
      */
   public String getSampleSentence() {
-    String sentence = getQuestion();
+    String sentence = phrase.getWords();
     String missingWord = getMissingWord();
     return sentence.replace(missingWord, "___"); 
   }
 
+  public ArrayList<String> findOtherAnswers () {
+    otherAnswers= word.getAlternatives();
+    ArrayList<String> selectedAnswers = new ArrayList<>();
+    HashSet<Integer> indices = new HashSet<>();
+    Random random = new Random();
+
+    while (indices.size() < 3 && indices.size() < otherAnswers.size()) {
+      int index = random.nextInt(otherAnswers.size());
+      if (indices.add(index)) {
+        selectedAnswers.add(otherAnswers.get(index));
+      }
+    }
+    return selectedAnswers; // Substitute for other things
+    
+  }
 
 }

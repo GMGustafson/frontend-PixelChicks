@@ -2,20 +2,21 @@ package com.controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Map;
+// import java.util.ArrayList;
+// import java.util.Map;
 import java.util.ResourceBundle;
+// import java.util.Locale.Category;
 
-import org.json.simple.JSONObject;
+// import org.json.simple.JSONObject;
 
 import com.chatterbox.App;
 import com.model.CategorySystemFacade;
 import com.model.Course;
 import com.model.DataLoader;
-import com.model.Flashcard;
+import com.model.Progress;
 import com.model.Story;
 import com.model.User;
-import com.model.Word;
+// import com.model.Word;
 import com.narration.Narriator;
 
 import javafx.event.ActionEvent;
@@ -40,55 +41,88 @@ public class StoryController implements Initializable {
 
     @FXML
     private Label storyTitle;
+
+    @FXML
+    private Button translate;
+
+    @FXML
+    private Button next;
  
 
     @FXML
     void backtoActivites(ActionEvent event) throws IOException {
         App.setRoot("activities");
+        // System.out.print(this.course); 
     }   
 
     @FXML
     void readStoryAloud(ActionEvent event) {
-        Narriator.playSound("En la tienda, Tom compra una manzana roja.También busca dos naranjas maduras.Finalmente compra tres plátanos amarillos."); 
+        Narriator.playSound(concatSpanishText()); 
+        // "En la tienda, Tom compra una manzana roja.También busca dos naranjas maduras.Finalmente compra tres plátanos amarillos."
     }
 
     private CategorySystemFacade facade;
-    private User user;
-    private Course course;
-    private Course co;
     private Story story;
-    private Story sto;
+    private User user;
+    private Course course; 
+    private Progress progress; 
+    private String category; 
 
     @FXML
     void Translate(ActionEvent event) {
 
         facade = CategorySystemFacade.getFacadeInstance();
-        user = facade.getCurrentUser(); 
-        course = facade.getCurrentCourse();
-        //co = course.getStoriesByCategory("colors");
-
+        progress = facade.getProgress(); 
+        category = progress.getCurrentCategory(); 
+        story = DataLoader.getStorybyCategory(null);
+        course = user.getCurrentCourse(); 
         storyTitle.setText(story.getTitle()); 
-        // englishText.setText(story.getText());
-        // SpanishText.setText(story.getStoryTranslation()); 
+
+        SpanishText.setText("hola");
+    
+        
+        SpanishText.setText(concatSpanishText()); 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
+        englishText.setText(concatText());
+        storyTitle.setText(story.getTitle()); 
+        // englishText.setText("hii"); 
     }
 
-    private void displayStory(){
-    ArrayList<Story> stories = course.getStoriesByCategory("colors");
-        for (int i=0; i < stories.size(); i++) {
-            Story storysentence = stories.get(i);
-            
+    @FXML
+    void goToNextStory(ActionEvent event) {
+        // storyTitle.setText("title2" ); 
+        // englishText.setText("hiiiiiii"); 
 
-        }
+    }
 
-    
-    
-  
+    private String concatText()
+    { 
+        String concatText = " ";
+        for (String t : story.getText()) 
+        {
+        concatText = concatText + story.getText(); 
+         }
+        return concatText;
+    }
 
+    private String concatSpanishText()
+    { 
+        String concatText = " ";
+        for (String t : story.getStoryTranslation()) 
+        {
+        concatText = concatText + story.getStoryTranslation(); 
+         }
+        return concatText;
+    }
+   
+   
 }
+
+
+
 
 

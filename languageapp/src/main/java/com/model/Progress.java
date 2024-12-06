@@ -18,6 +18,7 @@ public class Progress {
     private int streak;
     private ArrayList<String> missedWords;
     private static final String[] categories = {"numbers", "colors", "places", "weather", "people"};
+    private static final String[] courses = {"words", "phrases"}; 
 
     /**
      * Constructor for Progress (missedWords)
@@ -42,7 +43,7 @@ public class Progress {
         this.currentCategory = currentCategory;
         this.progressInCategory = progressInCategory;
         this.streak = streak;
-        this. missedWords = missedWords;
+        this.missedWords = missedWords;
     }
 
     /**

@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.MatchingController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../../../../../frontend-PixelChicks/languageapp/src/main/resources/com/chatterbox/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.MatchingController">
    <children>
-      <GridPane layoutX="83.0" layoutY="132.0" prefHeight="237.0" prefWidth="450.0">
+      <GridPane layoutX="129.0" layoutY="112.0" prefHeight="237.0" prefWidth="450.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -22,26 +22,21 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <!-- <Button mnemonicParsing="false" onAction="#FlipCard2" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" onAction="#FlipCard2" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#FlipCard2" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#FlipCard3" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#FlipCard2" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#FlipCard6" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#FlipCard2" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#FlipCard8" prefHeight="39.0" prefWidth="223.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button mnemonicParsing="false" onAction="#FlipCard2" prefHeight="39.0" prefWidth="223.0" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#FlipCard1" prefHeight="39.0" prefWidth="223.0" />
-            <Button mnemonicParsing="false" onAction="#FlipCard2" prefHeight="39.0" prefWidth="223.0" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#FlipCard4" prefHeight="39.0" prefWidth="223.0" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#FlipCard5" prefHeight="39.0" prefWidth="223.0" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#FlipCard7" prefHeight="39.0" prefWidth="223.0" GridPane.rowIndex="3" /> -->
+            <Button fx:id="Button1" mnemonicParsing="false" onMouseClicked="#changeColor" prefHeight="60.0" prefWidth="136.0" />
+            <Button fx:id="Button2" mnemonicParsing="false" onMouseClicked="#changeColor" prefHeight="59.0" prefWidth="135.0" GridPane.rowIndex="1" />
+            <Button fx:id="Button3" mnemonicParsing="false" onMouseClicked="#changeColor" prefHeight="59.0" prefWidth="135.0" GridPane.rowIndex="2" />
+            <Button fx:id="Button4" mnemonicParsing="false" onMouseClicked="#changeColor" prefHeight="59.0" prefWidth="135.0" GridPane.rowIndex="3" />
+            <Button fx:id="Button5" mnemonicParsing="false" onMouseClicked="#changeColor" prefHeight="60.0" prefWidth="136.0" GridPane.columnIndex="1" />
+            <Button fx:id="Button6" mnemonicParsing="false" onMouseClicked="#changeColor" prefHeight="57.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="Button7" mnemonicParsing="false" onMouseClicked="#changeColor" prefHeight="59.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="Button8" mnemonicParsing="false" onMouseClicked="#changeColor" prefHeight="61.0" prefWidth="135.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Label layoutX="219.0" layoutY="90.0" prefHeight="17.0" prefWidth="178.0" text="Matching Game " textAlignment="CENTER">
+      <Label layoutX="245.0" layoutY="23.0" prefHeight="29.0" prefWidth="110.0" text="Matching " textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
+      <Button layoutX="33.0" layoutY="25.0" mnemonicParsing="false" onAction="#backtoActivities" text="Back" />
    </children>
 </Pane>

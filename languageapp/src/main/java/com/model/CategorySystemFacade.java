@@ -18,6 +18,7 @@ public class CategorySystemFacade {
     private Progress progress;
     private String language;
     private static CategorySystemFacade facade;
+    
 
     /**
      * constructor 
@@ -38,7 +39,7 @@ public class CategorySystemFacade {
         this.question = question;
         this.phrases = phrases;
         this.words = words;
-        this.progress = progress;
+        this.progress = (progress != null) ? progress : new Progress();
     }
 
     public CategorySystemFacade() {
@@ -51,6 +52,7 @@ public class CategorySystemFacade {
         }
         return facade;
     }
+
 
     /**
      * addUser method
@@ -156,6 +158,8 @@ public class CategorySystemFacade {
         }
         return categories;
     }
+
+    
 
     public void manageProgress(boolean isCorrectAnswer) {
         if (isCorrectAnswer) {
