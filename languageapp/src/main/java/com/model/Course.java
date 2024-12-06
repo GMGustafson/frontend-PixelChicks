@@ -30,12 +30,15 @@ public class Course {
                  * @param stories 
                  */
                 public Course(UUID courseID, String course, HashMap<String, ArrayList<Phrase>> phrases,  HashMap<String, ArrayList<Word>>words, String category, HashMap<String, Story> stories ){
+                    
                     this.courseID = courseID;
                     this.course = course;
                     this.phrases = phrases;
-                    this.category = category;
+                    this.category = stories.keySet().iterator().next();
                     this.words = words;
                     this.stories = stories;
+
+                    System.out.println("On creation" + category);
                 }
             
                 /**
@@ -99,6 +102,7 @@ public class Course {
              * @return category
              */
             public String getCategory(){
+
                 return category;
             }
         
@@ -137,6 +141,7 @@ public class Course {
             * @return stories.get(category)
             */
             public Story getStoriesByCategory(String category) {
+                System.out.println(category); 
                 return stories.get(category);
     }
     

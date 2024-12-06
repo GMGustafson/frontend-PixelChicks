@@ -17,7 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class ProgressController implements Initializable{
-
+    
     @FXML
     private Label Score;
 
@@ -40,20 +40,27 @@ public class ProgressController implements Initializable{
 
     private CategorySystemFacade facade;
     private Progress progress; 
+    private User user; 
 
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL url, ResourceBundle rb) {
         System.out.println("Hi inside"); 
+
+        System.out.println("null"); 
+        facade = CategorySystemFacade.getFacadeInstance();
+        user = facade.getCurrentUser(); 
+        System.out.println(user);
+        progress = user.getCurrentProgress();
+       
         if (this.progress == null)
         { 
-            System.out.println("null"); 
-            facade = CategorySystemFacade.getFacadeInstance();
-            progress = facade.getProgress(); 
             Score.setText("No Progress yet"); 
+           
         }
         else { 
             System.out.println("not null"); 
             facade = CategorySystemFacade.getFacadeInstance();
-            progress = facade.getProgress(); 
+            user = facade.getCurrentUser(); 
+            progress = user.getCurrentProgress(); 
             TotalWrong.setText("" + (progress.getTotalQuestionsAnswered() - progress.getNumCorrectAnswers())); 
             TotalCorrect.setText("" + (progress.getNumCorrectAnswers())); 
             TotalAnswered.setText("" + (progress.getTotalQuestionsAnswered()));

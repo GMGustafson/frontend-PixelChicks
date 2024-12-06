@@ -28,6 +28,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+/** 
+  * She wants us to like randomly pick them with an arraylist 
+  */
+
 public class MatchingController {
     private String[] words = {"rojo", "verde", "blanco", "azul", "amarillo", "naranja", "rosa", "morado", "gris"};
     @FXML

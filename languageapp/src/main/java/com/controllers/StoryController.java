@@ -44,80 +44,82 @@ public class StoryController implements Initializable {
 
     @FXML
     private Button translate;
-
-    @FXML
-    private Button next;
  
 
     @FXML
     void backtoActivites(ActionEvent event) throws IOException {
         App.setRoot("activities");
-        // System.out.print(this.course); 
     }   
 
     @FXML
     void readStoryAloud(ActionEvent event) {
         Narriator.playSound(concatSpanishText()); 
-        // "En la tienda, Tom compra una manzana roja.También busca dos naranjas maduras.Finalmente compra tres plátanos amarillos."
     }
 
     private CategorySystemFacade facade;
     private Story story;
     private User user;
     private Course course; 
+    private String userCategory; 
     private Progress progress; 
-    private String category; 
 
     @FXML
     void Translate(ActionEvent event) {
 
-        facade = CategorySystemFacade.getFacadeInstance();
-        progress = facade.getProgress(); 
-        category = progress.getCurrentCategory(); 
-        story = DataLoader.getStorybyCategory(null);
-        course = user.getCurrentCourse(); 
-        storyTitle.setText(story.getTitle()); 
-
-        SpanishText.setText("hola");
-    
         
+        facade = CategorySystemFacade.getFacadeInstance();
+        user = facade.getCurrentUser();
+        course = user.getCurrentCourse(); 
+        progress = user.getCurrentProgress(); 
+        userCategory = progress.getCurrentCategory();
+        
+        story = course.getStoriesByCategory(userCategory); 
+         
+        System.out.println(userCategory);
+        storyTitle.setText(story.getTitle());
         SpanishText.setText(concatSpanishText()); 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        facade = CategorySystemFacade.getFacadeInstance();
+        user = facade.getCurrentUser();
+        course = user.getCurrentCourse(); 
+        progress = user.getCurrentProgress(); 
+        userCategory = progress.getCurrentCategory(); 
+        
+        System.out.println(userCategory); 
 
+
+        story = course.getStoriesByCategory(userCategory); 
         englishText.setText(concatText());
-        storyTitle.setText(story.getTitle()); 
-        // englishText.setText("hii"); 
+        storyTitle.setText(story.getTitle());
+         
+        
     }
 
-    @FXML
-    void goToNextStory(ActionEvent event) {
-        // storyTitle.setText("title2" ); 
-        // englishText.setText("hiiiiiii"); 
-
-    }
 
     private String concatText()
     { 
-        String concatText = " ";
+        String concatText = ""; // Start with an empty string
         for (String t : story.getText()) 
         {
-        concatText = concatText + story.getText(); 
-         }
+            concatText = concatText + t; // Append each individual string `t`
+        }
         return concatText;
     }
+    
 
     private String concatSpanishText()
-    { 
-        String concatText = " ";
-        for (String t : story.getStoryTranslation()) 
-        {
-        concatText = concatText + story.getStoryTranslation(); 
-         }
-        return concatText;
+{ 
+    String concatText = ""; 
+    for (String t : story.getStoryTranslation()) 
+    {
+        concatText = concatText + t;
     }
+    return concatText;
+}
    
    
 }
