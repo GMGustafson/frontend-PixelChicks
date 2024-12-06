@@ -1,4 +1,7 @@
 package com.model;
+
+import java.util.List;
+import java.util.ArrayList;
 /**
  * @author zaniah, sri, gracie, and grace
  */
@@ -27,7 +30,7 @@ public class Phrase {
         //return "words";
         return phraseWords;
     }
-
+    
     /**
      * getTranslation method
      * Returns translation in the different language
@@ -47,4 +50,6 @@ public class Phrase {
         result += phraseWords + ": " + translation;
         return result;
     }
+
+    
 }

@@ -61,8 +61,12 @@ public class ActivitiesController {
 
     @FXML
     void GoToProgress(ActionEvent event) throws IOException{
+        System.out.println("In go to progress");
         App.setRoot("progress");
     }
+
+    
+
 
 
 }

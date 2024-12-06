@@ -7,11 +7,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <VBox alignment="CENTER" prefHeight="383.0" prefWidth="242.0" spacing="20.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.StoryController">
     <children>
       <Pane prefHeight="317.0" prefWidth="202.0">
          <children>
             <Button fx:id="back" layoutX="-15.0" layoutY="-24.0" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
+=======
+<VBox alignment="CENTER" prefHeight="334.0" prefWidth="242.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.StoryController">
+    <children>
+      <Pane prefHeight="317.0" prefWidth="202.0">
+         <children>
+            <Button fx:id="back" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
+>>>>>>> 3d4d71d3392d2ae40c5d4b533dab7edfb7b628c5
               <!-- Story Title -->
               <Label fx:id="storyTitle" layoutX="61.0" layoutY="37.0" text="Story Title" textAlignment="CENTER" wrapText="true">
                   <font>
@@ -20,6 +28,7 @@
               </Label>
       
                     <!-- English Translation -->
+<<<<<<< HEAD
               <Label fx:id="englishText" layoutX="11.0" layoutY="74.0" prefHeight="69.0" prefWidth="183.0" text="English Translation:" textAlignment="CENTER" wrapText="true">
                   <font>
                       <Font size="10.0" />
@@ -33,6 +42,19 @@
                     <!-- Read Aloud Button -->
               <Button fx:id="readStoryButton" layoutX="31.0" layoutY="298.0" onAction="#readStoryAloud" text="Read Aloud" />
             <Button fx:id="translate" layoutX="73.0" layoutY="265.0" mnemonicParsing="false" onAction="#Translate" prefHeight="16.0" prefWidth="54.0" text="Translate">
+=======
+              <Label fx:id="englishText" layoutX="33.0" layoutY="74.0" text="English Translation:" textAlignment="CENTER" wrapText="true">
+                  <font>
+                      <Font size="16.0" />
+                  </font>
+              </Label>
+            <Label fx:id="SpanishText" layoutX="27.0" layoutY="107.0" prefHeight="96.0" prefWidth="148.0" text="Text" />
+            <Button layoutX="80.0" layoutY="233.0" mnemonicParsing="false" text="Next" />
+      
+                    <!-- Read Aloud Button -->
+              <Button fx:id="readStoryButton" layoutX="62.0" layoutY="262.0" onAction="#readStoryAloud" text="Read Aloud" />
+            <Button fx:id="translate" layoutX="73.0" layoutY="206.0" mnemonicParsing="false" onAction="#Translate" prefHeight="16.0" prefWidth="54.0" text="Translate">
+>>>>>>> 3d4d71d3392d2ae40c5d4b533dab7edfb7b628c5
                <font>
                   <Font size="10.0" />
                </font>

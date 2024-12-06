@@ -13,7 +13,8 @@ public class CategorySystemFacade {
     private Category category;
     private Course course;
     private Question question;
-    private Phrase phrases;
+    private Phrase fitbQuestion;
+    private Phrase hint;
     private Word words;
     private Progress progress;
     private String language;
@@ -250,8 +251,9 @@ public class CategorySystemFacade {
      * a way for the user to study by answering fill in the blank questions
      */
     public void getFillintheBlank(){
-        FillInTheBlank fillInBlank = new FillInTheBlank(null, phrases, null,null );
+        FillInTheBlank fillInBlank = new FillInTheBlank(null, hint, fitbQuestion, null );
 
+        String hint = fillInBlank.getHint();
         String sentence = fillInBlank.getSampleSentence();
         String missingWord = fillInBlank.getMissingWord();
 

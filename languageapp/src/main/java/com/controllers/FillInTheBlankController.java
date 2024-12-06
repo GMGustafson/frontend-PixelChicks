@@ -54,13 +54,19 @@ public class FillInTheBlankController implements Initializable{
     private String currentCategory;
     private CourseList courseList;
     private FillInTheBlank fillInTheBlank;
-    private Phrase phrase;
+    //private Phrase phrase;
     private Word word;
-    private Progress progress;
+    private Phrase randomPhrase;
     private String correctAnswer;
-    private String missingWord;
     private String sentence;
-    private FillInTheBlank correctWord ;
+   // private String missingWord;
+    private Progress progress;
+    //private String correctAnswer;
+    private String missingWord;
+    //private Phrase sentence;
+    private String correctWord ;
+    private String sampleSentence;
+    private String question;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -69,15 +75,55 @@ public class FillInTheBlankController implements Initializable{
         progress = facade.getProgress();
         course = facade.getCurrentCourse();
         currentCategory = progress.getCurrentCategory();
-        showCategory.setText("Category: " + facade.getCategory());
+        
+        showCategory.setText("Category: " + currentCategory);
+
         //fillInTheBlank = FillInTheBlank.
-        showCategory.setText("Category: " + facade.getCategory());
-        //correctWord = FillInTheBlank.getMissingWord();
+
 
         
         // Load the hint by category
         ArrayList<Phrase> phrases = course.getPhrasesByCategory(currentCategory);
-        
+        if (phrases != null && !phrases.isEmpty()) {
+            if (phrases != null && !phrases.isEmpty()) {
+                Random random = new Random();
+                int randomIndex = random.nextInt(phrases.size());
+                randomPhrase = phrases.get(randomIndex); // Get the random Phrase object from the list
+                sentence = fillInTheBlank.getSampleSentence();
+
+
+                //missingWord = randomPhrase.getWords().getMissingWord(); // Assuming `getMissingWord` returns the correct word
+                //fitbQuestion.setText(randomPhrase.getSampleSentence());
+            }
+
+        }
+
+        fillInTheBlank = new FillInTheBlank(
+            "Fill in the Blank: ",
+            randomPhrase.getSampleSentence(),
+            randomPhrase.getTranslation(),
+            new ArrayList<>(),
+            new ArrayList<>(),
+            ""
+    );
+
+        sentence = fillInTheBlank.getSampleSentence();
+        missingWord = fillInTheBlank.getMissingWord();
+        correctAnswer = missingWord;
+
+        fitbQuestion.setText(sentence);
+        //wordBank.add
+
+
+
+        //Load the missing word
+        String questionString = randomPhrase.getWords();
+         
+
+        fitbQuestion.setText(""+ fillInTheBlank.getSampleSentence());
+        correctAnswer = fillInTheBlank.getMissingWord();
+        //Load the other answers
+
 
 
         //ArrayList<String> wordBank = new ArrayList<>(randomPhrase)
@@ -89,8 +135,42 @@ public class FillInTheBlankController implements Initializable{
 
         
         //ArrayList<Phrase> phrases = course.getPhrasesByCategory(currentCategory);
-        fitbQuestion.setText(""+ fillInTheBlank.getSampleSentence());
-        correctAnswer = fillInTheBlank.getMissingWord();
+        // fitbQuestion.setText(""+ fillInTheBlank.getSampleSentence());
+        // correctAnswer = fillInTheBlank.getMissingWord();
+
+
+
+        //Get answers
+        ArrayList<String> answers = fillInTheBlank.findOtherAnswers();
+        answers.add(correctAnswer);
+        Random random =new Random();
+        ArrayList<String> shuffledAnswers = new ArrayList<>(answers);
+        for (int i = 0; i < shuffledAnswers.size(); i++) {
+            int swapIndex = random.nextInt(shuffledAnswers.size());
+            String temp = shuffledAnswers.get(i);
+            shuffledAnswers.set(i, shuffledAnswers.get(swapIndex));
+            shuffledAnswers.set(swapIndex, temp);
+        }
+
+        String sentence = fillInTheBlank.getSampleSentence();
+
+        ArrayList<String> answers = fillInTheBlank.getOtherAnswers();
+        answers.add(correctAnswer);
+        random = new Random();
+        ArrayList<String> shuffledAnswers = new ArrayList<>(answers);
+        for (int i = 0; i < shuffledAnswers.size(); i++) {
+            int swapIndex = random.nextInt(shuffledAnswers.size());
+            String temp = shuffledAnswers.get(i);
+            shuffledAnswers.set(i, shuffledAnswers.get(swapIndex));
+            shuffledAnswers.set(swapIndex, temp);
+        }
+
+        fitbQuestion.setText(sentence);
+
+        fitbA.setText(shuffledAnswers.get(0));
+        fitbB.setText(shuffledAnswers.get(1));
+        fitbC.setText(shuffledAnswers.get(2));
+        fitbD.setText(shuffledAnswers.get(3));
 
         throw new UnsupportedOperationException("Unimplemented method 'initialize'");
     }
@@ -102,7 +182,7 @@ public class FillInTheBlankController implements Initializable{
 
     @FXML
     void chooseA(ActionEvent event) {
-        fillInTheBlank.checkAnswer(fitbA.getText());
+        // fillInTheBlank.checkAnswer(fitbA.getText());
     if (fitbA.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
         progress.trackCorrectAnswer();
         fitbQuestion.setText(sentence.replace(missingWord, " "));  
@@ -116,7 +196,7 @@ public class FillInTheBlankController implements Initializable{
 
     @FXML
     void chooseC(ActionEvent event) {
-        fillInTheBlank.checkAnswer(fitbC.getText());
+        // fillInTheBlank.checkAnswer(fitbC.getText());
         if (fitbC.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
             progress.trackCorrectAnswer();
         }
@@ -129,8 +209,7 @@ public class FillInTheBlankController implements Initializable{
     @FXML
     void chooseD(ActionEvent event) {
     
-    fitbD.setText("");
-    fillInTheBlank.checkAnswer(fitbD.getText());
+    //fillInTheBlank.checkAnswer(fitbD.getText());
     if (fitbD.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
         progress.trackCorrectAnswer();
     }
@@ -142,7 +221,7 @@ public class FillInTheBlankController implements Initializable{
 
     @FXML
     void chooseB(ActionEvent event) {
-        fillInTheBlank.checkAnswer(fitbB.getText());
+        // fillInTheBlank.checkAnswer(fitbB.getText());
     if (fitbB.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
         progress.trackCorrectAnswer();
     }
@@ -154,10 +233,11 @@ public class FillInTheBlankController implements Initializable{
 
     @FXML
     void showHint(ActionEvent event) {
-            hintLabel.setText(""+ phrase.getTranslation());
-            hintLabel.setText("");
+            hintLabel.setText(""+ randomPhrase.getTranslation());
             
     }
+
+
 }
 
 

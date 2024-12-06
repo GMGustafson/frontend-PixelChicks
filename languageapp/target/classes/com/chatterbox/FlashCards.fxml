@@ -25,7 +25,7 @@
 =======
 >>>>>>> 61b8f48dc1313f97593db04edcc7c9d474b26446
       <Button fx:id="Back" layoutX="23.0" layoutY="21.0" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
-      <Button layoutX="243.0" layoutY="304.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Relearn" />
+      <Button fx:id="relearn" layoutX="243.0" layoutY="304.0" mnemonicParsing="false" onAction="#tobeginning" prefHeight="35.0" prefWidth="97.0" text="Relearn" />
       <Button layoutX="243.0" layoutY="351.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Shuffle" />
       <ImageView fitHeight="165.0" fitWidth="291.0" layoutX="152.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
          <image>

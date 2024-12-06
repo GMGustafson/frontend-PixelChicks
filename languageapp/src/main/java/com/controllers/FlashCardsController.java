@@ -30,6 +30,9 @@ public class FlashCardsController implements Initializable {
     private Button forward;
 
     @FXML
+    private Button Relearn;
+
+    @FXML
     private Label wordLabel;
 
     @FXML
@@ -44,8 +47,13 @@ public class FlashCardsController implements Initializable {
   
 
     @FXML
-    void backtoActivites(ActionEvent event) {
+    void backtoActivites(ActionEvent event) throws IOException{
 
+    }
+
+    @FXML
+    void tobeginning(MouseEvent event) throws IOException{
+        Relearn.setText(null);
     }
 
     @FXML
@@ -80,11 +88,9 @@ public class FlashCardsController implements Initializable {
         // course = facade.chooseCourse(course);
         // co = course.getStoriesByCategory("colors");
 
-        
         showcard.setText("Welcome " + user.getFirstName() + " " + user.getLastName());
         
         categ.setText(category.getCategory());
-
 
     }
 
@@ -96,6 +102,8 @@ public class FlashCardsController implements Initializable {
             
 
         }
+        // int relearn = words[0];
+
     }
 
 }

@@ -35,7 +35,7 @@ public class ProgressController implements Initializable{
 
     @FXML
     void GoBack(ActionEvent event) throws IOException{
-        App.setRoot(); 
+                App.setRoot("activities"); 
     }
 
     private CategorySystemFacade facade;
