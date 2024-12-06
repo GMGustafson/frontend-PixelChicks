@@ -263,8 +263,8 @@ public class CategorySystemFacade {
         System.out.println(sentence.replace(missingWord, " "));
         System.out.println(hint); 
          
-        Phrase sampleSentence = new Phrase("some sample sentence", missingWord); // Ensure this is not null
-        System.out.println("Creating FillInTheBlank with sampleSentence: " + sampleSentence);
+        // Phrase sampleSentence = new Phrase("some sample sentence", missingWord); // Ensure this is not null
+        // System.out.println("Creating FillInTheBlank with sampleSentence: " + sampleSentence);
         
         return fillInBlank;
     }
