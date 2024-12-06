@@ -30,6 +30,7 @@ public class LoginController {
     void switchToActivites(ActionEvent event) throws IOException {
         String username = txt_username.getText();
         String password = txt_password.getText();
+        
 
         CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance();
 
@@ -42,15 +43,12 @@ public class LoginController {
         { 
            System.out.println("Valid login credentials.");
             /* testing purposes */
-            lbl_error.setText("Welcome"  + username + "  " + password); 
+            lbl_error.setText("Welcome"  + username + "  " + password ); 
             
 
            System.out.println("Valid login credentials." + username + "  " + password);
-<<<<<<< HEAD
-        App.setRoot("activities");
-=======
-            App.setRoot("matching");
->>>>>>> 0e1ce541325834f3bbdacdf912d548ea10a4d326
+            App.setRoot("activities");
+            // App.setRoot("matching");
         }
     }
     @FXML
