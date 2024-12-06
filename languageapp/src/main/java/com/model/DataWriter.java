@@ -49,7 +49,7 @@ public class DataWriter extends DataConstants {
 			FileWriter writer = new FileWriter(path);
 			
 			writer.write(jsonUserList.toJSONString());
-			writer.flush();
+			// writer.flush();
 
             //URI url = DataLoader.class.getResource(FILE_NAME_USER).toURI();  
             //FileWriter writer = new FileWriter(url.getPath());

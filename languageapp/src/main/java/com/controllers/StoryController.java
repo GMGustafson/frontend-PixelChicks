@@ -13,6 +13,7 @@ import com.model.CategorySystemFacade;
 import com.model.Course;
 import com.model.DataLoader;
 import com.model.Flashcard;
+import com.model.Progress;
 import com.model.Story;
 import com.model.User;
 import com.model.Word;
@@ -41,34 +42,88 @@ public class StoryController implements Initializable {
     @FXML
     private Label storyTitle;
 
-    private Story story;  // Updated to use Story object
+    @FXML
+    private Button translate;
+
+    @FXML
+    private Button next;
+ 
 
     @FXML
     void backtoActivites(ActionEvent event) throws IOException {
         App.setRoot("activities");
-    }
+        // System.out.print(this.course); 
+    }   
 
     @FXML
     void readStoryAloud(ActionEvent event) {
-        // For reading the story aloud (here you can loop over the text and translate it)
-        for (String sentence : story.getText()) {
-            Narriator.playSound(sentence);
-        }
+        // Narriator.playSound(concatSpanishText()); 
+        // "En la tienda, Tom compra una manzana roja.También busca dos naranjas maduras.Finalmente compra tres plátanos amarillos."
     }
+
 
     @FXML
     void Translate(ActionEvent event) {
-        // Ensure the 'story' object is loaded
-        if (story != null) {
-            storyTitle.setText(story.getTitle());
-            englishText.setText(String.join(" ", story.getText()));  // Join lines into a single text block
-            SpanishText.setText(String.join(" ", story.getStoryTranslation()));  // Join lines of translation
-        }
+
+        SpanishText.setText("hola");
+        
+        // CategorySystemFacade facade;
+        // User user;
+        // Progress progress; 
+        // String category;
+        // DataLoader dataLoader;
+        // Story story;  
+    
+        
+        // facade = CategorySystemFacade.getFacadeInstance();
+        // progress = facade.getProgress(); 
+        // category = progress.getCurrentCategory(); 
+        // story = DataLoader.getStorybyCategory(category);
+       
+
+        
+
+        // englishText.setText(concatText());
+        // SpanishText.setText(concatSpanishText()); 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Assuming the story is loaded here
-        story = StoryLoader.loadStory("languageapp/src/main/java/com/data/course.json");
+        storyTitle.setText("title"); 
+        englishText.setText("hii"); 
     }
+
+    @FXML
+    void goToNextStory(ActionEvent event) {
+        storyTitle.setText("title2" ); 
+        englishText.setText("hiiiiiii"); 
+
+    }
+
+    // private String concatText()
+    // { 
+    //     String concatText = " ";
+    //     for (String t : story.getText()) 
+    //     {
+    //     concatText = concatText + story.getText(); 
+    //      }
+    //     return concatText;
+    // }
+
+    // private String concatSpanishText()
+    // { 
+    //     String concatText = " ";
+    //     for (String t : story.getStoryTranslation()) 
+    //     {
+    //     concatText = concatText + story.getStoryTranslation(); 
+    //      }
+    //     return concatText;
+    // }
+   
+   
 }
+
+
+
+
+
