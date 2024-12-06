@@ -93,8 +93,16 @@ public class MockConvoController implements Initializable{
     private void displayQuestion(){
         ArrayList<Word> words = category.getWordsByCategory(null);
         words = course.getWordsByCategory("colors");
+        for (int i=0; i < words.size(); i++) {
+            Word mockwords = words.get(i);
+            
+
+        }
+
+
+        // answer1.setText(choices.get(0));
+        // answer2.setText(choices.get(1));
+        // answer3.setText(choices.get(2));
 
     }
 }
-
-    
