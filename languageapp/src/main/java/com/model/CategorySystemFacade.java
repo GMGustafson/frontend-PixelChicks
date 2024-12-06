@@ -157,6 +157,8 @@ public class CategorySystemFacade {
         return categories;
     }
 
+    
+
     public void manageProgress(boolean isCorrectAnswer) {
         if (isCorrectAnswer) {
             progress.trackCorrectAnswer();

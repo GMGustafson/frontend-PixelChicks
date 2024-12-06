@@ -47,43 +47,51 @@ public class FillInTheBlankController implements Initializable{
     @FXML
     private Label showCategory;
 
-    private Progress progress;
     private CategorySystemFacade facade;
     private User user;
     private UserList userList;
     private Course course;
-    private Course category;
+    private String currentCategory;
     private CourseList courseList;
     private FillInTheBlank fillInTheBlank;
     private Phrase phrase;
     private Word word;
+    private Progress progress;
     private String correctAnswer;
-
+    private String missingWord;
+    private String sentence;
+    private FillInTheBlank correctWord ;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        facade = CategorySystemFacade.getFacadeInstance()
+        facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser();
-        category = facade.getCategory();
-        course = Course.getAvailableCourse();
+        progress = facade.getProgress();
+        course = facade.getCurrentCourse();
+        currentCategory = progress.getCurrentCategory();
         showCategory.setText("Category: " + facade.getCategory());
+        //fillInTheBlank = FillInTheBlank.
+        showCategory.setText("Category: " + facade.getCategory());
+        //correctWord = FillInTheBlank.getMissingWord();
+
         
-        
-        //String currentCategory = progress.getCurrentCategory();
-        ArrayList<Word> answerList = course.getWordsByCategory(currentCategory);
-        ArrayList<String> altAnswers = word.getAlternatives();
-        
+        // Load the hint by category
         ArrayList<Phrase> phrases = course.getPhrasesByCategory(currentCategory);
+        
+
+
+        //ArrayList<String> wordBank = new ArrayList<>(randomPhrase)
+        // load the word and randomly place the missing word in one of the answers
+        //ArrayList<Word> altWords = new ArrayList<>(alternatives)
+        // Load the rest of the answer choices
+        
+
+
+        
+        //ArrayList<Phrase> phrases = course.getPhrasesByCategory(currentCategory);
         fitbQuestion.setText(""+ fillInTheBlank.getSampleSentence());
         correctAnswer = fillInTheBlank.getMissingWord();
 
-        Random random = new Random();
-        while (!altAnswers.isEmpty()) {
-            int index = random.nextInt(altAnswers.size());
-            System.out.println(altAnswers.remove(index));
-            // fitbA.setText();
-
-        }
         throw new UnsupportedOperationException("Unimplemented method 'initialize'");
     }
 
@@ -97,6 +105,7 @@ public class FillInTheBlankController implements Initializable{
         fillInTheBlank.checkAnswer(fitbA.getText());
     if (fitbA.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
         progress.trackCorrectAnswer();
+        fitbQuestion.setText(sentence.replace(missingWord, " "));  
     }
     else {
         fitbD.setText("X");
