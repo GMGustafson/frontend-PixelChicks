@@ -17,19 +17,21 @@ public class FillInTheBlank extends Question{
   private ArrayList<String> wordBank;
   private String userInput;
   private String correctAnswer;
-  private String hint;
+  private Phrase hint;
   private ArrayList<String> otherAnswers;
 
   private Word word;
  // private ArrayList
 
-  public FillInTheBlank(String question, Phrase sampleSentence, ArrayList<String> wordBank, String userInput) {
+  public FillInTheBlank(String question, Phrase sampleSentence, Phrase hint, ArrayList<String> wordBank, String userInput, ArrayList<String> otherAnswers) {
       //TODO Auto-generated constructor stub
       super(question);
   
       this.sampleSentence = sampleSentence;
       this.wordBank = wordBank;
+      this.hint = hint;
       this.phrase = phrase;
+
 
   }
 
@@ -79,8 +81,15 @@ public class FillInTheBlank extends Question{
   //   return words[index];
   // }
 
+  public String getHint() {
+    if (sampleSentence != null) {
+      return sampleSentence.getTranslation();
+    }
+    return correctAnswer;
+  }
+
   public String getMissingWord() {
-    String sentence = sampleSentence.getTranslation();  // Get the translated sentence
+    String sentence = sampleSentence.getWords();  // Get the translated sentence
     String[] words = sentence.split(" ");               // Split the sentence into individual words
     Random random = new Random();                       // Create a random object
     ArrayList<String> wordBank = getWordBank();         // Assume this method retrieves the current word bank
@@ -111,7 +120,7 @@ public class FillInTheBlank extends Question{
   }
 
   public ArrayList<String> findOtherAnswers () {
-    otherAnswers= word.getAlternatives();
+    otherAnswers = word.getAlternatives();
     ArrayList<String> selectedAnswers = new ArrayList<>();
     HashSet<Integer> indices = new HashSet<>();
     Random random = new Random();
@@ -122,8 +131,10 @@ public class FillInTheBlank extends Question{
         selectedAnswers.add(otherAnswers.get(index));
       }
     }
-    return selectedAnswers; // Substitute for other things
+    return selectedAnswers; 
     
   }
+
+
 
 }

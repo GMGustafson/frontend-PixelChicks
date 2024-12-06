@@ -60,7 +60,10 @@ public class FillInTheBlankController implements Initializable{
     private String correctAnswer;
     private String missingWord;
     private String sentence;
-    private FillInTheBlank correctWord ;
+    private String correctWord ;
+    private Phrase randomPhrase;
+    private Phrase sampleSentence;
+    private String question;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -69,15 +72,51 @@ public class FillInTheBlankController implements Initializable{
         progress = facade.getProgress();
         course = facade.getCurrentCourse();
         currentCategory = progress.getCurrentCategory();
+        
         showCategory.setText("Category: " + facade.getCategory());
         //fillInTheBlank = FillInTheBlank.
         showCategory.setText("Category: " + facade.getCategory());
-        //correctWord = FillInTheBlank.getMissingWord();
+
 
         
         // Load the hint by category
         ArrayList<Phrase> phrases = course.getPhrasesByCategory(currentCategory);
-        
+        if (phrases != null && !phrases.isEmpty()) {
+            Random random = new Random();
+            int randomIndex = random.nextInt(phrases.size()); // Generate a random index
+            randomPhrase = phrases.get(randomIndex); // Get the random Phrase object from the list
+            fitbQuestion.setText("" + randomPhrase);
+        }
+
+        fillInTheBlank = new FillInTheBlank ( 
+            question,
+            randomPhrase.getWords(),
+            randomPhrase.getTranslation(),
+            new ArrayList<>(),
+            new ArrayList<>(),
+            "" 
+
+        );
+
+        sentence = fillInTheBlank.getSampleSentence();
+        missingWord = fillInTheBlank.getMissingWord();
+        correctAnswer = missingWord;
+
+        fitbQuestion.setText(sentence);
+        wordBank.add
+
+
+
+        //Load the missing word
+
+        String questionString = randomPhrase.getWords();
+        String fillInTheBlank = questionString.getSampleSentence();
+         
+
+        fitbQuestion.setText(""+ fillInTheBlank.getSampleSentence());
+        correctAnswer = fillInTheBlank.getMissingWord();
+        //Load the other answers
+
 
 
         //ArrayList<String> wordBank = new ArrayList<>(randomPhrase)
@@ -92,6 +131,19 @@ public class FillInTheBlankController implements Initializable{
         fitbQuestion.setText(""+ fillInTheBlank.getSampleSentence());
         correctAnswer = fillInTheBlank.getMissingWord();
 
+
+
+        //Get answers
+        ArrayList<String> answers = fillInTheBlank.findOtherAnswers();
+        alternatives
+        Random random =new Random();
+        ArrayList<String> shuffledAnswers = new ArrayList<>(answers);
+        for (int i = 0; i < shuffledAnswers.size(); i++) {
+            int swapIndex = random.nextInt(shuffledAnswers.size());
+            String temp = shuffledAnswers.get(i);
+            shuffledAnswers.set(i, shuffledAnswers.get(swapIndex));
+            shuffledAnswers.set(swapIndex, temp);
+        }
         throw new UnsupportedOperationException("Unimplemented method 'initialize'");
     }
 
@@ -154,10 +206,12 @@ public class FillInTheBlankController implements Initializable{
 
     @FXML
     void showHint(ActionEvent event) {
-            hintLabel.setText(""+ phrase.getTranslation());
+            hintLabel.setText(""+ randomPhrase.getTranslation());
             hintLabel.setText("");
             
     }
+
+
 }
 
 
