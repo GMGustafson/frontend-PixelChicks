@@ -105,7 +105,8 @@ public static ArrayList<Course> getCourse() {
             JSONObject CourseJSON = (JSONObject)CoursesJSON.get(i);
             UUID courseID = UUID.fromString(String.valueOf(CourseJSON.get(COURSE_ID)));
             String course = (String)CourseJSON.get(COURSE);
-            String category = (String)CourseJSON.get(CURRENT_CATEGORY_TITLE);
+            String category = (String)CourseJSON.get(NEW_CATEGORY);
+            System.out.print("CATEGORY  " + " " + category); 
             HashMap<String, ArrayList<Phrase>> catPhrases = new HashMap<>();
             HashMap<String, ArrayList<Word>> catWords = new HashMap<>();
             HashMap<String, Story> catStories = new HashMap<>();

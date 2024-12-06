@@ -61,8 +61,10 @@ public class User{
      */
     public User(UUID id, String firstName, String lastName, String email, String phoneNumber, LocalDate dateOfBirth, String username, String password, HashMap<Course,Progress> courses) {
         this(id, firstName, lastName, email, "", dateOfBirth, username, password);
+        this.courses = courses; 
     }
 
+   
     /**
      * getID method
      * Returns user ID
@@ -86,8 +88,13 @@ public class User{
     }
 
     public Progress getCurrentProgress()
-    { 
-        return currentProgress; 
+
+    {   Progress progress = courses.get(getCurrentCourse());
+        System.out.println("Progress is " + progress + progress.getMissedWords() + progress.getNumCorrectAnswers() + progress.getCurrentCategory());
+         
+        return progress; 
+
+        // courses.get(getCurrentCourse()) + getUsername() +
     }
 
 
