@@ -56,12 +56,12 @@ public class ActivitiesController {
 
     @FXML
     void GoToStory(ActionEvent event)  throws IOException{
-        App.setRoot("Story");
+        App.setRoot("story");
     }
 
     @FXML
     void GoToProgress(ActionEvent event) throws IOException{
-        App.setRoot("Progress");
+        App.setRoot("progress");
     }
 
 

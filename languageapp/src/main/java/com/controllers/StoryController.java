@@ -40,55 +40,35 @@ public class StoryController implements Initializable {
 
     @FXML
     private Label storyTitle;
- 
+
+    private Story story;  // Updated to use Story object
 
     @FXML
     void backtoActivites(ActionEvent event) throws IOException {
         App.setRoot("activities");
-    }   
+    }
 
     @FXML
     void readStoryAloud(ActionEvent event) {
-        Narriator.playSound("En la tienda, Tom compra una manzana roja.También busca dos naranjas maduras.Finalmente compra tres plátanos amarillos."); 
+        // For reading the story aloud (here you can loop over the text and translate it)
+        for (String sentence : story.getText()) {
+            Narriator.playSound(sentence);
+        }
     }
-
-    private CategorySystemFacade facade;
-    private User user;
-    private Course course;
-    private Course co;
-    private Story story;
-    private Story sto;
 
     @FXML
     void Translate(ActionEvent event) {
-
-        facade = CategorySystemFacade.getFacadeInstance();
-        user = facade.getCurrentUser(); 
-        course = facade.getCurrentCourse();
-        //co = course.getStoriesByCategory("colors");
-
-        storyTitle.setText(story.getTitle()); 
-        // englishText.setText(story.getText());
-        // SpanishText.setText(story.getStoryTranslation()); 
+        // Ensure the 'story' object is loaded
+        if (story != null) {
+            storyTitle.setText(story.getTitle());
+            englishText.setText(String.join(" ", story.getText()));  // Join lines into a single text block
+            SpanishText.setText(String.join(" ", story.getStoryTranslation()));  // Join lines of translation
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        // Assuming the story is loaded here
+        story = StoryLoader.loadStory("languageapp/src/main/java/com/data/course.json");
     }
-
-    private void displayStory(){
-    ArrayList<Story> stories = course.getStoriesByCategory("colors");
-        for (int i=0; i < stories.size(); i++) {
-            Story storysentence = stories.get(i);
-            
-
-        }
-
-    
-    
-  
-
 }
-
-
