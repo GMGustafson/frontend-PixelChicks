@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -39,9 +40,20 @@ public class MockConvoController implements Initializable{
 
 
     @FXML
+    private RadioButton ansone;
+
+    @FXML
+    private RadioButton ansthree;
+
+    @FXML
+    private RadioButton anstwo;
+
+
+    @FXML
     void QuestionWillAppear(ActionEvent event) throws IOException {
-        Question.setText("Question");
+        Question.setText("Ques");
     }
+
     @FXML
     void backtoActivites(ActionEvent event) throws IOException {
          App.setRoot("activities");
@@ -58,8 +70,14 @@ public class MockConvoController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = CategorySystemFacade.getFacadeInstance();
-        user = facade.getCurrentUser();  
+        user = facade.getCurrentUser(); 
+        
+        
     }   
+
+    private void displayQuestion(){
+        
+    }
 }
 
     

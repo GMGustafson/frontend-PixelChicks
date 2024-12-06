@@ -10,32 +10,32 @@
 <?import javafx.scene.shape.QuadCurve?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.HomeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="449.0" style="-fx-background-color: #ffffc5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.HomeController">
    <children>
       <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="back" />
       <!-- onAction="#backtoActivites" -->
       <Ellipse fill="#87dae0" layoutX="187.0" layoutY="82.0" radiusX="114.0" radiusY="68.0" stroke="#87dae0" strokeType="INSIDE" />
       <Label fx:id="Question" layoutX="108.0" layoutY="47.0" prefHeight="69.0" prefWidth="158.0" />
-      <RadioButton layoutX="34.0" layoutY="220.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="305.0" text="Answer 1">
+      <RadioButton fx:id="ansone" layoutX="34.0" layoutY="220.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="305.0">
          <font>
             <Font size="24.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="34.0" layoutY="275.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="305.0" text="Answer 2">
+      <RadioButton fx:id="anstwo" layoutX="34.0" layoutY="275.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="305.0">
          <font>
             <Font size="24.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="34.0" layoutY="325.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="305.0" text="Answer 3">
+      <RadioButton fx:id="ansthree" layoutX="34.0" layoutY="325.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="305.0">
          <font>
             <Font size="24.0" />
          </font>
       </RadioButton>
       <Button fx:id="Ask" layoutX="59.0" layoutY="150.0" mnemonicParsing="false" text="Ask" />
       <!-- onAction="#QuestionWillAppear" -->
-      <Button fx:id="Hint" layoutX="8.0" layoutY="150.0" mnemonicParsing="false" text="Hint" />
+      <Button fx:id="hint" layoutX="8.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#giveHint" text="Hint" />
       <!-- onAction="#HintWillAppear"  -->
-      <Label fx:id="Hint" layoutX="8.0" layoutY="181.0" prefHeight="39.0" prefWidth="305.0" />
+      <Label fx:id="hintLabel" layoutX="8.0" layoutY="181.0" prefHeight="39.0" prefWidth="305.0" />
       <ImageView fitHeight="189.0" fitWidth="201.0" layoutX="260.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/parrot.png" />
