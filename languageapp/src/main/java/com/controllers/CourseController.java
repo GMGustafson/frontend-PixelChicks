@@ -51,43 +51,46 @@ public class CourseController implements Initializable {
 
         private CategorySystemFacade facade;
         private User user;
-    
+        private String currentCategory;
+        private Progress progress;
         @Override
         public void initialize(URL location, ResourceBundle resources) {
             facade = CategorySystemFacade.getFacadeInstance();
             user = facade.getCurrentUser();
+            progress = facade.getProgress();
+            currentCategory = progress.getCurrentCategory();
             courseLabel.setText("Welcome, " + user.getUsername());
 
         }
 
         @FXML
         void chooseColors(ActionEvent event) {
-        
+            currentCategory = "Colors";
         }
     
         @FXML
         void chooseNumbers(ActionEvent event) {
-    
+            currentCategory = "Numbers";
         }
     
         @FXML
         void choosePeople(ActionEvent event) {
-    
+            currentCategory = "People";
         }
     
         @FXML
         void choosePlaces(ActionEvent event) {
-    
+            currentCategory = "Places";
         }
     
         @FXML
         void chooseWeather(ActionEvent event) {
-    
+            currentCategory = "Weather";
         }
     
         @FXML
-        void toActivities(ActionEvent event) {
-    
+        void toActivities(ActionEvent event) throws IOException {
+            App.setRoot("activities");
         }
     
 }

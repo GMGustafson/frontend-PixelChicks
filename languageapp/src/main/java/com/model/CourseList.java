@@ -43,6 +43,7 @@ public class CourseList {
         return courses;
     }
 
+
     /**
      * getCourseByUUID method
      * retrieves the course by the UUID
