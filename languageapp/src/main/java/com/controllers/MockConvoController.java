@@ -16,11 +16,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class MockConvoController implements Initializable{
 
     @FXML
-    private Label Hint;
+    private Button hint;
+
+    @FXML
+    private Label hintLabel;
+
+    @FXML
+    void giveHint(MouseEvent event) throws IOException{
+        hintLabel.setText("hint");
+    }
 
     @FXML
     private Label Question;
@@ -28,10 +37,6 @@ public class MockConvoController implements Initializable{
     @FXML
     private Button back;
 
-    @FXML
-    void HintWillAppear(ActionEvent event) throws IOException {
-        Hint.setText("Hint");
-    }
 
     @FXML
     void QuestionWillAppear(ActionEvent event) throws IOException {
