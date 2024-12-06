@@ -49,6 +49,8 @@ public class CourseController implements Initializable {
         @FXML
         private Button next;
 
+        @FXML Label categoryLabel;
+
         private CategorySystemFacade facade;
         private User user;
         private String currentCategory;
@@ -59,33 +61,40 @@ public class CourseController implements Initializable {
             user = facade.getCurrentUser();
             progress = facade.getProgress();
             currentCategory = progress.getCurrentCategory();
-            courseLabel.setText("Welcome, " + user.getUsername());
+            if (user.getCurrentProgress() != null) {
+                courseLabel.setText("Welcome back, " + user.getUsername());
+                currentCategory = progress.getCurrentCategory();
+                categoryLabel.setText("Loading previous progress");
 
+            }
+            courseLabel.setText("Welcome, " + user.getUsername());
         }
 
         @FXML
-        void chooseColors(ActionEvent event) {
+        void chooseColors(ActionEvent event) throws IOException {
             currentCategory = "Colors";
         }
     
         @FXML
-        void chooseNumbers(ActionEvent event) {
+        void chooseNumbers(ActionEvent event) throws IOException {
             currentCategory = "Numbers";
         }
     
         @FXML
-        void choosePeople(ActionEvent event) {
+        void choosePeople(ActionEvent event) throws IOException {
             currentCategory = "People";
         }
     
         @FXML
-        void choosePlaces(ActionEvent event) {
+        void choosePlaces(ActionEvent event) throws IOException{
             currentCategory = "Places";
+
         }
     
         @FXML
-        void chooseWeather(ActionEvent event) {
+        void chooseWeather(ActionEvent event) throws IOException {
             currentCategory = "Weather";
+            App.setRoot("activities");
         }
     
         @FXML

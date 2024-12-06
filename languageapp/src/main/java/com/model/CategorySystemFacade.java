@@ -15,6 +15,7 @@ public class CategorySystemFacade {
     private Question question;
     private Phrase fitbQuestion;
     private Phrase hint;
+    private Phrase phrase;
     private Word words;
     private Progress progress;
     private String language;

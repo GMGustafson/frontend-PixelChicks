@@ -25,6 +25,7 @@ public class FillInTheBlank extends Question{
       super(question);
       this.sampleSentence = sampleSentence;
       this.wordBank = wordBank;
+      this.hint = hint;
   }
 
   public String checkAnswer(String userInput) 

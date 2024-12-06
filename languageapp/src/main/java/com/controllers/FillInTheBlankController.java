@@ -66,6 +66,7 @@ public class FillInTheBlankController implements Initializable{
     //private Phrase sentence;
     private String correctWord ;
     private String sampleSentence;
+    private ArrayList<String> answers;
     private String question;
 
     @Override
@@ -90,22 +91,22 @@ public class FillInTheBlankController implements Initializable{
                 int randomIndex = random.nextInt(phrases.size());
                 randomPhrase = phrases.get(randomIndex); // Get the random Phrase object from the list
                 sentence = fillInTheBlank.getSampleSentence();
-
-
+                missingWord = fillInTheBlank.getMissingWord();
+                answers = fillInTheBlank.getWordBank();
                 //missingWord = randomPhrase.getWords().getMissingWord(); // Assuming `getMissingWord` returns the correct word
                 //fitbQuestion.setText(randomPhrase.getSampleSentence());
             }
 
         }
 
-        fillInTheBlank = new FillInTheBlank(
-            "Fill in the Blank: ",
-            randomPhrase.getSampleSentence(),
-            randomPhrase.getTranslation(),
-            new ArrayList<>(),
-            new ArrayList<>(),
-            ""
-    );
+    //     fillInTheBlank = new FillInTheBlank(
+    //         "Fill in the Blank: ",
+    //         randomPhrase.getSampleSentence(),
+    //         randomPhrase.getTranslation(),
+    //         new ArrayList<>(),
+    //         new ArrayList<>(),
+    //         ""
+    // );
 
         sentence = fillInTheBlank.getSampleSentence();
         missingWord = fillInTheBlank.getMissingWord();
@@ -141,7 +142,7 @@ public class FillInTheBlankController implements Initializable{
 
 
         //Get answers
-        ArrayList<String> answers = fillInTheBlank.findOtherAnswers();
+        ArrayList<String> answers = fillInTheBlank.getOtherAnswers();
         answers.add(correctAnswer);
         Random random =new Random();
         ArrayList<String> shuffledAnswers = new ArrayList<>(answers);
@@ -154,10 +155,10 @@ public class FillInTheBlankController implements Initializable{
 
         String sentence = fillInTheBlank.getSampleSentence();
 
-        ArrayList<String> answers = fillInTheBlank.getOtherAnswers();
+        answers = fillInTheBlank.getOtherAnswers();
         answers.add(correctAnswer);
         random = new Random();
-        ArrayList<String> shuffledAnswers = new ArrayList<>(answers);
+        shuffledAnswers = new ArrayList<>(answers);
         for (int i = 0; i < shuffledAnswers.size(); i++) {
             int swapIndex = random.nextInt(shuffledAnswers.size());
             String temp = shuffledAnswers.get(i);
