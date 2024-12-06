@@ -70,6 +70,27 @@ public class MatchingController {
         Button1.setOnMouseClicked(e -> {
             Button1.setStyle("-fx-background-color: yellow");
         });
+        Button2.setOnMouseClicked(e -> {
+            Button2.setStyle("-fx-background-color: pink");
+        });
+        Button3.setOnMouseClicked(e -> {
+            Button3.setStyle("-fx-background-color: blue");
+        });
+        Button4.setOnMouseClicked(e -> {
+            Button4.setStyle("-fx-background-color: green");
+        });
+        Button5.setOnMouseClicked(e -> {
+            Button5.setStyle("-fx-background-color: red");
+        });
+        Button6.setOnMouseClicked(e -> {
+            Button6.setStyle("-fx-background-color: white");
+        });
+        Button7.setOnMouseClicked(e -> {
+            Button7.setStyle("-fx-background-color: orange");
+        });
+        Button8.setOnMouseClicked(e -> {
+            Button8.setStyle("-fx-background-color: purple");
+        });
     }
     
     
@@ -77,6 +98,7 @@ public class MatchingController {
     void initialize() {
         List<Button> buttons1 = List.of(Button1, Button2, Button3, Button4); 
         List<Button> buttons2 = List.of(Button5, Button6, Button7, Button8);
+        // Collections.shuffle(buttons1);
 
 
    
@@ -100,7 +122,7 @@ public class MatchingController {
     // }
 
     Map<String, String> wordMap = new HashMap<>();
-    wordMap.put("rojo", "red");
+    wordMap.put("rojo", "red"); 
     wordMap.put("verde", "green");
     wordMap.put("blanco", "white");
     wordMap.put("azul", "blue");
@@ -123,13 +145,66 @@ public class MatchingController {
     int wordCount = buttons1.size();
 
     for (int i = 0; i < wordCount; i++) {
+        final int index = i;
         buttons1.get(i).setText(spanishWords.get(i));
+        buttons1.get(i).setOnMouseClicked(e -> {
+            buttons1.get(index).setStyle("-fx-background-color: " + getColor(spanishWords.get(index)));
+        });
+        // buttons1.get(i).setStyle("-fx-background-color: " + getColor(spanishWords.get(i)));
     }
 
     int wordCount2 = buttons2.size();
     for (int i = 0; i < wordCount2; i++) {
+        final int index = i;
         buttons2.get(i).setText(englishWords.get(i));
+        buttons2.get(i).setOnMouseClicked(e -> {
+            buttons2.get(index).setStyle("-fx-background-color: " + getColor(englishWords.get(index)));
+        });
+        // buttons2.get(i).setStyle("-fx-background-color: " + getColor(englishWords.get(i)));
     }   
+}
+
+private String getColor(String word){
+    switch (word) {
+        case "rojo":
+            return "red";
+        case "verde":
+            return "green";
+        case "blanco":
+            return "white";
+        case "azul":
+            return "blue";
+        case "amarillo":
+            return "yellow";
+        case "naranja":
+            return "orange";
+        case "rosa":
+            return "pink";
+        case "morado":
+            return "purple";
+        case "gris":
+            return "gray";
+        case "red":
+            return "red";
+        case "green":
+            return "green";
+        case "white":
+            return "white";
+        case "blue":
+            return "blue";
+        case "yellow":
+            return "yellow";
+        case "orange":
+            return "orange";
+        case "pink":
+            return "pink";
+        case "purple":
+            return "purple";
+        case "gray":
+            return "gray";
+        default:
+            return "black";
+    }
 }
 
 }

@@ -2,28 +2,43 @@
     -fx-font-size: 16pt;
     -fx-font-family: "Helvetica";
     /*-fx-base: #87c7d1;*/
-    /*-fx-background: #f2f2f2;*/
+    -fx-background: #3BA1B8;
     -fx-text-fill: #ffffff;
-    -fx-background-image: url("../images/background.jpg");
+    /* -fx-background-image: url("../images/background.jpg"); */
   }
   
   .label {
-    -fx-text-fill: #000000;
-  }
-  
-  .button {
-    -fx-background-color: black;
     -fx-text-fill: #ffffff;
   }
   
-  .book-grid-item {
-    -fx-background-color: #590202;
-    -fx-padding: 10px;
-    -fx-background-radius: 5;
-    -fx-alignment: center;
+  .button {
+    -fx-background-color: #F2B90C;
+    -fx-text-fill: #ffffff;
   }
   
-  .book-grid-item > .label {
-    -fx-text-fill: #fff;
-    -fx-padding: 5px;
+
+  #dictionaryWords
+  { 
+    -fx-text-fill:#2a7c8f; 
   }
+
+  /* #Logout
+  { 
+    -fx-text-fill:#2a7c8f; 
+  } */
+
+  #SignUp
+  {
+    -fx-text-fill:#ffffff;
+  }
+
+  #WelcomeBack
+  { 
+    -fx-text-fill:#2a7c8f;
+  }
+
+  .button :hover
+  { 
+    -fx-background-color: #f8dd8b
+  }
+  

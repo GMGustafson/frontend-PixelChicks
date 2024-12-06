@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="399.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+<Pane prefHeight="383.0" prefWidth="269.0" stylesheets="@../../../../src/main/resources/com/chatterbox/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="162.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logout" wrappingWidth="82.7664794921875">
+      <Label fx:id="Logout" layoutX="-190.0" prefHeight="53.0" prefWidth="439.0" stylesheets="@../../../../src/main/resources/com/chatterbox/styles.css" text="Logout">
          <font>
-            <Font size="27.0" />
+            <Font size="36.0" />
          </font>
-      </Text>
-      <Text layoutX="86.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thanks for playing! See you Next Time! " textAlignment="CENTER" wrappingWidth="219.32077026367188">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Text>
+         <padding>
+            <Insets left="265.0" />
+         </padding>
+      </Label>
+      <Label fx:id="Logout" layoutX="36.0" layoutY="274.0" prefHeight="95.0" prefWidth="198.0" stylesheets="@../../../../src/main/resources/com/chatterbox/styles.css" text="Thanks for playing! " textFill="WHITE" />
+      <ImageView fitHeight="201.0" fitWidth="263.0" layoutX="30.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/Untitled%20(6).png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
