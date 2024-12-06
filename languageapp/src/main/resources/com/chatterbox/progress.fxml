@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- 
-<?import com.gluonhq.charm.glisten.control.AppBar?>
-<?import com.gluonhq.charm.glisten.control.ProgressBar?> -->
-
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane blendMode="OVERLAY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.ProgressController">
+<Pane blendMode="OVERLAY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="374.0" style="-fx-background-color: purple;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.ProgressController">
    <children>
       <Text layoutX="39.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Answered:">
          <font>
