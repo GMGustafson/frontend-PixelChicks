@@ -60,6 +60,7 @@ public class CourseController implements Initializable {
             facade = CategorySystemFacade.getFacadeInstance();
             user = facade.getCurrentUser();
             progress = facade.getProgress();
+            course = user.getCourse();
             currentCategory = progress.getCurrentCategory();
             if (user.getCurrentProgress() != null) {
                 courseLabel.setText("Welcome back, " + user.getUsername());

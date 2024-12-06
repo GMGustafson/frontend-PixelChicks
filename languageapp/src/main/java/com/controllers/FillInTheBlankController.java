@@ -49,42 +49,38 @@ public class FillInTheBlankController implements Initializable{
 
     private CategorySystemFacade facade;
     private User user;
-    private UserList userList;
     private Course course;
-    private String currentCategory;
-    private CourseList courseList;
+    private String userCategory;
     private FillInTheBlank fillInTheBlank;
-    //private Phrase phrase;
     private Word word;
     private Phrase randomPhrase;
     private String correctAnswer;
     private String sentence;
-   // private String missingWord;
     private Progress progress;
-    //private String correctAnswer;
     private String missingWord;
-    //private Phrase sentence;
     private String correctWord ;
     private String sampleSentence;
     private ArrayList<String> answers;
     private String question;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser();
-        progress = facade.getProgress();
-        course = facade.getCurrentCourse();
-        currentCategory = progress.getCurrentCategory();
+        progress = user.getCurrentProgress();
+        course = user.getCurrentCourse();
+        userCategory = progress.getCurrentCategory();
         
-        showCategory.setText("Category: " + currentCategory);
+        
+        showCategory.setText("Category: " + userCategory);
 
         //fillInTheBlank = FillInTheBlank.
 
 
         
         // Load the hint by category
-        ArrayList<Phrase> phrases = course.getPhrasesByCategory(currentCategory);
+        ArrayList<Phrase> phrases = course.getPhrasesByCategory(userCategory);
         if (phrases != null && !phrases.isEmpty()) {
             if (phrases != null && !phrases.isEmpty()) {
                 Random random = new Random();
@@ -113,9 +109,6 @@ public class FillInTheBlankController implements Initializable{
         correctAnswer = missingWord;
 
         fitbQuestion.setText(sentence);
-        //wordBank.add
-
-
 
         //Load the missing word
         String questionString = randomPhrase.getWords();
@@ -141,7 +134,7 @@ public class FillInTheBlankController implements Initializable{
 
 
 
-        //Get answers
+        // Get answers
         ArrayList<String> answers = fillInTheBlank.getOtherAnswers();
         answers.add(correctAnswer);
         Random random =new Random();
