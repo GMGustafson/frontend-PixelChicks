@@ -15,7 +15,7 @@ import com.model.CategorySystemFacade;
 import com.chatterbox.App;
 import com.model.Category;
 import com.model.Course;
-import com.chatterbox.App;
+import com.controllers.WordLoader;
 
 import java.io.IOException;
 import java.net.URL;
@@ -64,19 +64,43 @@ public class MatchingController {
         App.setRoot("activities");
     }
     
-    private Course category;
     @FXML
     void initialize() {
-        List<Button> buttons = List.of(Button1, Button2, Button3, Button4, Button5, Button6, Button7, Button8);
+        List<Button> buttons1 = List.of(Button1, Button2, Button3, Button4); 
+        List<Button> buttons2 = List.of(Button5, Button6, Button7, Button8);
+
 
    
-    List<String> wordList = new ArrayList<>(List.of("rojo", "verde", "blanco", "azul", "amarillo", "naranja", "rosa", "morado", "gris"));
-    List<String> englishList = new ArrayList<>(List.of("red", "green", "white", "blue", "yellow", "orange", "pink", "purple", "gray"));
-    Collections.shuffle(wordList);
-    Collections.shuffle(englishList);
+    List<String> words = new ArrayList<>(List.of("rojo", "verde", "blanco", "azul", "amarillo", "naranja", "rosa", "morado", "gris"));
+    List<String> wordList = new ArrayList<>(WordLoader.getRandomizedWords(words));
 
     
+    int wordCount = buttons1.size();
 
+    for (int i = 0; i < wordCount; i++) {
+        buttons1.get(i).setText(wordList.get(i));
     }
+
+    List<String> words2 = new ArrayList<>(List.of("red", "green", "white", "blue", "yellow", "orange", "pink", "purple", "gray"));
+    List<String> wordList2 = new ArrayList<>(WordLoader.getRandomizedWords(words2));
+
+    int wordCount2 = buttons2.size();
+
+    for (int i = 0; i < wordCount2; i++) {
+        buttons2.get(i).setText(wordList2.get(i));
+    }
+
+    Map<String, String> wordMap = new HashMap<String, String>();
+    wordMap.put("rojo", "red");
+    wordMap.put("verde", "green");
+    wordMap.put("blanco", "white");
+    wordMap.put("azul", "blue");
+    wordMap.put("amarillo", "yellow");
+    wordMap.put("naranja", "orange");
+    wordMap.put("rosa", "pink");
+    wordMap.put("morado", "purple");
+    wordMap.put("gris", "gray");
+}
+
 }
 
