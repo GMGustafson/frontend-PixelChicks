@@ -22,9 +22,19 @@
     -fx-text-fill:#2a7c8f; 
   }
 
-  #Logout
+  /* #Logout
   { 
     -fx-text-fill:#2a7c8f; 
+  } */
+
+  #SignUp
+  {
+    -fx-text-fill:#ffffff;
+  }
+
+  #WelcomeBack
+  { 
+    -fx-text-fill:#2a7c8f;
   }
 
   .button :hover

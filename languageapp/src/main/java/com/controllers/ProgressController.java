@@ -1,15 +1,19 @@
 package com.controllers;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.chatterbox.App;
 import com.model.CategorySystemFacade;
 import com.model.CourseList;
 import com.model.Progress;
 import com.model.User;
 import com.model.UserList;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class ProgressController implements Initializable{
@@ -26,6 +30,13 @@ public class ProgressController implements Initializable{
     @FXML
     private Label TotalWrong;
 
+    @FXML
+    private Button Back;
+
+    @FXML
+    void GoBack(ActionEvent event) throws IOException{
+        App.setRoot(); 
+    }
 
     private CategorySystemFacade facade;
     private Progress progress; 

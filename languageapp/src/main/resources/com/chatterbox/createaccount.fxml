@@ -37,12 +37,12 @@
          <font>
             <Font size="11.0" />
          </font></Button>
-      <Text layoutX="15.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number:" />
-      <Text layoutX="17.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
-      <Text layoutX="17.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday:" />
-      <Text layoutX="17.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
-      <Text layoutX="18.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
-      <Text layoutX="54.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up " wrappingWidth="173.6666259765624">
+      <Text fx:id="SignUp" fill="WHITE" layoutX="15.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number:" />
+      <Text fx:id="SignUp" fill="WHITE" layoutX="17.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+      <Text fx:id="SignUp" fill="WHITE" layoutX="17.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday:" />
+      <Text fx:id="SignUp" fill="WHITE" layoutX="17.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
+      <Text fx:id="SignUp" fill="WHITE" layoutX="18.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
+      <Text fx:id="SignUp" fill="WHITE" layoutX="54.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up " wrappingWidth="173.6666259765624">
          <font>
             <Font size="36.0" />
          </font></Text>

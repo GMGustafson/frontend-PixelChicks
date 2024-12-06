@@ -10,19 +10,24 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="371.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.LoginController">
    <children>
-      <ImageView fitHeight="225.0" fitWidth="214.0" layoutX="171.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="225.0" fitWidth="214.0" layoutX="171.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/parrot.png" />
          </image>
       </ImageView>
-      <Label layoutX="21.0" layoutY="17.0" prefHeight="91.0" prefWidth="234.0" text="Welcome to ChatterBox" textAlignment="CENTER">
+      <ImageView fitHeight="162.0" fitWidth="155.0" layoutX="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/Untitled_4.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="WelcomeBack" layoutX="109.0" layoutY="15.0" prefHeight="91.0" prefWidth="110.0" text="Welcome Back!" textAlignment="CENTER" textFill="#0b0a0a" wrapText="true">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <TextField fx:id="txt_username" layoutX="35.0" layoutY="114.0" prefHeight="38.0" prefWidth="206.0" promptText="username" />
-      <TextField fx:id="txt_password" layoutX="35.0" layoutY="172.0" prefHeight="46.0" prefWidth="206.0" promptText="password" />
-      <Button fx:id="loginUser" layoutX="160.0" layoutY="235.0" onAction="#switchToActivites" text="Login" textFill="RED" />
+      <TextField fx:id="txt_username" layoutX="35.0" layoutY="173.0" prefHeight="38.0" prefWidth="206.0" promptText="username" />
+      <TextField fx:id="txt_password" layoutX="35.0" layoutY="231.0" prefHeight="46.0" prefWidth="206.0" promptText="password" />
+      <Button fx:id="loginUser" layoutX="160.0" layoutY="294.0" onAction="#switchToActivites" text="Login" textFill="RED" />
       <Label fx:id="lbl_error" layoutX="-157.0" layoutY="-25.0" />
    </children>
 </Pane>

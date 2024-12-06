@@ -14,7 +14,7 @@
 
 <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="673.0" prefWidth="455.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.CreateAccountController">
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up" textAlignment="CENTER" wrappingWidth="234.84376525878906">
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up" textAlignment="CENTER" wrappingWidth="234.84376525878906">
          <font>
             <Font size="24.0" />
          </font>
