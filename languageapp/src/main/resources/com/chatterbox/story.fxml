@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="383.0" prefWidth="242.0" spacing="20.0" stylesheets="@../../../../../target/classes/com/chatterbox/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.StoryController">
+<VBox alignment="CENTER" prefHeight="383.0" prefWidth="242.0" spacing="20.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.StoryController">
     <children>
       <Pane prefHeight="317.0" prefWidth="202.0">
          <children>

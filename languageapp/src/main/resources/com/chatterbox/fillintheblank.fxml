@@ -24,7 +24,7 @@
         </rowConstraints>
          <children>
             <Button fx:id="fitbA" alignment="CENTER" mnemonicParsing="false" onAction="#chooseA" prefHeight="66.0" prefWidth="76.0" stylesheets="@styles.css" text="A" />
-            <Button fx:id="fitbB" alignment="CENTER" mnemonicParsing="false" onAction="#fitbD" prefHeight="66.0" prefWidth="82.0" stylesheets="@styles.css" text="B" GridPane.columnIndex="1" />
+            <Button fx:id="fitbB" alignment="CENTER" mnemonicParsing="false" onAction="#chooseB" prefHeight="66.0" prefWidth="82.0" stylesheets="@styles.css" text="B" GridPane.columnIndex="1" />
             <Button fx:id="fitbC" alignment="CENTER" mnemonicParsing="false" onAction="#chooseC" prefHeight="67.0" prefWidth="75.0" stylesheets="@styles.css" text="C" GridPane.rowIndex="1" />
             <Button fx:id="fitbD" alignment="CENTER" mnemonicParsing="false" onAction="#chooseD" prefHeight="18.0" prefWidth="82.0" stylesheets="@styles.css" text="D" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
