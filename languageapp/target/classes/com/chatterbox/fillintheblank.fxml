@@ -13,7 +13,7 @@
       <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToActivities" text="Back" />
       <Button fx:id="fitbA" alignment="CENTER" layoutX="130.0" layoutY="218.0" mnemonicParsing="false" onAction="#chooseA" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="A" />
       <Button fx:id="fitbC" alignment="CENTER" layoutX="130.0" layoutY="288.0" mnemonicParsing="false" onAction="#chooseC" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="C" />
-      <Button fx:id="fitbB" alignment="CENTER" layoutX="316.0" layoutY="288.0" mnemonicParsing="false" onAction="#fitbD" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="B" />
+      <Button fx:id="fitbB" alignment="CENTER" layoutX="316.0" layoutY="288.0" mnemonicParsing="false" onAction="#chooseB" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="B" />
       <Button fx:id="fitbD" alignment="CENTER" layoutX="316.0" layoutY="218.0" mnemonicParsing="false" onAction="#chooseD" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="D" />
    </children>
 </AnchorPane>

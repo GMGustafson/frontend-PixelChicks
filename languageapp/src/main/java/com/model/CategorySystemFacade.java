@@ -255,7 +255,8 @@ public class CategorySystemFacade {
 
         //FillInTheBlank fillInBlank = new FillInTheBlank( fitbQuestion,  );
         ArrayList<Phrase> phrases = fillInBlank.getPhrases();
-        String sentence = fillInBlank.getSampleSentence();
+        Phrase sampleSentence = fillInBlank.getSampleSentence();
+        String sentence = fillInBlank.getSentence();
         String missingWord = fillInBlank.getMissingWord();
         ArrayList<String> wordBank = fillInBlank.getWordBank();
         System.out.println("Fill in the blank:");

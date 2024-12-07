@@ -21,6 +21,14 @@ public class Phrase {
     this.translation = translation;
     }
 
+    public void setWords(String phraseWords) {
+        this.phraseWords = phraseWords;
+    }
+
+    public void setTranslation(String translation) {
+        this.translation = translation;
+    }
+
     /**
      * getWords method
      * Returns words in phrase
