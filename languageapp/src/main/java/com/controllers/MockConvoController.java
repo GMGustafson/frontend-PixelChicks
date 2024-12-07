@@ -1,4 +1,5 @@
 package com.controllers;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -29,7 +30,6 @@ public class MockConvoController implements Initializable{
 
     @FXML
     private Button back;
-
 
     @FXML
     private RadioButton ansone;
@@ -81,7 +81,7 @@ public class MockConvoController implements Initializable{
     }
 
     @FXML
-    void backtoActivites(ActionEvent event) throws IOException {
+    void backtoActivites(MouseEvent event) throws IOException {
         progress.saveProgress();
         App.setRoot("activities");
     }
