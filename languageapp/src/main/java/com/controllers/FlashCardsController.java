@@ -62,7 +62,7 @@ public class FlashCardsController implements Initializable {
     void shuffle(ActionEvent event) {
         Collections.shuffle(wordList);
         index = 0;
-        displayCard();
+        displayCard(); 
     }
 
     @FXML
