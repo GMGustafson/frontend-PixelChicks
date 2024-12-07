@@ -59,9 +59,6 @@ public class MockConvoController implements Initializable{
     @FXML
     private Button next;
 
-    @FXML
-    private Label rightorwrong;
-
     private String getChosenAns() {
         if (ansone.isSelected()) return ansone.getText();
         if (anstwo.isSelected()) return anstwo.getText();

@@ -21,7 +21,7 @@
             <Font size="24.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="anstwo" layoutX="14.0" layoutY="257.0" mnemonicParsing="false" onMouseClicked="#pickthis" prefHeight="47.0" prefWidth="305.0">
+      <RadioButton fx:id="anstwo" layoutX="14.0" layoutY="257.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="305.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -41,8 +41,7 @@
          </image>
       </ImageView>
       <QuadCurve controlX="-50.0" controlY="-100.0" endX="43.999969482421875" endY="17.000015258789062" fill="#87dae0" layoutX="274.0" layoutY="128.0" startX="-50.0" stroke="#87dae0" strokeType="INSIDE" />
-      <Button fx:id="submit" layoutX="160.0" layoutY="363.0" mnemonicParsing="false" onMouseClicked="#check" text="Submit" />
-      <Button fx:id="next" layoutX="225.0" layoutY="363.0" mnemonicParsing="false" onMouseClicked="#nextques" prefHeight="25.0" prefWidth="54.0" text="Next" />
-      <Label fx:id="rightorwrong" layoutX="115.0" layoutY="363.0" prefHeight="25.0" prefWidth="38.0" />
+      <Button fx:id="submit" layoutX="155.0" layoutY="363.0" mnemonicParsing="false" onMouseClicked="#check" prefHeight="25.0" prefWidth="65.0" text="Submit" />
+      <Button fx:id="next" layoutX="238.0" layoutY="363.0" mnemonicParsing="false" onMouseClicked="#nextques" prefHeight="25.0" prefWidth="65.0" text="Next" />
    </children>
 </Pane>
