@@ -105,9 +105,11 @@ public class FlashCardsController implements Initializable {
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
         course = facade.chooseCourse(course);
+        category = user.getCurrentCourse();
         wordList = category.getWordsByCategory("colors");
         categ.setText(category.getCategory());
-
+         
+        displayCard();
     }
 
     
