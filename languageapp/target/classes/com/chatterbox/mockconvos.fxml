@@ -12,10 +12,10 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="449.0" style="-fx-background-color: #ffffc5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.MockConvoController">
    <children>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false"  onMouseClicked="#backtoActivities" text="back" />
-      <!-- onAction="#backtoActivites" -->
+      <QuadCurve controlX="-50.0" controlY="-100.0" endX="43.999969482421875" endY="17.000015258789062" fill="#87dae0" layoutX="274.0" layoutY="128.0" startX="-50.0" stroke="#87dae0" strokeType="INSIDE" />
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#backtoActivities" text="back" />
+      <!-- onAction="#backtoActivities" -->
       <Ellipse fill="#87dae0" layoutX="187.0" layoutY="82.0" radiusX="114.0" radiusY="68.0" stroke="#87dae0" strokeType="INSIDE" />
-      <Label fx:id="Question" layoutX="108.0" layoutY="47.0" prefHeight="69.0" prefWidth="158.0" />
       <RadioButton fx:id="ansone" layoutX="14.0" layoutY="177.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="305.0">
          <font>
             <Font size="24.0" />
@@ -36,8 +36,8 @@
             <Image url="@../../images/parrot.png" />
          </image>
       </ImageView>
-      <QuadCurve controlX="-50.0" controlY="-100.0" endX="43.999969482421875" endY="17.000015258789062" fill="#87dae0" layoutX="274.0" layoutY="128.0" startX="-50.0" stroke="#87dae0" strokeType="INSIDE" />
       <Button fx:id="submit" layoutX="143.0" layoutY="363.0" mnemonicParsing="false" onMouseClicked="#check" prefHeight="25.0" prefWidth="65.0" text="Submit" />
       <Button fx:id="next" layoutX="238.0" layoutY="363.0" mnemonicParsing="false" onMouseClicked="#nextques" prefHeight="25.0" prefWidth="65.0" text="Next" />
+      <Label fx:id="Question" layoutX="108.0" layoutY="47.0" prefHeight="69.0" prefWidth="158.0" />
    </children>
 </Pane>
