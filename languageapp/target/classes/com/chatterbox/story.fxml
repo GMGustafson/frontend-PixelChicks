@@ -22,12 +22,12 @@
                     <!-- English Translation -->
               <Label fx:id="englishText" layoutX="11.0" layoutY="74.0" prefHeight="69.0" prefWidth="183.0" text="English Translation:" textAlignment="CENTER" wrapText="true">
                   <font>
-                      <Font size="10.0" />
+                      <Font size="11.0" />
                   </font>
               </Label>
-            <Label fx:id="SpanishText" layoutX="14.0" layoutY="139.0" prefHeight="117.0" prefWidth="187.0" text="Text" wrapText="true">
+            <Label fx:id="SpanishText" layoutX="14.0" layoutY="139.0" prefHeight="117.0" prefWidth="187.0" text="Translation:" wrapText="true">
                <font>
-                  <Font size="10.0" />
+                  <Font size="11.0" />
                </font></Label>
       
                     <!-- Read Aloud Button -->
