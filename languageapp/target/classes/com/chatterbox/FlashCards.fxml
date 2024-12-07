@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.FlashCardsController">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2a7c8f;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.FlashCardsController">
    <children>
       <Text layoutX="237.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flashcards">
          <font>
@@ -17,8 +17,7 @@
          </font>
       </Text>
       <Button fx:id="Back" layoutX="23.0" layoutY="21.0" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
-      <Button fx:id="relearn" layoutX="243.0" layoutY="304.0" mnemonicParsing="false" onAction="#tobeginning" onMouseClicked="#tobeginning" prefHeight="35.0" prefWidth="97.0" text="Relearn" />
-      <Button layoutX="243.0" layoutY="351.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Shuffle" />
+      <Button fx:id="relearn" layoutX="242.0" layoutY="319.0" mnemonicParsing="false" onAction="#tobeginning" onMouseClicked="#tobeginning" prefHeight="35.0" prefWidth="97.0" text="Relearn" />
       <ImageView fitHeight="165.0" fitWidth="291.0" layoutX="152.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/flashcard.jpg" />
@@ -26,7 +25,7 @@
       </ImageView>
       <Button layoutX="203.0" layoutY="260.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="40.0" text="&lt;" />
       <Button fx:id="forward" layoutX="333.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#goNext" prefHeight="32.0" prefWidth="40.0" text="&gt;" />
-      <Label fx:id="wordLabel" alignment="CENTER" layoutX="229.0" layoutY="123.0" onMouseClicked="#translateCard" prefHeight="44.0" prefWidth="124.0" text="Label" />
+      <Label fx:id="wordLabel" alignment="CENTER" layoutX="227.0" layoutY="145.0" onMouseClicked="#translateCard" prefHeight="44.0" prefWidth="124.0" />
       <Accordion />
       <Label fx:id="categ" alignment="CENTER" layoutX="237.0" layoutY="59.0" prefHeight="17.0" prefWidth="103.0" text="Label" />
    </children>
