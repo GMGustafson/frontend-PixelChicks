@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.ResourceBundle;
 
 import com.model.CategorySystemFacade;
+import com.chatterbox.App;
 import com.model.Category;
 import com.model.Course;
 import com.model.Flashcard;
@@ -32,6 +33,9 @@ public class FlashCardsController implements Initializable {
     private Button forward;
 
     @FXML
+    private Button prev;
+
+    @FXML
     private Button Relearn;
 
     @FXML
@@ -47,23 +51,14 @@ public class FlashCardsController implements Initializable {
 
     @FXML
     void backtoActivites(ActionEvent event) throws IOException{
-
+         App.setRoot("activities");
     }
 
-    @FXML
-    private Button shuffle;
 
     @FXML
     void tobeginning(MouseEvent event) throws IOException{
         index = 0;
         displayCard();
-    }
-
-    @FXML
-    void shuffle(ActionEvent event) {
-        Collections.shuffle(wordList);
-        index = 0;
-        displayCard(); 
     }
 
     @FXML

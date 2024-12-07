@@ -16,16 +16,18 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Button fx:id="Back" layoutX="23.0" layoutY="21.0" mnemonicParsing="false" onAction="#backtoActivites" text="Back" />
-      <Button fx:id="relearn" layoutX="242.0" layoutY="319.0" mnemonicParsing="false" onAction="#tobeginning" onMouseClicked="#tobeginning" prefHeight="35.0" prefWidth="97.0" text="Relearn" />
+      <Button fx:id="Back" layoutX="23.0" layoutY="21.0" mnemonicParsing="false" onAction="#backtoActivites" onMouseClicked="#backtoActivites" style="-fx-background-color: #F2B90C;" text="Back" />
       <ImageView fitHeight="165.0" fitWidth="291.0" layoutX="152.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/flashcard.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="203.0" layoutY="260.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="40.0" text="&lt;" />
-      <Button fx:id="forward" layoutX="333.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#goNext" prefHeight="32.0" prefWidth="40.0" text="&gt;" />
-      <Label fx:id="wordLabel" alignment="CENTER" layoutX="227.0" layoutY="145.0" onMouseClicked="#translateCard" prefHeight="44.0" prefWidth="124.0" />
+      <Button fx:id="prev" layoutX="203.0" layoutY="260.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="44.0" prefWidth="64.0" style="-fx-background-color: #F2B90C;" text="&lt;" />
+      <Button fx:id="forward" layoutX="333.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#goNext" prefHeight="44.0" prefWidth="64.0" style="-fx-background-color: #F2B90C;" text="&gt;" />
+      <Label fx:id="wordLabel" alignment="CENTER" layoutX="179.0" layoutY="121.0" onMouseClicked="#translateCard" prefHeight="106.0" prefWidth="220.0">
+         <font>
+            <Font size="48.0" />
+         </font></Label>
       <Accordion />
       <Label fx:id="categ" alignment="CENTER" layoutX="237.0" layoutY="59.0" prefHeight="17.0" prefWidth="103.0" text="Label" />
    </children>
