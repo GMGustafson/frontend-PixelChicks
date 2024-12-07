@@ -2,6 +2,8 @@ package com.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -26,6 +28,9 @@ public class MockConvoController implements Initializable{
 
     @FXML
     private Button hint;
+
+    @FXML
+    private Button submit;
 
     @FXML
     private Label hintLabel;
@@ -70,39 +75,43 @@ public class MockConvoController implements Initializable{
     private Course category;
     private Course course;
     private Random random; 
-    private String userCategory; 
-    private Progress progress; 
+    //private String userCategory; 
+    private Progress progress;
+    private ArrayList<Word> wordList; 
+    private Word currWord;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
-        course = user.getCurrentCourse(); 
+        course = user.getCurrentCourse();  
+        category = course;
         progress = user.getCurrentProgress(); 
-        userCategory = progress.getCurrentCategory(); 
+        random = new Random();
          
-        System.out.println(userCategory);
+        wordList = category.getWordsByCategory("colors");
         
         random = new Random();
+        displayQuestion();
         
-        if (course.getCategory().equals("colors") && category.getCourse().equals("words")) {
-            displayQuestion();
-        } 
     }   
 
     private void displayQuestion(){
-        ArrayList<Word> words = category.getWordsByCategory(null);
-        words = course.getWordsByCategory("colors");
-        for (int i=0; i < words.size(); i++) {
-            Word mockwords = words.get(i);
-            
+        currWord = wordList.get(random.nextInt(wordList.size()));
+        String q = " What is " + currWord.getTranslation() + " in Spanish? ";
+        Question.setText(q);
+        
+        ArrayList<String> options = new ArrayList<>(currWord.getAlternatives());
+        Collections.shuffle(options);
 
-        }
+        String correctAnswer = currWord.getWord();
+        options = new ArrayList<>(options.subList(0, 2)); // Take two random alternatives
+        options.add(correctAnswer);
+        Collections.shuffle(options);
 
-
-        // answer1.setText(choices.get(0));
-        // answer2.setText(choices.get(1));
-        // answer3.setText(choices.get(2));
+        ansone.setText(options.get(0));
+        anstwo.setText(options.get(1));
+        ansthree.setText(options.get(2));
 
     }
 }
