@@ -22,6 +22,9 @@ public class FillInTheBlankController implements Initializable{
     @FXML
     private Button back;
 
+    @FXML 
+    private Button hintButton;
+
     @FXML
     private AnchorPane fillintheblank;
 
@@ -42,6 +45,8 @@ public class FillInTheBlankController implements Initializable{
 
     @FXML
     private Label showCategory;
+
+    @FXML Label hintLabel;
     
     private CategorySystemFacade facade;
     private User user;
@@ -141,6 +146,11 @@ public class FillInTheBlankController implements Initializable{
     void backtoActivities(ActionEvent event) throws IOException {
         //progress.saveProgress();
         App.setRoot("activities");
+    }
+
+    @FXML 
+    void showHint(ActionEvent event) throws IOException {
+        hintLabel.setText(currPhrase.getTranslation());
     }
 
     @FXML

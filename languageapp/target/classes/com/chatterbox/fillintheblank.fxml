@@ -12,7 +12,9 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backtoActivities" text="Back" />
+      <Label fx:id="hintLabel" layoutX="109.0" layoutY="142.0" prefHeight="31.0" prefWidth="415.0" />
+      <Button fx:id="hintButton" layoutX="16.0" layoutY="135.0" mnemonicParsing="false" onAction="#showHint" text="Hint" />
+      <Button fx:id="back" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backtoActivities" text="Back" />
       <Button fx:id="fitbA" alignment="CENTER" layoutX="130.0" layoutY="200.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="A" />
       <Button fx:id="fitbC" alignment="CENTER" layoutX="130.0" layoutY="279.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="C" />
       <Button fx:id="fitbB" alignment="CENTER" layoutX="319.0" layoutY="279.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="B" />

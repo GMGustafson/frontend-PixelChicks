@@ -22,17 +22,8 @@ public class FillInTheBlank extends Question  {
   private String missingWord;
   private ArrayList<String> otherAnswers;
   private ArrayList<Phrase> phrases; 
-  private String userCategory;
   private String sentence;
-
-
-  // public FillInTheBlank( String question, ArrayList<Phrase> phrases, Phrase sampleSentence, String hint, ArrayList<String> wordBank) {
-  //     super(question);
-  //     this.phrases = phrases;
-  //     this.sampleSentence = sampleSentence;
-  //     this.wordBank = wordBank;
-  // }
-
+  
   public FillInTheBlank() {
 
   }
@@ -41,31 +32,25 @@ public class FillInTheBlank extends Question  {
     super(question);
   }
 
-  public ArrayList<Phrase> getPhrases() {
-    return phrases;
-  }
-
   public void setSampleSentence (Phrase sampleSentence) {
     this.sampleSentence = sampleSentence;
+  }
 
+  public Phrase getSampleSentence () {
+    return sampleSentence;
   }
 
   public void setSentence(String sentence) {
-    sentence= sampleSentence.getWords();
+    this.sentence = sentence;
   }
 
   public String getSentence() {
     if (sampleSentence == null) {
       return "No sampleSentence available.";
     }
-  
     sentence = sampleSentence.getWords();
-    String missingWord = getMissingWord();
+    missingWord = getMissingWord();
     return sentence.replace(missingWord, "___"); 
-  }
-
-  public Phrase getSampleSentence () {
-    return sampleSentence;
   }
 
   public ArrayList<String> generateWordBank() {
@@ -84,9 +69,10 @@ public class FillInTheBlank extends Question  {
   }
 
   public String getMissingWord() { 
-    if (sampleSentence == null) {
-      throw new IllegalStateException("sampleSentence is not set! Please set it before continuing!");
-    } // Get the translated sentence
+    // if (sampleSentence == null) {
+    //   throw new IllegalStateException("sampleSentence is not set! Please set it before continuing!");
+    // } // Get the translated sentence
+    sentence = sampleSentence.getWords();
     String[] words = sentence.split(" ");               // Split the sentence into individual words
     Random random = new Random();                       // Create a random object
     ArrayList<String> wordBank = getWordBank();         // Assume this method retrieves the current word bank
