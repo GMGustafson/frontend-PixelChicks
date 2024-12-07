@@ -14,12 +14,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class FillInTheBlankController implements Initializable{
 
     @FXML
     private Button back;
+
+    @FXML 
+    private Button hintButton;
 
     @FXML
     private AnchorPane fillintheblank;
@@ -40,204 +44,124 @@ public class FillInTheBlankController implements Initializable{
     private Label fitbQuestion;
 
     @FXML
-    private Button hint;
-
-    @FXML
-    private Label hintLabel;
-
-    @FXML
     private Label showCategory;
 
+    @FXML Label hintLabel;
+    
     private CategorySystemFacade facade;
     private User user;
-    private String userCategory;
-    private FillInTheBlank fillInTheBlank;
-    private Word word;
-    private Phrase randomPhrase;
-    private String correctAnswer;
-    private String sentence;
-    private Progress progress;
-    private String missingWord;
-    private String correctWord ;
-    private Phrase sampleSentence;
-    private String question;
-    private ArrayList<String> answers;
     private Course course;
-    private ArrayList<Phrase> phrases;
-    private Random random;
-
+    private Progress progress;
+    private Phrase currPhrase;
+    private String missingWord;
+    private ArrayList<String> ansOptions;
+    private String correctAnswer;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         facade = CategorySystemFacade.getFacadeInstance();
-        fillInTheBlank = facade.getFillintheBlank();
-        if (fillInTheBlank == null) {
-            throw new IllegalStateException("FillInTheBlank is not initialized correctly.");
-        }
         user = facade.getCurrentUser();
         course = user.getCurrentCourse();
         progress = user.getCurrentProgress();
-        fillInTheBlank = facade.getFillintheBlank();
-        userCategory = progress.getCurrentCategory();
-        phrases = course.getPhrasesByCategory(userCategory);
-        random = new Random();
-        displayQuestions();
-        
-        /*
-         * 1. Load a random spanish phrase from a specific category in Course.json using Phrase method
-         * 2. Convert it into the question using a method that picks out a missing word
-         *    and changes that area to "____"
-         * 3. MissingWord needs to pick out a word and ensures it is a word that exists in the list of words from Course.json
-         * 4. A method needs to use the word chosen to load alternatives from Course.json using Word method in ArrayList<String>
-         * 5. Missing word and 3 random alternatives need to moved to 4-element ArrayList<String> and then shuffled
-         * 6. The buttons need to have the different words assigned to them
-         */
-       
-        System.out.print("FillInTheBlank" + fillInTheBlank);
-  
-        showCategory.setText("Category: " + userCategory);
 
-        System.out.println("category =" + userCategory);
-       
-        System.out.println("Phrases available: " + phrases);
-        // Load the hint by category
-        System.out.println("Phrases available: " + phrases);
-        if (phrases == null || phrases.isEmpty()) {
-        throw new IllegalStateException("No phrases available for the selected category!");
+        String userCategory = progress.getCurrentCategory();
+        showCategory.setText(userCategory);
+
+        displayQuestion(userCategory);
+    }
+
+    private void displayQuestion(String category) {
+        ArrayList<Phrase> phrases = course.getPhrasesByCategory(category);
+        Random random = new Random();
+        currPhrase = phrases.get(random.nextInt(phrases.size()));
+        String phraseText = currPhrase.getWords();
+
+        ArrayList<Word> words = course.getWordsByCategory(category);
+        ArrayList<String> wordsInPhrase = getWordsFromPhrase(phraseText, words);
+        missingWord = wordsInPhrase.get(random.nextInt(wordsInPhrase.size()));
+        correctAnswer = missingWord;
+
+        String q = phraseText.replaceFirst(missingWord, "____");
+        fitbQuestion.setText(q);
+        ansOptions = new ArrayList<>(getRandomAlternatives(missingWord, words));
+        ansOptions.add(correctAnswer);
+        Collections.shuffle(ansOptions);
+        fitbA.setText(ansOptions.get(0));
+        fitbB.setText(ansOptions.get(1));
+        fitbC.setText(ansOptions.get(2));
+        fitbD.setText(ansOptions.get(3));
+    }
+
+    private ArrayList<String> getWordsFromPhrase(String phrase, ArrayList<Word> words) {
+        ArrayList<String> ans = new ArrayList<>();
+        for (Word word : words) {
+            if (phrase.contains(word.getWord())) {
+                ans.add(word.getWord());
+            }
         }
+        return ans;
     }
 
-        private void displayQuestions() {
-            sampleSentence = phrases.get(random.nextInt(phrases.size()));
-            sentence = sampleSentence.getWords();
-            question = fillInTheBlank.getSentence();
-            missingWord = fillInTheBlank.getMissingWord();
-            fitbQuestion.setText(question);
+    private ArrayList<String> getRandomAlternatives(String correct, ArrayList<Word> words) {
+        ArrayList<String> alternatives = new ArrayList<>();
+        for (Word word : words) {
+            if (!word.getWord().equals(correct)) {
+                alternatives.add(word.getWord());
+            }
         }
-
-
-            // if (phrases != null && !phrases.isEmpty()) {
-            //     Random random = new Random();
-            //     int randomIndex = random.nextInt(phrases.size());
-            //     randomPhrase = phrases.get(randomIndex);
-            //     if (randomPhrase == null) {
-            //         throw new IllegalStateException("Random phrase is null. Check data source!");
-            //     }
-
-
-            //     fillInTheBlank.setSampleSentence(randomPhrase);
-            //     sampleSentence = fillInTheBlank.getSampleSentence();
-            //     fitbQuestion.setText(fillInTheBlank.getSentence());
-            //     sentence = fillInTheBlank.getSentence();
-
-
-            //     System.out.println("Sample Sentence: " + sampleSentence);
-            //     System.out.println("Sentence: " + sentence);
-            //     System.out.println("Missing Word: " + missingWord);
-
-            //     fillInTheBlank.setSentence(sentence);
-            //     question = fillInTheBlank.getSentence();
-            //     missingWord = fillInTheBlank.getMissingWord();
-            //     answers = fillInTheBlank.getWordBank();
-
-
-
-        // // Get answers
-        // ArrayList<String> answers = fillInTheBlank.getOtherAnswers();
-        // answers.add(correctAnswer);
-        // Random random = new Random();
-        // ArrayList<String> shuffledAnswers = new ArrayList<>(answers);
-        // for (int i = 0; i < shuffledAnswers.size(); i++) {
-        //     int swapIndex = random.nextInt(shuffledAnswers.size());
-        //     String temp = shuffledAnswers.get(i);
-        //     shuffledAnswers.set(i, shuffledAnswers.get(swapIndex));
-        //     shuffledAnswers.set(swapIndex, temp);
-        // }
-        // answers = fillInTheBlank.getOtherAnswers();
-        // answers.add(correctAnswer);
-        // random = new Random();
-        // shuffledAnswers = new ArrayList<>(answers);
-        // for (int i = 0; i < shuffledAnswers.size(); i++) {
-        //     int swapIndex = random.nextInt(shuffledAnswers.size());
-        //     String temp = shuffledAnswers.get(i);
-        //     shuffledAnswers.set(i, shuffledAnswers.get(swapIndex));
-        //     shuffledAnswers.set(swapIndex, temp);
-        // }
-
-
-    //     fitbQuestion.setText(sentence);
-
-
-    //     fitbA.setText(shuffledAnswers.get(0));
-    //     fitbB.setText(shuffledAnswers.get(1));
-    //     fitbC.setText(shuffledAnswers.get(2));
-    //     fitbD.setText(shuffledAnswers.get(3));
-
-
-    //     throw new UnsupportedOperationException("Unimplemented method 'initialize'");
-    // }
-
-
-    @FXML
-    void backToActivities(ActionEvent event) throws IOException {
-        App.setRoot("activities");
+        Collections.shuffle(alternatives);
+        return new ArrayList<>(alternatives.subList(0, 3));
     }
 
     @FXML
-    void chooseA(ActionEvent event) {
-        // fillInTheBlank.checkAnswer(fitbA.getText());
-    if (fitbA.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
-        progress.trackCorrectAnswer();
-        fitbQuestion.setText(sentence.replace(missingWord, " "));  
-    }
-    else {
-        fitbD.setText("X");
-        progress.trackQuestion();
+    void submitAnswer(ActionEvent event) {
+        Button pickbutton = (Button) event.getSource();
+        String chosenans = pickbutton.getText();
 
-    }
-    }
-
-    @FXML
-    void chooseC(ActionEvent event) {
-        // fillInTheBlank.checkAnswer(fitbC.getText());
-        if (fitbC.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
+        if (chosenans.equals(correctAnswer)) {
+            fitbQuestion.setText("Correct!");
             progress.trackCorrectAnswer();
-        }
+        } 
         else {
-            fitbC.setText("X");
+            fitbQuestion.setText("Wrong, go to next question.");
             progress.trackQuestion();
         }
     }
 
     @FXML
-    void chooseD(ActionEvent event) {
-    
-    //fillInTheBlank.checkAnswer(fitbD.getText());
-    if (fitbD.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
-        progress.trackCorrectAnswer();
+    void gotonext(ActionEvent event) {
+        String userCategory = progress.getCurrentCategory();
+        displayQuestion(userCategory);
+
+        enableButtons();
+        fitbQuestion.setText("");
     }
-    else {
-        fitbD.setText("X");
-        progress.trackQuestion();
+
+
+     @FXML
+    void backtoActivities(ActionEvent event) throws IOException {
+        //progress.saveProgress();
+        App.setRoot("activities");
     }
+
+    @FXML 
+    void showHint(ActionEvent event) throws IOException {
+        hintLabel.setText(currPhrase.getTranslation());
     }
 
     @FXML
-    void chooseB(ActionEvent event) {
-        // fillInTheBlank.checkAnswer(fitbB.getText());
-    if (fitbB.getText().equals(fillInTheBlank.checkAnswer(correctAnswer))) {
-        progress.trackCorrectAnswer();
-    }
-    else {
-        fitbB.setText("X");
-        progress.trackQuestion();
-    }
+    void disableButtons() {
+        fitbA.setDisable(true);
+        fitbB.setDisable(true);
+        fitbC.setDisable(true);
+        fitbD.setDisable(true);
     }
 
     @FXML
-    void showHint(ActionEvent event) {
-            hintLabel.setText(sampleSentence.getTranslation());
+    void enableButtons() {
+        fitbA.setDisable(false);
+        fitbB.setDisable(false);
+        fitbC.setDisable(false);
+        fitbD.setDisable(false);
     }
 }
-
-

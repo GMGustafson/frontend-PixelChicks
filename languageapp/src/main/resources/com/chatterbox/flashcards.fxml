@@ -11,7 +11,7 @@
 
 <Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.FlashCardsController">
    <children>
-      <Text layoutX="237.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flashcards">
+      <Text fill="WHITE" layoutX="237.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flashcards">
          <font>
             <Font size="24.0" />
          </font>
@@ -29,14 +29,7 @@
             <Font size="48.0" />
          </font></Label>
       <Accordion />
-<<<<<<< HEAD
       <Label fx:id="categ" alignment="CENTER" layoutX="237.0" layoutY="51.0" prefHeight="17.0" prefWidth="103.0" text="Label" />
       <Button fx:id="PlayWord" layoutX="257.0" layoutY="325.0" mnemonicParsing="false" onAction="#PlayWord" text="Play" />
-=======
-      <Label fx:id="categ" alignment="CENTER" layoutX="237.0" layoutY="51.0" prefHeight="25.0" prefWidth="109.0" text="Label">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
->>>>>>> 9ef19ec6af2a6cb3deba7a56dc540458744d303d
    </children>
 </Pane>

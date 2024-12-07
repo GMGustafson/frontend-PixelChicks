@@ -1,4 +1,5 @@
 package com.controllers;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -19,7 +20,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
@@ -30,7 +30,6 @@ public class MockConvoController implements Initializable{
 
     @FXML
     private Button back;
-
 
     @FXML
     private RadioButton ansone;
@@ -44,8 +43,59 @@ public class MockConvoController implements Initializable{
     @FXML
     private Button next;
 
+    @FXML
+    private ImageView parimage;
 
-    private String getChosenAns() {
+    private CategorySystemFacade facade;
+    private User user;
+    private Course category;
+    private Course course;
+    private Random random; 
+    //private String userCategory; 
+    private Progress progress;
+    private ArrayList<Word> wordList; 
+    private Word currWord;
+    private String userCatergory;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        facade = CategorySystemFacade.getFacadeInstance();
+        user = facade.getCurrentUser(); 
+        course = facade.chooseCourse(course);
+        category = user.getCurrentCourse();
+        progress = user.getCurrentProgress(); 
+        userCatergory = progress.getCurrentCategory(); 
+        wordList = category.getWordsByCategory(userCatergory);
+        random = new Random();
+         
+        wordList = category.getWordsByCategory(userCatergory);
+        
+        random = new Random();
+        displayQuestion();
+        
+    }   
+
+    private void displayQuestion(){
+        currWord = wordList.get(random.nextInt(wordList.size()));
+        String q = " What is " + currWord.getTranslation() + " in Spanish? ";
+        Question.setText(q);
+        
+        ArrayList<String> options = new ArrayList<>(currWord.getAlternatives());
+        Collections.shuffle(options);
+        options = new ArrayList<>(options.subList(0, 2));
+        options.add(currWord.getWord());
+        Collections.shuffle(options);
+
+        ansone.setText(options.get(0));
+        anstwo.setText(options.get(1));
+        ansthree.setText(options.get(2));
+
+        ansone.setSelected(false);
+        anstwo.setSelected(false);
+        ansthree.setSelected(false);
+    }
+
+private String getChosenAns() {
         if (ansone.isSelected()) return ansone.getText();
         if (anstwo.isSelected()) return anstwo.getText();
         if (ansthree.isSelected()) return ansthree.getText();
@@ -82,60 +132,8 @@ public class MockConvoController implements Initializable{
     }
 
     @FXML
-    void backtoActivites(ActionEvent event) throws IOException {
-        progress.saveProgress();
+    void backtoActivities(MouseEvent event) throws IOException {
+        //progress.saveProgress();
         App.setRoot("activities");
-    }
-
-    @FXML
-    private ImageView parimage;
-
-    private CategorySystemFacade facade;
-    private User user;
-    private Course category;
-    private Course course;
-    private Random random; 
-    //private String userCategory; 
-    private Progress progress;
-    private ArrayList<Word> wordList; 
-    private Word currWord;
-    private String userCatergory;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        facade = CategorySystemFacade.getFacadeInstance();
-        user = facade.getCurrentUser(); 
-        course = facade.chooseCourse(course);
-        category = user.getCurrentCourse();
-        progress = user.getCurrentProgress(); 
-        userCatergory = progress.getCurrentCategory(); 
-        wordList = category.getWordsByCategory(userCatergory);
-        random = new Random();
-         
-        wordList = category.getWordsByCategory("colors");
-        
-        random = new Random();
-        displayQuestion();
-        
-    }   
-
-    private void displayQuestion(){
-        currWord = wordList.get(random.nextInt(wordList.size()));
-        String q = " What is " + currWord.getTranslation() + " in Spanish? ";
-        Question.setText(q);
-        
-        ArrayList<String> options = new ArrayList<>(currWord.getAlternatives());
-        Collections.shuffle(options);
-        options = new ArrayList<>(options.subList(0, 2));
-        options.add(currWord.getWord());
-        Collections.shuffle(options);
-
-        ansone.setText(options.get(0));
-        anstwo.setText(options.get(1));
-        ansthree.setText(options.get(2));
-
-        ansone.setSelected(false);
-        anstwo.setSelected(false);
-        ansthree.setSelected(false);
     }
 }

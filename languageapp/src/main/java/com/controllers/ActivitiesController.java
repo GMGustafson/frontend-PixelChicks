@@ -42,6 +42,9 @@ public class ActivitiesController implements Initializable {
     private Button Settings;
 
     @FXML
+    private Button logout;
+
+    @FXML
     void GoToDictionary(ActionEvent event) throws IOException{
         App.setRoot("dictionary");
     }
@@ -70,6 +73,12 @@ public class ActivitiesController implements Initializable {
     void GoToStory(ActionEvent event)  throws IOException{
         App.setRoot("story");
     }
+
+    @FXML
+    void GoToLogout(ActionEvent event) throws IOException{
+        App.setRoot("logout");
+    }
+
 
     @FXML
     void GoToProgress(ActionEvent event) throws IOException{

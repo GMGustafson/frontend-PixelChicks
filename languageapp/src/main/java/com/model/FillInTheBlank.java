@@ -32,10 +32,6 @@ public class FillInTheBlank extends Question  {
     super(question);
   }
 
-  public ArrayList<Phrase> getPhrases() {
-    return phrases;
-  }
-
   public void setSampleSentence (Phrase sampleSentence) {
     this.sampleSentence = sampleSentence;
   }
