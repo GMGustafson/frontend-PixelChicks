@@ -12,7 +12,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="449.0" style="-fx-background-color: #ffffc5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.HomeController">
    <children>
-      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backtoactivities" onMouseClicked="#backtoactivities" text="back" />
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backtoActivities" onMouseClicked="#backtoActivities" text="back" />
       <!-- onAction="#backtoActivites" -->
       <Ellipse fill="#87dae0" layoutX="187.0" layoutY="82.0" radiusX="114.0" radiusY="68.0" stroke="#87dae0" strokeType="INSIDE" />
       <Label fx:id="Question" layoutX="108.0" layoutY="47.0" prefHeight="69.0" prefWidth="158.0" />
