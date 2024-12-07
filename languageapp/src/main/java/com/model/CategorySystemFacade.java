@@ -14,9 +14,7 @@ public class CategorySystemFacade {
     private Category category;
     private Course course;
     private Question question;
-    private Phrase fitbQuestion;
-    private Phrase hint;
-    private Phrase phrases;
+    private Phrase phrase;
     private Word words;
     private Progress progress;
     private String language;
@@ -33,14 +31,14 @@ public class CategorySystemFacade {
      * @param language the language the user is studying
      * @param progress how far along the user is in their studies/how active they are
      */
-    public CategorySystemFacade(User user, Course course, Category category, Question question, Phrase phrases, 
+    public CategorySystemFacade(User user, Course course, Category category, Question question, Phrase phrase, 
     Word words, Progress progress){
 
         this.user = user;
         this.course = course;
         this.category = category;
         this.question = question;
-        this.phrases = phrases;
+        this.phrase = phrase;
         this.words = words;
         this.progress = (progress != null) ? progress : new Progress();
     }
@@ -253,16 +251,18 @@ public class CategorySystemFacade {
      * a way for the user to study by answering fill in the blank questions
      */
     public FillInTheBlank getFillintheBlank(){
-        FillInTheBlank fillInBlank = new FillInTheBlank(null, hint, fitbQuestion, null );
+        FillInTheBlank fillInBlank = new FillInTheBlank();
 
-        String hint = fillInBlank.getHint();
+        //FillInTheBlank fillInBlank = new FillInTheBlank( fitbQuestion,  );
+        ArrayList<Phrase> phrases = fillInBlank.getPhrases();
         String sentence = fillInBlank.getSampleSentence();
         String missingWord = fillInBlank.getMissingWord();
-
+        ArrayList<String> wordBank = fillInBlank.getWordBank();
         System.out.println("Fill in the blank:");
+        System.out.println("");
         System.out.println(sentence.replace(missingWord, " "));
-        System.out.println(hint); 
-         
+        //System.out.println(hint); 
+        
         // Phrase sampleSentence = new Phrase("some sample sentence", missingWord); // Ensure this is not null
         // System.out.println("Creating FillInTheBlank with sampleSentence: " + sampleSentence);
         

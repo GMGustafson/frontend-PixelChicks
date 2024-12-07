@@ -11,23 +11,38 @@ import com.model.CategorySystemFacade;
  * @author zaniah, sri, gracie, and grace
  */
 
-public class FillInTheBlank extends Question{
+public class FillInTheBlank extends Question  {
     // Attributes
-  private Phrase hint;
+  private String hint;
   private Phrase sampleSentence;
   private ArrayList<String> wordBank;
   private String userInput;
   private Word word;
+  Course course;
   private ArrayList<String> otherAnswers;
+  private ArrayList<Phrase> phrases;
 
-  public FillInTheBlank(String question, Phrase hint, Phrase sampleSentence, ArrayList<String> wordBank) {
-      //TODO Auto-generated constructor stub
-      super(question);
-     
-      this.sampleSentence = sampleSentence;
-      System.out.println("Sample sentence: " + sampleSentence);
-      this.wordBank = wordBank;
-      this.hint = hint;
+  // public FillInTheBlank( String question, ArrayList<Phrase> phrases, Phrase sampleSentence, String hint, ArrayList<String> wordBank) {
+  //     super(question);
+  //     this.phrases = phrases;
+  //     this.sampleSentence = sampleSentence;
+  //     this.wordBank = wordBank;
+  // }
+
+  public FillInTheBlank() {
+
+  }
+
+  public FillInTheBlank(String question) {
+    super(question);
+  }
+
+  public ArrayList<Phrase> getPhrases() {
+    return phrases.;
+  }
+
+  public ArrayList<String> wordBank() {
+    return wordBank;
   }
 
   public String checkAnswer(String userInput) 
@@ -50,7 +65,7 @@ public class FillInTheBlank extends Question{
   //   return words[index];
   // }
 
-  public String getMissingWord() {
+  public String getMissingWord() { 
     String sentence = sampleSentence.getTranslation();  // Get the translated sentence
     String[] words = sentence.split(" ");               // Split the sentence into individual words
     Random random = new Random();                       // Create a random object
@@ -67,18 +82,18 @@ public class FillInTheBlank extends Question{
 
     
   public String getSampleSentence() {
+
     String sentence = sampleSentence.getWords();
     String missingWord = getMissingWord();
     return sentence.replace(missingWord, "___"); 
   }
 
-  public String getHint() {
+  public String getSampleHint() {
     String hint = sampleSentence.getTranslation();
     return hint;
   }
  
   public ArrayList<String> getWordBank() {
-    
     return wordBank;
   }
 
@@ -93,9 +108,7 @@ public class FillInTheBlank extends Question{
         selectedAnswers.add(otherAnswers.get(index));
       }
     }
-      return selectedAnswers;
-
-    
+      return selectedAnswers; 
   }
 
 }

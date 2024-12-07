@@ -55,28 +55,16 @@ public class CourseController implements Initializable {
         private User user;
         private String userCategory;
         private Progress progress;
-<<<<<<< HEAD
-        private Course course; 
-=======
         private Course course;
 
->>>>>>> e312ced3ddeb7fabf663a2190e139f10373533a0
         @Override
         public void initialize(URL location, ResourceBundle resources) {
             facade = CategorySystemFacade.getFacadeInstance();
             user = facade.getCurrentUser();
-<<<<<<< HEAD
-            progress = facade.getProgress();
-            // course = progress.get(); 
-
-            currentCategory = progress.getCurrentCategory();
-            if (user.getCurrentProgress() != null) {
-=======
             course = user.getCurrentCourse(); 
             progress = user.getCurrentProgress(); 
             userCategory = progress.getCurrentCategory(); 
             if ( progress != null) {
->>>>>>> e312ced3ddeb7fabf663a2190e139f10373533a0
                 courseLabel.setText("Welcome back, " + user.getUsername());
                 userCategory = progress.getCurrentCategory();
                 categoryLabel.setText("Loading previous progress");
@@ -118,16 +106,12 @@ public class CourseController implements Initializable {
             // App.setRoot("activities");
         }
     
-        @FXML
+        @FXML 
         void chooseWeather(ActionEvent event) throws IOException {
-<<<<<<< HEAD
-            currentCategory = "Weather";
-=======
             String catType = "weather";
             userCategory = progress.setCurrentCategory(catType);
             // categoryLabel.setText("Weather");
             // App.setRoot("activities");
->>>>>>> e312ced3ddeb7fabf663a2190e139f10373533a0
         }
     
         @FXML
