@@ -37,7 +37,7 @@ public class MockConvoController implements Initializable{
 
     @FXML
     void giveHint(MouseEvent event) throws IOException{
-        hintLabel.setText("hint");
+        hintLabel.setText(currWord.getPronunciation());
     }
 
     @FXML
@@ -62,14 +62,33 @@ public class MockConvoController implements Initializable{
     @FXML
     private Label rightorwrong;
 
+    private String getChosenAns() {
+        if (ansone.isSelected()) return ansone.getText();
+        if (anstwo.isSelected()) return anstwo.getText();
+        if (ansthree.isSelected()) return ansthree.getText();
+        return null;
+    }
+
     @FXML
     void check(MouseEvent event) {
+        String correctans = currWord.getWord();
+        String chosenans = getChosenAns();
+
+        if (chosenans.equals(correctans)) {
+            Question.setText("Correct!");
+            progress.trackCorrectAnswer();
+        } 
+        else {
+            Question.setText("Wrong! Go to the next question.");
+            progress.trackQuestion();
+            progress.addMissedWords(currWord.getWord());
+        }
 
     }
 
     @FXML
     void nextques(MouseEvent event) {
-
+        displayQuestion();
     }
 
 
@@ -121,15 +140,17 @@ public class MockConvoController implements Initializable{
         
         ArrayList<String> options = new ArrayList<>(currWord.getAlternatives());
         Collections.shuffle(options);
-
-        String correctAnswer = currWord.getWord();
-        options = new ArrayList<>(options.subList(0, 2)); // Take two random alternatives
-        options.add(correctAnswer);
+        options = new ArrayList<>(options.subList(0, 2));
+        options.add(currWord.getWord());
         Collections.shuffle(options);
 
         ansone.setText(options.get(0));
         anstwo.setText(options.get(1));
         ansthree.setText(options.get(2));
 
+        ansone.setSelected(false);
+        anstwo.setSelected(false);
+        ansthree.setSelected(false);
+        hintLabel.setText("");
     }
 }
