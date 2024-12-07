@@ -12,10 +12,10 @@
             {
                 "courseID": "8c24fea9-e192-457d-8ba3-db5828f62490",
                 "Progress": {
-                    "totalQuestionsAnswered": 10,
-                    "numCorrectAnswers": 7,
+                    "totalQuestionsAnswered": 0,
+                    "numCorrectAnswers": 0,
                     "currentCategory": "numbers",
-                    "progressInCategory": 7,
+                    "progressInCategory": 0,
                     "streak": 3,
                     "missedWords": [
                         "tres",
