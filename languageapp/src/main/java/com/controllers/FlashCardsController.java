@@ -16,6 +16,7 @@ import com.model.Progress;
 import com.model.Story;
 import com.model.User;
 import com.model.Word;
+import com.narration.Narriator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,9 +47,18 @@ public class FlashCardsController implements Initializable {
 
     @FXML
     private Pane pane;
+
     @FXML
     private Label showcard;
 
+    @FXML
+    private Button PlayWord;
+
+    
+    @FXML
+    void PlayWord(ActionEvent event) {
+        Narriator.playSound(wordLabel.getText());
+    }
     @FXML
     void backtoActivites(ActionEvent event) throws IOException{
          App.setRoot("activities");

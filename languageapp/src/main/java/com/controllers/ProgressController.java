@@ -1,4 +1,5 @@
 package com.controllers;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -50,6 +51,7 @@ public class ProgressController implements Initializable{
         user = facade.getCurrentUser(); 
         System.out.println(user.getFirstName());
         progress = user.getCurrentProgress();
+        System.out.println("Johns Progress: " + progress.getTotalQuestionsAnswered());
        
         if (this.progress == null)
         { 
