@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -35,10 +34,10 @@ public class MockConvoController implements Initializable{
     @FXML
     private Label hintLabel;
 
-    @FXML
-    void giveHint(MouseEvent event) throws IOException{
-        hintLabel.setText(currWord.getPronunciation());
-    }
+    // @FXML
+    // public void giveHint(MouseEvent event) throws IOException{
+    //     hintLabel.setText(currWord.getPronunciation());
+    // }
 
     @FXML
     private Label Question;

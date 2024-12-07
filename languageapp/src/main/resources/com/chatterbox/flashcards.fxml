@@ -29,6 +29,9 @@
             <Font size="48.0" />
          </font></Label>
       <Accordion />
-      <Label fx:id="categ" alignment="CENTER" layoutX="237.0" layoutY="59.0" prefHeight="17.0" prefWidth="103.0" text="Label" />
+      <Label fx:id="categ" alignment="CENTER" layoutX="237.0" layoutY="51.0" prefHeight="25.0" prefWidth="109.0" text="Label">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
    </children>
 </Pane>
