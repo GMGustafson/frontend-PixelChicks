@@ -45,7 +45,7 @@ public class ProgressController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         System.out.println("Hi inside"); 
 
-        System.out.println("null"); 
+        System.out.println("null");
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
         System.out.println(user.getFirstName());
