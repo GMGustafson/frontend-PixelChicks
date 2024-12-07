@@ -25,13 +25,6 @@ import javafx.scene.input.MouseEvent;
 
 public class MockConvoController implements Initializable{
 
-
-    @FXML
-    private Button submit;
-
-    @FXML
-    private Label hintLabel;
-
     @FXML
     private Label Question;
 
@@ -50,6 +43,7 @@ public class MockConvoController implements Initializable{
 
     @FXML
     private Button next;
+
 
     private String getChosenAns() {
         if (ansone.isSelected()) return ansone.getText();
@@ -105,14 +99,17 @@ public class MockConvoController implements Initializable{
     private Progress progress;
     private ArrayList<Word> wordList; 
     private Word currWord;
+    private String userCatergory;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
-        course = user.getCurrentCourse();  
-        category = course;
+        course = facade.chooseCourse(course);
+        category = user.getCurrentCourse();
         progress = user.getCurrentProgress(); 
+        userCatergory = progress.getCurrentCategory(); 
+        wordList = category.getWordsByCategory(userCatergory);
         random = new Random();
          
         wordList = category.getWordsByCategory("colors");
@@ -140,6 +137,5 @@ public class MockConvoController implements Initializable{
         ansone.setSelected(false);
         anstwo.setSelected(false);
         ansthree.setSelected(false);
-        hintLabel.setText("");
     }
 }
