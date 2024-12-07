@@ -106,7 +106,7 @@ public class CourseController implements Initializable {
             // App.setRoot("activities");
         }
     
-        @FXML
+        @FXML 
         void chooseWeather(ActionEvent event) throws IOException {
             String catType = "weather";
             userCategory = progress.setCurrentCategory(catType);

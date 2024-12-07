@@ -8,39 +8,39 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="281.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.CreateAccountController">
    <children>
-      <TextField fx:id="txt_first_name" accessibleRole="CHECK_BOX" layoutX="18.0" layoutY="110.0" prefHeight="27.0" prefWidth="188.0">
+      <TextField fx:id="txt_first_name" accessibleRole="CHECK_BOX" layoutX="18.0" layoutY="110.0" prefHeight="27.0" prefWidth="187.0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="txt_last_name" layoutX="17.0" layoutY="165.0" prefHeight="27.0" prefWidth="188.0">
+      <TextField fx:id="txt_last_name" layoutX="18.0" layoutY="165.0" prefHeight="27.0" prefWidth="187.0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="txt_birthday" accessibleRole="DATE_PICKER" layoutX="18.0" layoutY="217.0" prefHeight="27.0" prefWidth="187.0">
+      <TextField fx:id="txt_birthday" accessibleRole="DATE_PICKER" layoutX="18.0" layoutY="220.0" prefHeight="27.0" prefWidth="187.0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="txt_email" accessibleRole="DATE_PICKER" layoutX="18.0" layoutY="270.0" prefHeight="27.0" prefWidth="187.0">
+      <TextField fx:id="txt_email" accessibleRole="DATE_PICKER" layoutX="18.0" layoutY="275.0" prefHeight="27.0" prefWidth="187.0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <TextField fx:id="txt_phone_number" layoutX="14.0" layoutY="322.0" prefHeight="29.0" prefWidth="193.0">
+      <TextField fx:id="txt_phone_number" layoutX="18.0" layoutY="330.0" prefHeight="27.0" prefWidth="187.0">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <Button fx:id="next" layoutX="145.0" layoutY="355.0" onAction="#goToCreateAccount2" prefHeight="36.0" prefWidth="70.0" text="Next">
+      <Button fx:id="next" layoutX="193.0" layoutY="396.0" onAction="#goToCreateAccount2" prefHeight="36.0" prefWidth="70.0" text="Next">
          <font>
             <Font size="11.0" />
          </font></Button>
-      <Text fx:id="SignUp" fill="WHITE" layoutX="15.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number:" />
-      <Text fx:id="SignUp" fill="WHITE" layoutX="17.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
-      <Text fx:id="SignUp" fill="WHITE" layoutX="17.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday:" />
-      <Text fx:id="SignUp" fill="WHITE" layoutX="17.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
+      <Text fx:id="SignUp" fill="WHITE" layoutX="18.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number:" />
+      <Text fx:id="SignUp" fill="WHITE" layoutX="18.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+      <Text fx:id="SignUp" fill="WHITE" layoutX="18.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday:" />
+      <Text fx:id="SignUp" fill="WHITE" layoutX="18.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
       <Text fx:id="SignUp" fill="WHITE" layoutX="18.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
       <Text fx:id="SignUp" fill="WHITE" layoutX="54.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up " wrappingWidth="173.6666259765624">
          <font>

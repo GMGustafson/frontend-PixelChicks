@@ -19,13 +19,13 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Label prefHeight="31.0" prefWidth="418.0" text="User Name:" />
-      <TextField fx:id="txt_username" accessibleRole="CHECK_BOX" prefHeight="24.0" prefWidth="327.0">
+      <Label prefHeight="31.0" prefWidth="411.0" text="User Name:" />
+      <TextField fx:id="txt_username" accessibleRole="CHECK_BOX">
          <font>
             <Font size="11.0" />
          </font>
       </TextField>
-      <Label alignment="TOP_LEFT" contentDisplay="RIGHT" prefHeight="31.0" prefWidth="413.0" text="Password:" />
+      <Label alignment="TOP_LEFT" contentDisplay="RIGHT" prefHeight="31.0" prefWidth="411.0" text="Password:" />
       <TextField fx:id="txt_password">
          <font>
             <Font size="11.0" />

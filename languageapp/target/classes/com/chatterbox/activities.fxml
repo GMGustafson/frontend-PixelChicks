@@ -20,7 +20,7 @@
       <Button fx:id="MatchingButton" layoutX="21.0" layoutY="311.0" mnemonicParsing="false" onAction="#GoToMatching" text="Matching" />
       <Button fx:id="FlashcardButton" layoutX="225.0" layoutY="383.0" mnemonicParsing="false" onAction="#GoToFlashCards" text="Flashcards" />
       <Button fx:id="FillInTheBlankButton" layoutX="36.0" layoutY="484.0" mnemonicParsing="false" onAction="#GoToFillInTheBlank" text="Fill in the Blank" />
-      <Button fx:id="dictionary" layoutX="258.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoToDictionary" text="Dictionary" />
-      <Button fx:id="Progress" layoutX="273.0" layoutY="543.0" mnemonicParsing="false" onAction="#GoToProgress" text="Progress" />
+      <Button fx:id="dictionary" layoutX="244.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoToDictionary" text="Dictionary" />
+      <Button fx:id="Progress" layoutX="259.0" layoutY="537.0" mnemonicParsing="false" onAction="#GoToProgress" text="Progress" />
    </children>
 </Pane>
