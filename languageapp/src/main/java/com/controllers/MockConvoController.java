@@ -56,6 +56,23 @@ public class MockConvoController implements Initializable{
     @FXML
     private RadioButton anstwo;
 
+    @FXML
+    private Button next;
+
+    @FXML
+    private Label rightorwrong;
+
+    @FXML
+    void check(MouseEvent event) {
+
+    }
+
+    @FXML
+    void nextques(MouseEvent event) {
+
+    }
+
+
 
     @FXML
     void QuestionWillAppear(ActionEvent event) throws IOException {
@@ -64,7 +81,8 @@ public class MockConvoController implements Initializable{
 
     @FXML
     void backtoActivites(ActionEvent event) throws IOException {
-         App.setRoot("activities");
+        progress.saveProgress();
+        App.setRoot("activities");
     }
 
     @FXML
