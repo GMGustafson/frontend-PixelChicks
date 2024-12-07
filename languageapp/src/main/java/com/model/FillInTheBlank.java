@@ -19,8 +19,10 @@ public class FillInTheBlank extends Question  {
   private String userInput;
   private Word word;
   Course course;
+  private String missingWord;
   private ArrayList<String> otherAnswers;
-  private ArrayList<Phrase> phrases;
+  private ArrayList<Phrase> phrases; 
+  private String userCategory;
 
   // public FillInTheBlank( String question, ArrayList<Phrase> phrases, Phrase sampleSentence, String hint, ArrayList<String> wordBank) {
   //     super(question);
@@ -38,10 +40,22 @@ public class FillInTheBlank extends Question  {
   }
 
   public ArrayList<Phrase> getPhrases() {
-    return phrases.;
+    phrases = course.getPhrasesByCategory(userCategory);
+    return phrases;
   }
 
-  public ArrayList<String> wordBank() {
+  public ArrayList<String> generateWordBank() {
+    ArrayList<String> altWords = word.getAlternatives();
+    wordBank = new ArrayList<String>();
+    Random random = new Random();
+    while ( wordBank.size() < 3 && !altWords.isEmpty()) {
+      int randomIndex = random.nextInt(altWords.size());
+      String selectedAlternative = altWords.get(randomIndex);
+
+      if (!wordBank.contains(selectedAlternative)) {
+        wordBank.add(selectedAlternative);
+      }
+    }
     return wordBank;
   }
 

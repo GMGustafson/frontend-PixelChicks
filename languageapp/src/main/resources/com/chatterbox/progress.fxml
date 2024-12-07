@@ -6,24 +6,37 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="281.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.ProgressController">
+<Pane blendMode="OVERLAY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="374.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.ProgressController">
    <children>
-      <Text fill="WHITE" layoutX="78.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress" wrappingWidth="148.43748092651367">
+      <Text fill="WHITE" layoutX="39.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Answered:">
          <font>
-            <Font size="36.0" />
+            <Font size="17.0" />
          </font>
       </Text>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBack" prefHeight="34.0" prefWidth="64.0" text="Back">
+      <Text fill="WHITE" layoutX="39.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Correct:">
          <font>
-            <Font size="10.0" />
+            <Font size="17.0" />
          </font>
-      </Button>
-      <Text fill="WHITE" layoutX="21.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Answered:" />
-      <Text fill="WHITE" layoutX="21.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Wrong: " />
-      <Text fill="WHITE" layoutX="18.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Correct: " />
-      <Label fx:id="TotalAnswered" layoutX="185.0" layoutY="129.0" />
-      <Label fx:id="TotalCorrect" layoutX="157.0" layoutY="176.0" />
-      <Label fx:id="TotalWrong" layoutX="157.0" layoutY="223.0" />
-      <Label fx:id="Score" layoutX="98.0" layoutY="271.0" prefHeight="48.0" prefWidth="105.0" text="Score" />
+      </Text>
+      <Text fill="WHITE" layoutX="39.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Wrong:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="39.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Score:" wrappingWidth="48.29817581176758">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Label fx:id="TotalAnswered" layoutX="175.0" layoutY="153.0" prefHeight="37.0" prefWidth="112.0" />
+      <Label fx:id="TotalCorrect" layoutX="159.0" layoutY="209.0" prefHeight="37.0" prefWidth="112.0" />
+      <Label fx:id="TotalWrong" layoutX="146.0" layoutY="260.0" prefHeight="37.0" prefWidth="112.0" />
+      <Label fx:id="Score" layoutX="90.0" layoutY="309.0" prefHeight="37.0" prefWidth="112.0" />
+      <Text fill="WHITE" layoutX="84.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <Button fx:id="Back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoBack" text="Back" />
    </children>
 </Pane>
