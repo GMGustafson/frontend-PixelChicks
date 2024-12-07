@@ -135,6 +135,7 @@ public class FillInTheBlankController implements Initializable{
         correctAnswer = null;
 
         fitbQuestion.setText("");
+        hintLabel.setText("");
         enableButtons();
 
         String userCategory = progress.getCurrentCategory();
