@@ -48,7 +48,7 @@ public class ProgressController implements Initializable{
         System.out.println("null"); 
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
-        System.out.println(user);
+        System.out.println(user.getFirstName());
         progress = user.getCurrentProgress();
        
         if (this.progress == null)
@@ -65,6 +65,8 @@ public class ProgressController implements Initializable{
             TotalCorrect.setText("" + (progress.getNumCorrectAnswers())); 
             TotalAnswered.setText("" + (progress.getTotalQuestionsAnswered()));
             Score.setText("" + (progress.getNumCorrectAnswers() / progress.getTotalQuestionsAnswered()));
+            System.out.println("Total Questions Answered: " + progress.getTotalQuestionsAnswered());
+            System.out.println("Number of Correct Answers: " + progress.getNumCorrectAnswers());
 
         }
        

@@ -5,22 +5,30 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="383.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.ActivitiesController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="383.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.ActivitiesController">
    <children>
-      <Polygon fill="#56bfbf" layoutX="-83.0" layoutY="20.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 83.89739227294922, 125.79914855957031, 210.58424377441406, 227.30209350585938" rotate="-76.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <Polygon fill="#56bfbf" layoutX="-83.0" layoutY="182.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" rotate="-74.5" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <Polygon fill="#57bdbd" layoutX="127.0" layoutY="55.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" rotate="-33.7" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <Polygon fill="#56bfbf" layoutX="-71.0" layoutY="339.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <Polygon fill="#56bfbf" layoutX="118.0" layoutY="247.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <Button fx:id="MockConvosButton" ellipsisString="" layoutX="40.0" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#GoToMockConvo" prefHeight="58.0" prefWidth="85.0" text="Mock Convo" textOverrun="CLIP" wrapText="true">
+      <Polygon fill="#56bfbf" layoutX="-84.0" layoutY="45.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 83.89739227294922, 125.79914855957031, 210.58424377441406, 227.30209350585938" rotate="-76.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Polygon fill="#56bfbf" layoutX="-84.0" layoutY="207.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" rotate="-74.5" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Polygon fill="#57bdbd" layoutX="126.0" layoutY="80.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" rotate="-33.7" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Polygon fill="#56bfbf" layoutX="-72.0" layoutY="364.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Polygon fill="#56bfbf" layoutX="117.0" layoutY="272.0" points="164.5658416748047, 75.35291290283203, 108.92691040039062, 224.5482177734375, 241.06300354003906, 135.5609893798828, 85.5, 129.0, 210.58424377441406, 227.30209350585938" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Button fx:id="MockConvosButton" ellipsisString="" layoutX="39.0" layoutY="155.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#GoToMockConvo" prefHeight="58.0" prefWidth="85.0" text="Mock Convo" textOverrun="CLIP" wrapText="true">
          <font>
             <Font name="Bell MT Bold" size="10.0" />
          </font></Button>
-      <Button fx:id="StoryButton" layoutX="258.0" layoutY="183.0" mnemonicParsing="false" onAction="#GoToStory" text="Story" />
-      <Button fx:id="MatchingButton" layoutX="21.0" layoutY="311.0" mnemonicParsing="false" onAction="#GoToMatching" text="Matching" />
-      <Button fx:id="FlashcardButton" layoutX="225.0" layoutY="383.0" mnemonicParsing="false" onAction="#GoToFlashCards" text="Flashcards" />
-      <Button fx:id="FillInTheBlankButton" layoutX="36.0" layoutY="484.0" mnemonicParsing="false" onAction="#GoToFillInTheBlank" text="Fill in the Blank" />
-      <Button fx:id="dictionary" layoutX="244.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoToDictionary" text="Dictionary" />
-      <Button fx:id="Progress" layoutX="259.0" layoutY="537.0" mnemonicParsing="false" onAction="#GoToProgress" text="Progress" />
+      <Button fx:id="StoryButton" layoutX="257.0" layoutY="208.0" mnemonicParsing="false" onAction="#GoToStory" text="Story" />
+      <Button fx:id="MatchingButton" layoutX="20.0" layoutY="336.0" mnemonicParsing="false" onAction="#GoToMatching" text="Matching" />
+      <Button fx:id="FlashcardButton" layoutX="224.0" layoutY="408.0" mnemonicParsing="false" onAction="#GoToFlashCards" text="Flashcards" />
+      <Button fx:id="FillInTheBlankButton" layoutX="35.0" layoutY="509.0" mnemonicParsing="false" onAction="#GoToFillInTheBlank" text="Fill in the Blank" />
+      <Button fx:id="dictionary" layoutX="290.0" layoutY="14.0" mnemonicParsing="false" onAction="#GoToDictionary" prefHeight="46.0" prefWidth="78.0" text="Dictionary">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Button fx:id="Progress" layoutX="290.0" layoutY="568.0" mnemonicParsing="false" onAction="#GoToProgress" prefHeight="46.0" prefWidth="78.0" text="Progress" />
+      <Button fx:id="Settings" layoutX="290.0" layoutY="69.0" mnemonicParsing="false" onAction="#GoToSettings" prefHeight="46.0" prefWidth="78.0" text="Settings">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

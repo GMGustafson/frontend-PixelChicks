@@ -29,6 +29,10 @@ public class ActivitiesController {
     @FXML
     private Button Progress;
 
+    
+    @FXML
+    private Button Settings;
+
     @FXML
     void GoToDictionary(ActionEvent event) throws IOException{
         App.setRoot("dictionary");
@@ -64,6 +68,13 @@ public class ActivitiesController {
         System.out.println("In go to progress");
         App.setRoot("progress");
     }
+
+
+    @FXML
+    void GoToSettings(ActionEvent event) throws IOException{
+        App.setRoot("settings");
+    }
+
 
     
 
