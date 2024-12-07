@@ -252,8 +252,6 @@ public class CategorySystemFacade {
      */
     public FillInTheBlank getFillintheBlank(){
         FillInTheBlank fillInBlank = new FillInTheBlank();
-
-        //FillInTheBlank fillInBlank = new FillInTheBlank( fitbQuestion,  );
         Phrase sampleSentence = fillInBlank.getSampleSentence();
         String sentence = fillInBlank.getSentence();
         String missingWord = fillInBlank.getMissingWord();
@@ -261,10 +259,6 @@ public class CategorySystemFacade {
         System.out.println("Fill in the blank:");
         System.out.println("");
         System.out.println(sentence.replace(missingWord, " "));
-        //System.out.println(hint); 
-        
-        // Phrase sampleSentence = new Phrase("some sample sentence", missingWord); // Ensure this is not null
-        // System.out.println("Creating FillInTheBlank with sampleSentence: " + sampleSentence);
         
         return fillInBlank;
     }
