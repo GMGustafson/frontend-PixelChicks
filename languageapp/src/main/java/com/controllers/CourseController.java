@@ -67,7 +67,7 @@ public class CourseController implements Initializable {
             if ( progress != null) {
                 courseLabel.setText("Welcome back, " + user.getUsername());
                 userCategory = progress.getCurrentCategory();
-                categoryLabel.setText("Loading previous progress");
+                categoryLabel.setText("Previous category: " + userCategory);
 
             }
             courseLabel.setText("Welcome, " + user.getUsername());
