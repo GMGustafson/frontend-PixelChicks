@@ -124,6 +124,11 @@ public class Course {
             public ArrayList<Word> getWordsByCategory(String category2) {
                 return words.getOrDefault(category2, new ArrayList<>());
             }
+
+            public ArrayList<Word> getTranslationByCategory(String category2) {
+                return words.getOrDefault(category2, new ArrayList<>());
+            }
+            
         
             /**
              * getStories method
