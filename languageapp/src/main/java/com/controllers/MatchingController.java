@@ -17,6 +17,9 @@ import com.chatterbox.App;
 import com.model.Category;
 import com.model.Course;
 import com.controllers.WordLoader;
+import com.model.User;
+import com.model.Progress;
+import com.model.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,13 +30,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import com.model.CategorySystemFacade;
+
+
 
 /** 
   * She wants us to like randomly pick them with an arraylist 
   */
 
 public class MatchingController {
-    private String[] words = {"rojo", "verde", "blanco", "azul", "amarillo", "naranja", "rosa", "morado", "gris"};
     @FXML
     private ResourceBundle resources;
 
@@ -96,120 +101,111 @@ public class MatchingController {
             Button8.setStyle("-fx-background-color: purple");
         });
     }
-    
+
+    private CategorySystemFacade facade;
+    private User user;
+    // private Word word;
+    private Course course;
+    private Category category;
+    private Progress progress;
+    private List<Word> word;
+    private String userCatergory;
+
+    private List<Word> words;
+    private List<Word> translations;
     
     @FXML
     void initialize() {
+
         List<Button> buttons1 = List.of(Button1, Button2, Button3, Button4); 
         List<Button> buttons2 = List.of(Button5, Button6, Button7, Button8);
-        // Collections.shuffle(buttons1);
 
+        
+        
+        facade = CategorySystemFacade.getFacadeInstance();
+        user = facade.getCurrentUser();
+        course = user.getCurrentCourse();
+        progress = user.getCurrentProgress();
+        userCatergory= progress.getCurrentCategory();
+        
+        words = course.getWordsByCategory(userCatergory);
+        translations = course.getTranslationByCategory(userCatergory);
+        
+        System.out.println("Progress" + progress);
+        System.out.println("Words" + words);
+        System.out.println("Translations" + translations);
+        Collections.shuffle(words);
+        Collections.shuffle(translations);
+    
+        
 
    
-    // // List<String> words = new ArrayList<>(List.of("rojo", "verde", "blanco", "azul", "amarillo", "naranja", "rosa", "morado", "gris"));
-    // List<String> wordList = new ArrayList<>(WordLoader.getRandomizedWords(words));
-
-    
-    // int wordCount = buttons1.size();
-
-    // for (int i = 0; i < wordCount; i++) {
-    //     buttons1.get(i).setText(wordList.get(i));
-    // }
-
-    // // List<String> words2 = new ArrayList<>(List.of("red", "green", "white", "blue", "yellow", "orange", "pink", "purple", "gray"));
-    // List<String> wordList2 = new ArrayList<>(WordLoader.getRandomizedWords(words2));
-
-    // int wordCount2 = buttons2.size();
-
-    // for (int i = 0; i < wordCount2; i++) {
-    //     buttons2.get(i).setText(wordList2.get(i));
-    // }
-
-    Map<String, String> wordMap = new HashMap<>();
-    wordMap.put("rojo", "red"); 
-    wordMap.put("verde", "green");
-    wordMap.put("blanco", "white");
-    wordMap.put("azul", "blue");
-    wordMap.put("amarillo", "yellow");
-    wordMap.put("naranja", "orange");
-    wordMap.put("rosa", "pink");
-    wordMap.put("morado", "purple");
-    wordMap.put("gris", "gray");
-
-    List<Map.Entry<String, String>> wordList = new ArrayList<>(wordMap.entrySet());
-    Collections.shuffle(wordList);
-
-    List<String> spanishWords = new ArrayList<>();
-    List<String> englishWords = new ArrayList<>();
-    for (Map.Entry<String, String> pair : wordList) {
-        spanishWords.add(pair.getKey());
-        englishWords.add(pair.getValue());
-    }
 
     int wordCount = buttons1.size();
 
     for (int i = 0; i < wordCount; i++) {
         final int index = i;
-        buttons1.get(i).setText(spanishWords.get(i));
+        buttons1.get(i).setText(words.get(i).getWord());
         buttons1.get(i).setOnMouseClicked(e -> {
-            buttons1.get(index).setStyle("-fx-background-color: " + getColor(spanishWords.get(index)));
+            // buttons1.get(index).setStyle("-fx-background-color: " + getColor(words.get(index)));
         });
-        // buttons1.get(i).setStyle("-fx-background-color: " + getColor(spanishWords.get(i)));
+        // buttons1.get(i).setStyle("-fx-background-color: " + getColor(words.get(i)));
     }
 
     int wordCount2 = buttons2.size();
     for (int i = 0; i < wordCount2; i++) {
         final int index = i;
-        buttons2.get(i).setText(englishWords.get(i));
+        buttons2.get(i).setText(translations.get(i).getTranslation());
         buttons2.get(i).setOnMouseClicked(e -> {
-            buttons2.get(index).setStyle("-fx-background-color: " + getColor(englishWords.get(index)));
+            // buttons2.get(index).setStyle("-fx-background-color: " + getColor(englishWords.get(index)));
         });
         // buttons2.get(i).setStyle("-fx-background-color: " + getColor(englishWords.get(i)));
     }   
 }
 
-private String getColor(String word){
-    switch (word) {
-        case "rojo":
-            return "red";
-        case "verde":
-            return "green";
-        case "blanco":
-            return "white";
-        case "azul":
-            return "blue";
-        case "amarillo":
-            return "yellow";
-        case "naranja":
-            return "orange";
-        case "rosa":
-            return "pink";
-        case "morado":
-            return "purple";
-        case "gris":
-            return "gray";
-        case "red":
-            return "red";
-        case "green":
-            return "green";
-        case "white":
-            return "white";
-        case "blue":
-            return "blue";
-        case "yellow":
-            return "yellow";
-        case "orange":
-            return "orange";
-        case "pink":
-            return "pink";
-        case "purple":
-            return "purple";
-        case "gray":
-            return "gray";
-        default:
-            return "black";
-    }
+// private String getColor(Word word){
+//     switch (word) {
+//         case "rojo":
+//             return "red";
+//         case "verde":
+//             return "green";
+//         case "blanco":
+//             return "white";
+//         case "azul":
+//             return "blue";
+//         case "amarillo":
+//             return "yellow";
+//         case "naranja":
+//             return "orange";
+//         case "rosa":
+//             return "pink";
+//         case "morado":
+//             return "purple";
+//         case "gris":
+//             return "gray";
+//         case "red":
+//             return "red";
+//         case "green":
+//             return "green";
+//         case "white":
+//             return "white";
+//         case "blue":
+//             return "blue";
+//         case "yellow":
+//             return "yellow";
+//         case "orange":
+//             return "orange";
+//         case "pink":
+//             return "pink";
+//         case "purple":
+//             return "purple";
+//         case "gray":
+//             return "gray";
+//         default:
+//             return "black";
+//     }
+// }
 }
 
-}
+
 
