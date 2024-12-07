@@ -23,7 +23,9 @@ public class FillInTheBlank extends Question{
   public FillInTheBlank(String question, Phrase hint, Phrase sampleSentence, ArrayList<String> wordBank) {
       //TODO Auto-generated constructor stub
       super(question);
+     
       this.sampleSentence = sampleSentence;
+      System.out.println("Sample sentence: " + sampleSentence);
       this.wordBank = wordBank;
       this.hint = hint;
   }

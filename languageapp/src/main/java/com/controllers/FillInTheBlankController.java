@@ -71,24 +71,36 @@ public class FillInTheBlankController implements Initializable{
         progress = user.getCurrentProgress();
         course = user.getCurrentCourse();
         userCategory = progress.getCurrentCategory();
+       
+        fillInTheBlank = facade.getFillintheBlank();
+      
         
-        
+        System.out.print("FillInTheBlank" + fillInTheBlank); 
+
         showCategory.setText("Category: " + userCategory);
 
-        //fillInTheBlank = FillInTheBlank.
+        System.out.println("category =" + userCategory); 
+       
 
 
         
         // Load the hint by category
         ArrayList<Phrase> phrases = course.getPhrasesByCategory(userCategory);
+
+        System.out.println("phrases" + phrases); 
+
         if (phrases != null && !phrases.isEmpty()) {
             if (phrases != null && !phrases.isEmpty()) {
                 Random random = new Random();
                 int randomIndex = random.nextInt(phrases.size());
                 randomPhrase = phrases.get(randomIndex); // Get the random Phrase object from the list
+                System.out.println("randomPhrase" + randomPhrase); 
                 sentence = fillInTheBlank.getSampleSentence();
+                System.out.println("Sentence" + sentence); 
                 missingWord = fillInTheBlank.getMissingWord();
+                System.out.println("Missing Word" + missingWord);
                 answers = fillInTheBlank.getWordBank();
+                System.out.println("Word Bank" + answers);
                 //missingWord = randomPhrase.getWords().getMissingWord(); // Assuming `getMissingWord` returns the correct word
                 //fitbQuestion.setText(randomPhrase.getSampleSentence());
             }

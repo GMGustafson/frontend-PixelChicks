@@ -108,9 +108,11 @@ public class Progress {
     * setCurrentCategory method
     * Sets currentCategory
     * @param currentCategory
+     * @return 
     */
-    public void setCurrentCategory(String currentCategory){
+    public String setCurrentCategory(String currentCategory){
         this.currentCategory = currentCategory;
+        return this.currentCategory;
     }
 
     /**

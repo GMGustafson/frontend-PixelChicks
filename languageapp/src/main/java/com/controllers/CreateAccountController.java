@@ -85,7 +85,7 @@ public class CreateAccountController {
         {
             System.out.println("going to next page"); 
             // DataWriter.saveUsers(); 
-            App.setRoot("activities");
+            App.setRoot("courses");
         }
 
 

@@ -1,6 +1,7 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 /**
  * @author zaniah, sri, gracie, and grace
@@ -251,7 +252,7 @@ public class CategorySystemFacade {
      * getFillBlank method
      * a way for the user to study by answering fill in the blank questions
      */
-    public void getFillintheBlank(){
+    public FillInTheBlank getFillintheBlank(){
         FillInTheBlank fillInBlank = new FillInTheBlank(null, hint, fitbQuestion, null );
 
         String hint = fillInBlank.getHint();
@@ -259,7 +260,13 @@ public class CategorySystemFacade {
         String missingWord = fillInBlank.getMissingWord();
 
         System.out.println("Fill in the blank:");
-        System.out.println(sentence.replace(missingWord, " "));  
+        System.out.println(sentence.replace(missingWord, " "));
+        System.out.println(hint); 
+         
+        // Phrase sampleSentence = new Phrase("some sample sentence", missingWord); // Ensure this is not null
+        // System.out.println("Creating FillInTheBlank with sampleSentence: " + sampleSentence);
+        
+        return fillInBlank;
     }
 
     /**

@@ -47,8 +47,13 @@ public class LoginController {
             
 
            System.out.println("Valid login credentials." + username + "  " + password);
+<<<<<<< HEAD
             App.setRoot("activities");
             // App.setRoot("matching");
+=======
+            // App.setRoot("activities");
+            App.setRoot("courses");
+>>>>>>> ad1a7e176c920976740487943dd7b49bf06ed061
         }
     }
     @FXML
