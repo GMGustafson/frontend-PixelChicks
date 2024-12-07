@@ -125,11 +125,15 @@ public class FillInTheBlankController implements Initializable{
 
     @FXML
     void gotonext(ActionEvent event) {
+        currPhrase = null;
+        missingWord = null;
+        correctAnswer = null;
+
+        fitbQuestion.setText("");
+        enableButtons();
+
         String userCategory = progress.getCurrentCategory();
         displayQuestion(userCategory);
-
-        enableButtons();
-        fitbQuestion.setText("");
     }
 
 
