@@ -11,6 +11,7 @@ import com.model.CategorySystemFacade;
 import com.model.Category;
 import com.model.Course;
 import com.model.Flashcard;
+import com.model.Progress;
 import com.model.Story;
 import com.model.User;
 import com.model.Word;
@@ -98,6 +99,8 @@ public class FlashCardsController implements Initializable {
     private Word currWord;
     private int index = 0;
     private boolean translate = false; 
+    private Progress progress; 
+    private String userCatergory; 
     
     
     @Override
@@ -106,8 +109,10 @@ public class FlashCardsController implements Initializable {
         user = facade.getCurrentUser(); 
         course = facade.chooseCourse(course);
         category = user.getCurrentCourse();
-        wordList = category.getWordsByCategory("colors");
-        categ.setText(category.getCategory());
+        progress = user.getCurrentProgress(); 
+        userCatergory = progress.getCurrentCategory(); 
+        wordList = category.getWordsByCategory(userCatergory);
+        categ.setText(userCatergory);
          
         displayCard();
     }
