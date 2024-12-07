@@ -141,7 +141,7 @@ public class MatchingController {
         });;
         Button1.setStyle("-fx-background-color: gray");
         Button2.setOnMouseClicked(e ->{
-            Button2.setStyle("-fx-background-color: lightyellow");
+            Button2.setStyle("-fx-background-color: lightpurple");
         });;
         Button2.setStyle("-fx-background-color: gray");
         Button3.setOnMouseClicked(e ->{
