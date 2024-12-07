@@ -85,7 +85,16 @@ public class MatchingController {
         // } else {
         //     lblCheck.setText("Incorrect!");
         // }
-        lblCheck.setText("Correct!");
+        // lblCheck.setText("Correct!");
+        if(Button1 != Button5 || Button2 != Button6 || Button3 != Button7 || Button4 != Button8){
+            lblCheck.setText("Correct!");
+            // progress.trackQuestion();
+            progress.trackCorrectAnswer();
+        } else {
+            lblCheck.setText("Incorrect!");
+            // progress.trackQuestion();
+            // progress.addMissedWords(userCatergory);
+        }
 
     }
     
