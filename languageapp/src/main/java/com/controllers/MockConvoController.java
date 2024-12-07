@@ -25,19 +25,12 @@ import javafx.scene.input.MouseEvent;
 
 public class MockConvoController implements Initializable{
 
-    @FXML
-    private Button hint;
 
     @FXML
     private Button submit;
 
     @FXML
     private Label hintLabel;
-
-    // @FXML
-    // public void giveHint(MouseEvent event) throws IOException{
-    //     hintLabel.setText(currWord.getPronunciation());
-    // }
 
     @FXML
     private Label Question;
