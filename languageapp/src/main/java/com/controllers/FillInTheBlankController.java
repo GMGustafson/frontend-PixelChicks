@@ -7,7 +7,6 @@ import com.chatterbox.App;
 import com.model.*;
 import java.util.Random;
 import java.util.ArrayList;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -49,7 +48,6 @@ public class FillInTheBlankController implements Initializable{
 
     private CategorySystemFacade facade;
     private User user;
-    private Course course;
     private String userCategory;
     private FillInTheBlank fillInTheBlank;
     private Word word;
@@ -59,21 +57,43 @@ public class FillInTheBlankController implements Initializable{
     private Progress progress;
     private String missingWord;
     private String correctWord ;
-    private String sampleSentence;
+    private Phrase sampleSentence;
     private ArrayList<String> answers;
-    private String question;
+    private Course course;
+    private ArrayList<Phrase> phrases;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         facade = CategorySystemFacade.getFacadeInstance();
+        fillInTheBlank = facade.getFillintheBlank();
         user = facade.getCurrentUser();
         progress = user.getCurrentProgress();
         course = user.getCurrentCourse();
-        userCategory = progress.getCurrentCategory();
-       
         fillInTheBlank = facade.getFillintheBlank();
+        userCategory = progress.getCurrentCategory();
+        phrases = course.getPhrasesByCategory(userCategory);
+        
+
+        //phrases = fillInTheBlank.getPhrases();
+
+
+        fitbQuestion.setText(getPhraseQuestion());
+
+       
+        //fillInTheBlank = facade.getFillintheBlank();
+
+        
       
+        /*
+         * 1. Load a random spanish phrase from a specific category in Course.json using Phrase method
+         * 2. Convert it into the question using a method that picks out a missing word
+         *    and changes that area to "____"
+         * 3. MissingWord needs to pick out a word and ensures it is a word that exists in the list of words from Course.json
+         * 4. A method needs to use the word chosen to load alternatives from Course.json using Word method in ArrayList<String>
+         * 5. Missing word and 3 random alternatives need to moved to 4-element ArrayList<String> and then shuffled 
+         * 6. The buttons need to have the different words assigned to them
+         */
         
         System.out.print("FillInTheBlank" + fillInTheBlank); 
 
@@ -85,16 +105,13 @@ public class FillInTheBlankController implements Initializable{
 
         
         // Load the hint by category
-        ArrayList<Phrase> phrases = course.getPhrasesByCategory(userCategory);
-
         System.out.println("phrases" + phrases); 
 
-        if (phrases != null && !phrases.isEmpty()) {
             if (phrases != null && !phrases.isEmpty()) {
                 Random random = new Random();
                 int randomIndex = random.nextInt(phrases.size());
-                randomPhrase = phrases.get(randomIndex); // Get the random Phrase object from the list
-                System.out.println("randomPhrase" + randomPhrase); 
+                sampleSentence = phrases.get(randomIndex); // Get the random Phrase object from the list
+                System.out.println("randomPhrase" + sampleSentence); 
                 sentence = fillInTheBlank.getSampleSentence();
                 System.out.println("Sentence" + sentence); 
                 missingWord = fillInTheBlank.getMissingWord();
@@ -105,11 +122,12 @@ public class FillInTheBlankController implements Initializable{
                 //fitbQuestion.setText(randomPhrase.getSampleSentence());
             }
 
-        }
+
+        
 
     //     fillInTheBlank = new FillInTheBlank(
     //         "Fill in the Blank: ",
-    //         randomPhrase.getSampleSentence(),
+    //         .getSampleSentence(),
     //         randomPhrase.getTranslation(),
     //         new ArrayList<>(),
     //         new ArrayList<>(),
@@ -181,6 +199,23 @@ public class FillInTheBlankController implements Initializable{
         throw new UnsupportedOperationException("Unimplemented method 'initialize'");
     }
 
+    private String getPhraseQuestion() {
+        if (phrases != null && !phrases.isEmpty()) {
+            Random random = new Random();
+            int randomIndex = random.nextInt(phrases.size());
+            sampleSentence = phrases.get(randomIndex); // Get the random Phrase object from the list
+            System.out.println("randomPhrase" + sampleSentence); 
+            sentence = fillInTheBlank.getSampleSentence();
+            System.out.println("Sentence" + sentence); 
+            missingWord = fillInTheBlank.getMissingWord();
+            System.out.println("Missing Word" + missingWord);
+            answers = fillInTheBlank.getWordBank();
+            System.out.println("Word Bank" + answers);
+        }
+            return sentence;
+
+    }
+
     @FXML
     void backToActivities(ActionEvent event) throws IOException {
         App.setRoot("activities");
@@ -239,7 +274,7 @@ public class FillInTheBlankController implements Initializable{
 
     @FXML
     void showHint(ActionEvent event) {
-            hintLabel.setText(""+ randomPhrase.getTranslation());
+            hintLabel.setText(sampleHint.getSampleHint());
             
     }
 
