@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 
-<VBox alignment="CENTER" prefHeight="401.0" prefWidth="569.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.HomeController">
+<VBox alignment="CENTER" prefHeight="413.0" prefWidth="312.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.HomeController">
    <children>
       <Label text="Welcome to Chatterbox!" />
       <ImageView fitHeight="141.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">

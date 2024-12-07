@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="fillintheblank" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.FillInTheBlankController">
+<AnchorPane fx:id="fillintheblank" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="439.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.FillInTheBlankController">
    <children>
       <Label fx:id="showCategory" layoutX="249.0" layoutY="20.0" prefHeight="31.0" prefWidth="101.0" text="Category" />
       <Label fx:id="fitbQuestion" alignment="CENTER" layoutX="85.0" layoutY="74.0" prefHeight="46.0" prefWidth="429.0" stylesheets="@styles.css">
@@ -15,10 +15,10 @@
       <Label fx:id="hintLabel" layoutX="109.0" layoutY="142.0" prefHeight="31.0" prefWidth="415.0" />
       <Button fx:id="hintButton" layoutX="16.0" layoutY="135.0" mnemonicParsing="false" onAction="#showHint" text="Hint" />
       <Button fx:id="back" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backtoActivities" text="Back" />
-      <Button fx:id="fitbA" alignment="CENTER" layoutX="130.0" layoutY="200.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="A" />
-      <Button fx:id="fitbC" alignment="CENTER" layoutX="130.0" layoutY="279.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="C" />
-      <Button fx:id="fitbB" alignment="CENTER" layoutX="319.0" layoutY="279.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="B" />
-      <Button fx:id="fitbD" alignment="CENTER" layoutX="319.0" layoutY="200.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="D" />
+      <Button fx:id="fitbA" alignment="CENTER" layoutX="55.0" layoutY="200.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="A" />
+      <Button fx:id="fitbC" alignment="CENTER" layoutX="55.0" layoutY="279.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="C" />
+      <Button fx:id="fitbB" alignment="CENTER" layoutX="261.0" layoutY="279.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="B" />
+      <Button fx:id="fitbD" alignment="CENTER" layoutX="261.0" layoutY="200.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="35.0" prefWidth="150.0" stylesheets="@styles.css" text="D" />
       <Button fx:id="nextq" layoutX="263.0" layoutY="340.0" mnemonicParsing="false" onAction="#gotonext" text="Next" />
    </children>
 </AnchorPane>
