@@ -5,6 +5,7 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
 import java.util.ResourceBundle;
@@ -67,40 +68,33 @@ public class MatchingController {
     private Button Button7;
 
     @FXML
-    private Button Button8;   
+    private Button Button8;  
+
+    @FXML
+    private Button Check;
+
+    @FXML
+    private Label lblCheck;
+
+    @FXML
+    void CheckAnswers(ActionEvent event) {
+
+        // if (Button1 == Button2)
+        // {
+        //     lblCheck.setText("Correct!");
+        // } else {
+        //     lblCheck.setText("Incorrect!");
+        // }
+        lblCheck.setText("yay!");
+
+    }
     
     @FXML
     void backtoActivities(ActionEvent event) throws IOException {
         App.setRoot("activities");
     }
 
-    @FXML
-    void changeColor(MouseEvent event) {
-        Button1.setOnMouseClicked(e -> {
-            Button1.setStyle("-fx-background-color: yellow");
-        });
-        Button2.setOnMouseClicked(e -> {
-            Button2.setStyle("-fx-background-color: pink");
-        });
-        Button3.setOnMouseClicked(e -> {
-            Button3.setStyle("-fx-background-color: blue");
-        });
-        Button4.setOnMouseClicked(e -> {
-            Button4.setStyle("-fx-background-color: green");
-        });
-        Button5.setOnMouseClicked(e -> {
-            Button5.setStyle("-fx-background-color: red");
-        });
-        Button6.setOnMouseClicked(e -> {
-            Button6.setStyle("-fx-background-color: white");
-        });
-        Button7.setOnMouseClicked(e -> {
-            Button7.setStyle("-fx-background-color: orange");
-        });
-        Button8.setOnMouseClicked(e -> {
-            Button8.setStyle("-fx-background-color: purple");
-        });
-    }
+
 
     private CategorySystemFacade facade;
     private User user;
@@ -137,75 +131,47 @@ public class MatchingController {
         Collections.shuffle(words);
         Collections.shuffle(translations);
     
-        
-
-   
-
-    int wordCount = buttons1.size();
+        int wordCount = buttons1.size();
 
     for (int i = 0; i < wordCount; i++) {
         final int index = i;
         buttons1.get(i).setText(words.get(i).getWord());
-        buttons1.get(i).setOnMouseClicked(e -> {
-            // buttons1.get(index).setStyle("-fx-background-color: " + getColor(words.get(index)));
-        });
-        // buttons1.get(i).setStyle("-fx-background-color: " + getColor(words.get(i)));
-    }
+        Button1.setOnMouseClicked(e ->{
+            Button1.setStyle("-fx-background-color: lightblue");
+        });;
+        Button2.setOnMouseClicked(e ->{
+            Button2.setStyle("-fx-background-color: lightyellow");
+        });;
+        Button3.setOnMouseClicked(e ->{
+            Button3.setStyle("-fx-background-color: lightgreen");
+        });;
+        Button4.setOnMouseClicked(e ->{
+            Button4.setStyle("-fx-background-color: lightpink");
+        });;
+        }
 
-    int wordCount2 = buttons2.size();
-    for (int i = 0; i < wordCount2; i++) {
+        int wordCount2 = buttons2.size();
+        for (int i = 0; i < wordCount2; i++) {
         final int index = i;
         buttons2.get(i).setText(translations.get(i).getTranslation());
-        buttons2.get(i).setOnMouseClicked(e -> {
-            // buttons2.get(index).setStyle("-fx-background-color: " + getColor(englishWords.get(index)));
-        });
-        // buttons2.get(i).setStyle("-fx-background-color: " + getColor(englishWords.get(i)));
+        Button5.setOnMouseClicked(e ->{
+            Button5.setStyle("-fx-background-color: lightblue");
+        });;
+        Button6.setOnMouseClicked(e ->{
+            Button6.setStyle("-fx-background-color: lightyellow");
+        });;
+        Button7.setOnMouseClicked(e ->{
+            Button7.setStyle("-fx-background-color: lightgreen");
+        });;
+        Button8.setOnMouseClicked(e ->{
+            Button8.setStyle("-fx-background-color: lightpink");
+        });;
+
+        }
     }   
 }
 
-// private String getColor(Word word){
-//     switch (word) {
-//         case "rojo":
-//             return "red";
-//         case "verde":
-//             return "green";
-//         case "blanco":
-//             return "white";
-//         case "azul":
-//             return "blue";
-//         case "amarillo":
-//             return "yellow";
-//         case "naranja":
-//             return "orange";
-//         case "rosa":
-//             return "pink";
-//         case "morado":
-//             return "purple";
-//         case "gris":
-//             return "gray";
-//         case "red":
-//             return "red";
-//         case "green":
-//             return "green";
-//         case "white":
-//             return "white";
-//         case "blue":
-//             return "blue";
-//         case "yellow":
-//             return "yellow";
-//         case "orange":
-//             return "orange";
-//         case "pink":
-//             return "pink";
-//         case "purple":
-//             return "purple";
-//         case "gray":
-//             return "gray";
-//         default:
-//             return "black";
-//     }
-// }
-}
+
 
 
 
