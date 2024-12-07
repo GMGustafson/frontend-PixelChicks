@@ -17,7 +17,7 @@
             <Insets left="245.0" />
          </padding>
       </Label>
-      <Button fx:id="next" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#NextPage" text="Back" />
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BacktoActivites" text="Back" />
       <TextArea fx:id="dictionaryWords" layoutX="182.0" layoutY="66.0" prefHeight="610.0" prefWidth="274.0" stylesheets="@styles.css" text="A&#10;abuela - grandmother&#10;abuelo - grandfather&#10;adentro - inside&#10;Aeropuerto - Airport&#10;amarillo - yellow&#10;azul - blue&#10;&#10;B&#10;Biblioteca - Library&#10;blanco - white&#10;&#10;C&#10;cinco - five&#10;cuatro - four&#10;&#10;D&#10;diez - ten&#10;dos - two&#10;&#10;E&#10;el grado - degree&#10;el invierno - winter&#10;el tiempo - weather&#10;el verano - summer&#10;Escuela - School&#10;Esposa - wife&#10;Esposo - Husband&#10;&#10;H&#10;Hermano - Brother&#10;Hermana - Sister&#10;Hija - daughter&#10;Hijo - son&#10;&#10;H&#10;hotel - hotel&#10;&#10;L&#10;la lluvia - rain&#10;la nieve - snow&#10;la primavera - spring&#10;la temperatura - temperature&#10;&#10;M&#10;Mama - mom&#10;&#10;P&#10;Papa - dad&#10;&#10;M&#10;morado - purple&#10;Museo - Museum&#10;&#10;N&#10;naranja - orange&#10;negro - black&#10;nueve - nine&#10;&#10;O&#10;ocho - eight&#10;&#10;P&#10;Panadería - bakery&#10;Parque - Park&#10;&#10;R&#10;Restaurante - Restaurant&#10;rojo - red&#10;rosa - pink&#10;&#10;S&#10;seis - six&#10;siete - seven&#10;soleado - sunny&#10;&#10;T&#10;tres - three&#10;&#10;U&#10;uno - one&#10;&#10;V&#10;verde - green&#10;&#10;Z&#10;zoológico - Zoo&#10;&#10;" />
    </children>
 </Pane>

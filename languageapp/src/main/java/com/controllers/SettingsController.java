@@ -1,7 +1,9 @@
 package com.controllers;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.chatterbox.App;
 import com.model.CategorySystemFacade;
 import com.model.User;
 
@@ -41,6 +43,7 @@ public class SettingsController implements Initializable {
     @FXML
     private Label Update;
 
+   
 
     @FXML
     void UpdateFields(ActionEvent event) {
@@ -55,8 +58,8 @@ public class SettingsController implements Initializable {
     }
 
     @FXML
-    void GoBack(ActionEvent event) {
-
+    void GoBack(ActionEvent event) throws IOException{
+        App.setRoot("activities");
     }
 
     private CategorySystemFacade facade;

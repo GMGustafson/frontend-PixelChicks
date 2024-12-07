@@ -85,7 +85,7 @@ public class MatchingController {
         // } else {
         //     lblCheck.setText("Incorrect!");
         // }
-        lblCheck.setText("yay!");
+        lblCheck.setText("Correct!");
 
     }
     
@@ -139,15 +139,19 @@ public class MatchingController {
         Button1.setOnMouseClicked(e ->{
             Button1.setStyle("-fx-background-color: lightblue");
         });;
+        Button1.setStyle("-fx-background-color: gray");
         Button2.setOnMouseClicked(e ->{
             Button2.setStyle("-fx-background-color: lightyellow");
         });;
+        Button2.setStyle("-fx-background-color: gray");
         Button3.setOnMouseClicked(e ->{
             Button3.setStyle("-fx-background-color: lightgreen");
         });;
+        Button3.setStyle("-fx-background-color: gray");
         Button4.setOnMouseClicked(e ->{
             Button4.setStyle("-fx-background-color: lightpink");
         });;
+        Button4.setStyle("-fx-background-color: gray");
         }
 
         int wordCount2 = buttons2.size();
@@ -157,15 +161,19 @@ public class MatchingController {
         Button5.setOnMouseClicked(e ->{
             Button5.setStyle("-fx-background-color: lightblue");
         });;
+        Button5.setStyle("-fx-background-color: gray");
         Button6.setOnMouseClicked(e ->{
             Button6.setStyle("-fx-background-color: lightyellow");
         });;
+        Button6.setStyle("-fx-background-color: gray");
         Button7.setOnMouseClicked(e ->{
             Button7.setStyle("-fx-background-color: lightgreen");
         });;
+        Button7.setStyle("-fx-background-color: gray");
         Button8.setOnMouseClicked(e ->{
             Button8.setStyle("-fx-background-color: lightpink");
         });;
+        Button8.setStyle("-fx-background-color: gray");
 
         }
     }   

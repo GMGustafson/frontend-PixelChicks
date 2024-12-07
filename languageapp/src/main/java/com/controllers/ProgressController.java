@@ -1,4 +1,5 @@
 package com.controllers;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -45,11 +46,12 @@ public class ProgressController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         System.out.println("Hi inside"); 
 
-        System.out.println("null"); 
+        System.out.println("null");
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
-        System.out.println(user);
+        System.out.println(user.getFirstName());
         progress = user.getCurrentProgress();
+        System.out.println("Johns Progress: " + progress.getTotalQuestionsAnswered());
        
         if (this.progress == null)
         { 
@@ -65,6 +67,8 @@ public class ProgressController implements Initializable{
             TotalCorrect.setText("" + (progress.getNumCorrectAnswers())); 
             TotalAnswered.setText("" + (progress.getTotalQuestionsAnswered()));
             Score.setText("" + (progress.getNumCorrectAnswers() / progress.getTotalQuestionsAnswered()));
+            // System.out.println("Total Questions Answered: " + progress.getTotalQuestionsAnswered());
+            // System.out.println("Number of Correct Answers: " + progress.getNumCorrectAnswers());
 
         }
        

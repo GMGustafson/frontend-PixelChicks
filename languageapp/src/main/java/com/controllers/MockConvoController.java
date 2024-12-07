@@ -2,6 +2,7 @@ package com.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -25,17 +26,6 @@ import javafx.scene.input.MouseEvent;
 public class MockConvoController implements Initializable{
 
     @FXML
-    private Button hint;
-
-    @FXML
-    private Label hintLabel;
-
-    @FXML
-    void giveHint(MouseEvent event) throws IOException{
-        hintLabel.setText("hint");
-    }
-
-    @FXML
     private Label Question;
 
     @FXML
@@ -51,6 +41,40 @@ public class MockConvoController implements Initializable{
     @FXML
     private RadioButton anstwo;
 
+    @FXML
+    private Button next;
+
+
+    private String getChosenAns() {
+        if (ansone.isSelected()) return ansone.getText();
+        if (anstwo.isSelected()) return anstwo.getText();
+        if (ansthree.isSelected()) return ansthree.getText();
+        return null;
+    }
+
+    @FXML
+    void check(MouseEvent event) {
+        String correctans = currWord.getWord();
+        String chosenans = getChosenAns();
+
+        if (chosenans.equals(correctans)) {
+            Question.setText("Correct!");
+            progress.trackCorrectAnswer();
+        } 
+        else {
+            Question.setText("Wrong! Go to the next question.");
+            progress.trackQuestion();
+            progress.addMissedWords(currWord.getWord());
+        }
+
+    }
+
+    @FXML
+    void nextques(MouseEvent event) {
+        displayQuestion();
+    }
+
+
 
     @FXML
     void QuestionWillAppear(ActionEvent event) throws IOException {
@@ -59,7 +83,8 @@ public class MockConvoController implements Initializable{
 
     @FXML
     void backtoActivites(ActionEvent event) throws IOException {
-         App.setRoot("activities");
+        progress.saveProgress();
+        App.setRoot("activities");
     }
 
     @FXML
@@ -70,39 +95,47 @@ public class MockConvoController implements Initializable{
     private Course category;
     private Course course;
     private Random random; 
-    private String userCategory; 
-    private Progress progress; 
+    //private String userCategory; 
+    private Progress progress;
+    private ArrayList<Word> wordList; 
+    private Word currWord;
+    private String userCatergory;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
-        course = user.getCurrentCourse(); 
+        course = facade.chooseCourse(course);
+        category = user.getCurrentCourse();
         progress = user.getCurrentProgress(); 
-        userCategory = progress.getCurrentCategory(); 
+        userCatergory = progress.getCurrentCategory(); 
+        wordList = category.getWordsByCategory(userCatergory);
+        random = new Random();
          
-        System.out.println(userCategory);
+        wordList = category.getWordsByCategory("colors");
         
         random = new Random();
+        displayQuestion();
         
-        if (course.getCategory().equals("colors") && category.getCourse().equals("words")) {
-            displayQuestion();
-        } 
     }   
 
     private void displayQuestion(){
-        ArrayList<Word> words = category.getWordsByCategory(null);
-        words = course.getWordsByCategory("colors");
-        for (int i=0; i < words.size(); i++) {
-            Word mockwords = words.get(i);
-            
+        currWord = wordList.get(random.nextInt(wordList.size()));
+        String q = " What is " + currWord.getTranslation() + " in Spanish? ";
+        Question.setText(q);
+        
+        ArrayList<String> options = new ArrayList<>(currWord.getAlternatives());
+        Collections.shuffle(options);
+        options = new ArrayList<>(options.subList(0, 2));
+        options.add(currWord.getWord());
+        Collections.shuffle(options);
 
-        }
+        ansone.setText(options.get(0));
+        anstwo.setText(options.get(1));
+        ansthree.setText(options.get(2));
 
-
-        // answer1.setText(choices.get(0));
-        // answer2.setText(choices.get(1));
-        // answer3.setText(choices.get(2));
-
+        ansone.setSelected(false);
+        anstwo.setSelected(false);
+        ansthree.setSelected(false);
     }
 }

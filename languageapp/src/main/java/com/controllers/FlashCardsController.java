@@ -4,15 +4,19 @@ package com.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 import com.model.CategorySystemFacade;
+import com.chatterbox.App;
 import com.model.Category;
 import com.model.Course;
 import com.model.Flashcard;
+import com.model.Progress;
 import com.model.Story;
 import com.model.User;
 import com.model.Word;
+import com.narration.Narriator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,6 +34,9 @@ public class FlashCardsController implements Initializable {
     private Button forward;
 
     @FXML
+    private Button prev;
+
+    @FXML
     private Button Relearn;
 
     @FXML
@@ -40,38 +47,52 @@ public class FlashCardsController implements Initializable {
 
     @FXML
     private Pane pane;
+
     @FXML
     private Label showcard;
-    private String[] words = {"rojo", "verde", "blanco"};
-    private int index = 0;
-  
 
     @FXML
-    void backtoActivites(ActionEvent event) throws IOException{
+    private Button PlayWord;
 
+    
+    @FXML
+    void PlayWord(ActionEvent event) {
+        Narriator.playSound(wordLabel.getText());
     }
+    @FXML
+    void backtoActivites(ActionEvent event) throws IOException{
+         App.setRoot("activities");
+    }
+
 
     @FXML
     void tobeginning(MouseEvent event) throws IOException{
-        Relearn.setText(null);
+        index = 0;
+        displayCard();
     }
 
     @FXML
     void goNext(MouseEvent event) throws IOException{
-        wordLabel.setText(words[index]);
-        index = (index + 1) % words.length;
+        index = (index + 1) % wordList.size();
+        displayCard();
     }
 
     @FXML
     void goBack(MouseEvent event) throws IOException{
-        index = (index - 1 + words.length) % words.length; 
-        wordLabel.setText(words[index]);
+        index = (index - 1 + wordList.size()) % wordList.size();
+        displayCard();
     }
 
     @FXML
     void translateCard(MouseEvent event) throws IOException{
-        forward.setText(words[index]);
-        index = (index + 1) % words.length;
+        Word currentWord = wordList.get(index);
+        if (translate) {
+            wordLabel.setText(currentWord.getTranslation());
+        } 
+        else {
+            wordLabel.setText(currentWord.getWord());
+        }
+        translate = !translate;
     }
 
     private CategorySystemFacade facade;
@@ -79,39 +100,35 @@ public class FlashCardsController implements Initializable {
     private Course category;
     private Course course;
     private Flashcard flashcard;
-    private Story co;
+    private ArrayList<Word> wordList; 
+    private Word currWord;
+    private int index = 0;
+    private boolean translate = false; 
+    private Progress progress; 
+    private String userCatergory; 
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
-        // course = facade.chooseCourse(course);
-        // co = course.getStoriesByCategory("colors");
-
-        showcard.setText("Welcome " + user.getFirstName() + " " + user.getLastName());
-        
-        categ.setText(category.getCategory());
-
+        course = facade.chooseCourse(course);
+        category = user.getCurrentCourse();
+        progress = user.getCurrentProgress(); 
+        userCatergory = progress.getCurrentCategory(); 
+        wordList = category.getWordsByCategory(userCatergory);
+        categ.setText(userCatergory);
+         
+        displayCard();
     }
 
     
-    private void displayFlashcardWords(){
-        ArrayList<Word> words = category.getWordsByCategory(null);
-        for (int i=0; i < words.size(); i++) {
-            Word flashwords = words.get(i);
-            
-
-        }
-        // int relearn = words[0];
+    private void displayCard(){
+        Word currentWord = wordList.get(index);
+        wordLabel.setText(currentWord.getTranslation());
+        translate = false;
 
     }
 
 }
-  
-
-
-    // private void showCard(){
-    //     CategorySystemFacade facade = facade.getFacadeInstance();
-    // }
-
 

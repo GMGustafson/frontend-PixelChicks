@@ -9,6 +9,7 @@ import com.chatterbox.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 
 public class DictionaryController {
 
@@ -19,11 +20,20 @@ public class DictionaryController {
     private URL location;
 
     @FXML
-    private Button next;
+    private TextArea dictionaryWords;
 
     @FXML
-    void NextPage(ActionEvent event) throws IOException {
-        App.setRoot("logout");
+    private Button back;
+
+    // @FXML
+    // void NextPage(ActionEvent event) throws IOException {
+    //     // App.setRoot("logout");
+    //     App.setRoot("settings"); 
+    // }
+
+    @FXML
+    void BacktoActivites(ActionEvent event) throws IOException {
+        App.setRoot("activities");
     }
 
 }

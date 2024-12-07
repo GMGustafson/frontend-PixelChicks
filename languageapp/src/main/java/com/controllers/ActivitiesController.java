@@ -1,14 +1,20 @@
 package com.controllers;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import com.chatterbox.App;
+import com.model.CategorySystemFacade;
+import com.model.User;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
-public class ActivitiesController {
+public class ActivitiesController implements Initializable {
 
     @FXML
     private Button FillInTheBlankButton;
@@ -28,6 +34,12 @@ public class ActivitiesController {
     private Button dictionary;
     @FXML
     private Button Progress;
+
+    @FXML
+    private Label WelcomeText;
+    
+    @FXML
+    private Button Settings;
 
     @FXML
     void GoToDictionary(ActionEvent event) throws IOException{
@@ -64,6 +76,26 @@ public class ActivitiesController {
         System.out.println("In go to progress");
         App.setRoot("progress");
     }
+
+
+    @FXML
+    void GoToSettings(ActionEvent event) throws IOException{
+        App.setRoot("settings");
+    }
+
+    private User user; 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        CategorySystemFacade facade = CategorySystemFacade.getFacadeInstance();
+        user = facade.getCurrentUser();
+        if(user == null) {
+            System.out.println("User is null");
+        }
+        else{
+            WelcomeText.setText("Welcome, " + user.getFirstName());
+        }
+    }
+
 
     
 
