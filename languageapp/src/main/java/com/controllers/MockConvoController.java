@@ -43,49 +43,6 @@ public class MockConvoController implements Initializable{
     @FXML
     private Button next;
 
-
-    private String getChosenAns() {
-        if (ansone.isSelected()) return ansone.getText();
-        if (anstwo.isSelected()) return anstwo.getText();
-        if (ansthree.isSelected()) return ansthree.getText();
-        return null;
-    }
-
-    @FXML
-    void check(MouseEvent event) {
-        String correctans = currWord.getWord();
-        String chosenans = getChosenAns();
-
-        if (chosenans.equals(correctans)) {
-            Question.setText("Correct!");
-            progress.trackCorrectAnswer();
-        } 
-        else {
-            Question.setText("Wrong! Go to the next question.");
-            progress.trackQuestion();
-            progress.addMissedWords(currWord.getWord());
-        }
-
-    }
-
-    @FXML
-    void nextques(MouseEvent event) {
-        displayQuestion();
-    }
-
-
-
-    @FXML
-    void QuestionWillAppear(ActionEvent event) throws IOException {
-        Question.setText("Ques");
-    }
-
-    @FXML
-    void backtoActivites(MouseEvent event) throws IOException {
-        progress.saveProgress();
-        App.setRoot("activities");
-    }
-
     @FXML
     private ImageView parimage;
 
@@ -136,5 +93,47 @@ public class MockConvoController implements Initializable{
         ansone.setSelected(false);
         anstwo.setSelected(false);
         ansthree.setSelected(false);
+    }
+
+private String getChosenAns() {
+        if (ansone.isSelected()) return ansone.getText();
+        if (anstwo.isSelected()) return anstwo.getText();
+        if (ansthree.isSelected()) return ansthree.getText();
+        return null;
+    }
+
+    @FXML
+    void check(MouseEvent event) {
+        String correctans = currWord.getWord();
+        String chosenans = getChosenAns();
+
+        if (chosenans.equals(correctans)) {
+            Question.setText("Correct!");
+            progress.trackCorrectAnswer();
+        } 
+        else {
+            Question.setText("Wrong! Go to the next question.");
+            progress.trackQuestion();
+            progress.addMissedWords(currWord.getWord());
+        }
+
+    }
+
+    @FXML
+    void nextques(MouseEvent event) {
+        displayQuestion();
+    }
+
+
+
+    @FXML
+    void QuestionWillAppear(ActionEvent event) throws IOException {
+        Question.setText("Ques");
+    }
+
+    @FXML
+    void backtoActivities(MouseEvent event) throws IOException {
+        //progress.saveProgress();
+        App.setRoot("activities");
     }
 }

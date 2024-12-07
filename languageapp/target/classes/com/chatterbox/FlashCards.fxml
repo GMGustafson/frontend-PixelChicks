@@ -29,14 +29,7 @@
             <Font size="48.0" />
          </font></Label>
       <Accordion />
-<<<<<<< HEAD
       <Label fx:id="categ" alignment="CENTER" layoutX="237.0" layoutY="51.0" prefHeight="17.0" prefWidth="103.0" text="Label" />
       <Button fx:id="PlayWord" layoutX="257.0" layoutY="325.0" mnemonicParsing="false" onAction="#PlayWord" text="Play" />
-=======
-      <Label fx:id="categ" alignment="CENTER" layoutX="237.0" layoutY="51.0" prefHeight="25.0" prefWidth="109.0" text="Label">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
->>>>>>> 9ef19ec6af2a6cb3deba7a56dc540458744d303d
    </children>
 </Pane>
