@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -27,15 +26,6 @@ import javafx.scene.input.MouseEvent;
 public class MockConvoController implements Initializable{
 
     @FXML
-    private Button hintButton;
-
-    @FXML
-    private Button submit;
-
-    @FXML
-    private Label hintLabel;
-
-    @FXML
     private Label Question;
 
     @FXML
@@ -54,16 +44,12 @@ public class MockConvoController implements Initializable{
     @FXML
     private Button next;
 
+
     private String getChosenAns() {
         if (ansone.isSelected()) return ansone.getText();
         if (anstwo.isSelected()) return anstwo.getText();
         if (ansthree.isSelected()) return ansthree.getText();
         return null;
-    }
-
-    @FXML
-    void GiveHint(ActionEvent event) throws IOException {
-        hintLabel.setText("Hint:" + currWord.getPronunciation());
     }
 
     @FXML
@@ -113,14 +99,17 @@ public class MockConvoController implements Initializable{
     private Progress progress;
     private ArrayList<Word> wordList; 
     private Word currWord;
+    private String userCatergory;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         facade = CategorySystemFacade.getFacadeInstance();
         user = facade.getCurrentUser(); 
-        course = user.getCurrentCourse();  
-        category = course;
+        course = facade.chooseCourse(course);
+        category = user.getCurrentCourse();
         progress = user.getCurrentProgress(); 
+        userCatergory = progress.getCurrentCategory(); 
+        wordList = category.getWordsByCategory(userCatergory);
         random = new Random();
          
         wordList = category.getWordsByCategory("colors");
@@ -148,6 +137,5 @@ public class MockConvoController implements Initializable{
         ansone.setSelected(false);
         anstwo.setSelected(false);
         ansthree.setSelected(false);
-        hintLabel.setText("");
     }
 }
