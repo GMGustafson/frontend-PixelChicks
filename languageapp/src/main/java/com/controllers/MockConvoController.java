@@ -68,7 +68,7 @@ public class MockConvoController implements Initializable{
         wordList = category.getWordsByCategory(userCatergory);
         random = new Random();
          
-        wordList = category.getWordsByCategory("colors");
+        wordList = category.getWordsByCategory(userCatergory);
         
         random = new Random();
         displayQuestion();

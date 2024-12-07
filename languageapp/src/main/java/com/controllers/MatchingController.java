@@ -150,7 +150,7 @@ public class MatchingController {
         });;
         Button1.setStyle("-fx-background-color: gray");
         Button2.setOnMouseClicked(e ->{
-            Button2.setStyle("-fx-background-color: lightyellow");
+            Button2.setStyle("-fx-background-color: orange");
         });;
         Button2.setStyle("-fx-background-color: gray");
         Button3.setOnMouseClicked(e ->{
@@ -172,7 +172,7 @@ public class MatchingController {
         });;
         Button5.setStyle("-fx-background-color: gray");
         Button6.setOnMouseClicked(e ->{
-            Button6.setStyle("-fx-background-color: lightyellow");
+            Button6.setStyle("-fx-background-color: orange");
         });;
         Button6.setStyle("-fx-background-color: gray");
         Button7.setOnMouseClicked(e ->{
